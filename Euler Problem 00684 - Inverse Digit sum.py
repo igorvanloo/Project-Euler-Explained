@@ -15,7 +15,7 @@ Anwser:
     
 '''
 
-import time, math, eulerlib, itertools
+import time, math
 
 start_time = time.time()
 
@@ -38,10 +38,7 @@ def fibonnaci(x):
 def sn(b):
     return ((b % 9 + 1)*(pow(10,(b // 9), 1000000007)) - 1) % 1000000007
 
-def S(k,N=1000000007):
-    return (pow(10,k//9,N)*(6+(k%9)*(k%9+3)//2)-6-k)%N
-
-def MyS(k):
+def S(k):
     q = k // 9
     r = k % 9
     sum1 = (6*(pow(10,q,1000000007) - 1)) - (9*q % 1000000007)
@@ -53,7 +50,7 @@ def finals(k):
     r = k % 9
     
     return (6*(pow(10,q,1000000007) - 1) - (9*q % 1000000007) + (r/2)*(r*pow(10,q,1000000007) + 3*pow(10,q,1000000007) - 2)) % 1000000007
-    
+
 def compute():
     total = 0
     temp_list = fibonnaci(92)
@@ -65,18 +62,10 @@ def compute1():
     total = 0
     temp_list = fibonnaci(92)
     for x in range(2,91):
-        total += MyS(temp_list[x])
-    return total % 1000000007
-
-def compute2():
-    total = 0
-    temp_list = fibonnaci(92)
-    for x in range(2,91):
         total += finals(temp_list[x])
     return total % 1000000007
 
 if __name__ == "__main__":
-    print(compute())
     print(compute1())
-    print(compute2())
+    print(compute())
     print("--- %s seconds ---" % (time.time() - start_time))

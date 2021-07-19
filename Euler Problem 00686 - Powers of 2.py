@@ -36,21 +36,6 @@ import time, math
 start_time = time.time()
 
 def compute(n):
-    k = 1
-    lower = math.log(1.23, 10)
-    upper = math.log(1.24, 10)
-    count = 0
-    while True:
-        value = k * math.log(2, 10)
-        value = value - int(value)
-        if value >= lower and value <= upper:
-            count += 1
-        k += 1
-        if count == n:
-            return k - 1
-            break
-
-def compute1(n):
     lower = math.log(1.23, 10)
     upper = math.log(1.24, 10)
     cons = math.log(2,10)
@@ -64,7 +49,7 @@ def compute1(n):
     return j
     
 if __name__ == "__main__":
-    print(compute1(678910))
+    print(compute(678910))
     print("--- %s seconds ---" % (time.time() - start_time))
     
 

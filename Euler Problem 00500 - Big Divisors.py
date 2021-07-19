@@ -36,7 +36,8 @@ We can see that we can build them from the previous d(n)
 So our algorithm must choose to increase one of the powers to the next power of 2 or add a new primes
 
 Anwser:
-    
+    35407281
+--- 2.399091958999634 seconds ---
 '''
 
 import time, math, eulerlib

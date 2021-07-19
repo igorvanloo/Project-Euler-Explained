@@ -9,55 +9,13 @@ Created on Sun Apr 11 18:17:04 2021
 '''
 Project Euler Problem 719
 
-
-
 Anwser:
 128088830547982
 --- 2972.8279888629913 seconds ---
 '''
 
-import time, math, itertools
+import time, math
 start_time = time.time()
-
-def joinstr(x):
-    string = ""
-    for y in x:
-        string += str(y)
-    return int(string)
-    
-def IsSnumber1(x):
-    if x in [10**x for x in range(1,13)]:
-        return True
-    
-    value = int(math.sqrt(x))
-    
-    
-    
-    addition = [int(y) for y in range(0, value)]
-    suitable = []
-    for z in addition:
-        if str(z) in str(x):
-            suitable.append(z)
-    
-    combinations = []
-    for i in range(2,len(str(x))+1):
-        combinations += list(itertools.permutations(suitable, i))
-    
-    for j in combinations:
-        if sum(j) == value:
-            if joinstr(j) == x:
-                return True
-    return False                
-
-def compute():
-    total = 0
-    for x in range((10**3)+1, (10**4) + 1):
-        if x % 9 != 0 or x % 9 != 1:
-        
-            if IsSnumber1(x**2) == True:
-                print(x**2)
-                total += x**2
-    return total
 
 def list_maker(anumber):
     length = len(str(anumber))
@@ -91,16 +49,8 @@ def partition(number):
              answer.add(tuple(((x, ) + y)))
         
      return sorted([x for x in answer])
-
-def Partition(goal):
-    ways = set()
-    ways.add((goal, ))
-    for options in range(1, goal):
-        for i in Partition(goal - options):
-            ways.add(tuple(sorted((options, ) + i)))
-    return sorted([x for x in ways])
     
-def compute1(limit):
+def compute(limit):
     
     total = 0
     
@@ -131,9 +81,7 @@ def compute1(limit):
                     total += x
                     break
     return total
-                
-                
     
 if __name__ == "__main__":
-    print(compute1(10**6))
+    print(compute(10**6))
     print("--- %s seconds ---" % (time.time() - start_time))
