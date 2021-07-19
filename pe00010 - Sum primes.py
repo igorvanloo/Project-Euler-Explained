@@ -1,23 +1,30 @@
-#Project Euler Problem 10
-#The sum of the primes below 10 is 2 + 3 + 5 + 7 = 17.
-#Find the sum of all the primes below two million.
-import eulerlib
+'''
+Project Euler Problem 10
 
-def bettersumprime():
-    requiredprime = 2000000
-    return sum(eulerlib.primes(requiredprime))
+Anwser:
+    142913828922
+--- 0.3636751174926758 seconds ---
+'''
 
-def prime(z):
-    primes = [2]
-    for x in range(3,z,2):
-        for y in range(2,x):
-            if x % y == 0:
-                break
-        else:
-            primes.append(x)
-    return primes
+import time, math
 
-def sumprime():
-    requiredprime = 2000000
-    return sum(prime(requiredprime))
+def list_primality(n):
+	result = [True] * (n + 1)
+	result[0] = result[1] = False
+	for i in range(int(math.sqrt(n)) + 1):
+		if result[i]:
+			for j in range(2 * i, len(result), i):
+				result[j] = False
+	return result
+
+def list_primes(n):
+	return sum([i for (i, isprime) in enumerate(list_primality(n)) if isprime])
+
+if __name__ == "__main__":
+    start_time = time.time()
+    print(list_primes(2000000))
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+
+
 

@@ -1,19 +1,17 @@
-#Euler problem 6
-#FInd the difference between the square of the sum and the indivdual numbers squared
+'''
+Project Euler Problem 6
 
-def individualsquaredsum(y):
-    totalsum = 0
-    for i in range(1,y):
-        totalsum = totalsum + i**2
-    return int(totalsum)
-    
+Anwser:
+    25164150.0
+--- 0.00011491775512695312 seconds ---
+'''
 
-def totalsquaredsum(y):
-    totalsum1 = int((sum(x for x in range(1,y))))**2
-    return int(totalsum1)
-    
+import time
 
-def difference(y):
-    return totalsquaredsum(y) - individualsquaredsum(y)
-    
-print(difference(101))
+def compute(x):
+    return abs(x*(x+1)*(-3*x**2 + x + 2)/12)
+
+if __name__ == "__main__":
+    start_time = time.time()
+    print(compute(101))
+    print("--- %s seconds ---" % (time.time() - start_time))

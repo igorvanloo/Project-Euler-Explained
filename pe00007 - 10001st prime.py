@@ -1,34 +1,31 @@
-#Euler Problem 7 - Way too slow
+'''
+Project Euler Problem 7
 
-import eulerlib
-
-def isprime(x):
-    for y in range(2,x+1,2):
-        if x % y == 0:
-            print("Not prime")
-            break
-        else:
-            print("Is prime")
-            
-def prime(z):
-    primes = [2]
-    for x in range(3,z,2):
-        for y in range(2,x):
-            if x % y == 0:
-                break
-        else:
-            primes.append(x)
-    return primes
-
-def numberofprimes(length):
-    return len(prime(length))
+Anwser:
+    104743
+--- 0.17671489715576172 seconds ---
     
-while True:
-    num = 104742
-    if numberofprimes(num) == 10000:
-        print(num)
-        break
-    else:
-        num = num + 1
-        
-eulerlib.prime_gen(10001)
+'''
+
+import time, math, eulerlib
+
+def list_primality(n):
+	result = [True] * (n + 1)
+	result[0] = result[1] = False
+	for i in range(int(math.sqrt(n)) + 1):
+		if result[i]:
+			for j in range(2 * i, len(result), i):
+				result[j] = False
+	return result
+
+def list_primes(n):
+	return [i for (i, isprime) in enumerate(list_primality(n)) if isprime]
+
+def compute(x):
+    temp = list_primes(10**6)
+    return temp[x-1]
+
+if __name__ == "__main__":
+    start_time = time.time()
+    print(compute(10001))
+    print("--- %s seconds ---" % (time.time() - start_time))

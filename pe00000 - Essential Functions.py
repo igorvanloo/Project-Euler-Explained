@@ -9,7 +9,7 @@ Created on Wed Dec  9 12:51:18 2020
 Project Euler Essential Functions
 '''
 
-import math, itertools
+import math
 
 def ReadFile(): #Create the inital list 
     file = open("Input File name")
@@ -225,3 +225,18 @@ def ZeckendorfRepresentation(x, fibnumbers): #Returns list with zeckendorf decom
         count += 1
         
     return rep
+
+def ppt(limit): #Pythagorean Triplet generator
+    triples = []
+    for m in range(2,int(math.sqrt(1000))+1):
+        for n in range(1,m):
+            if (m+n) % 2 == 1 and math.gcd(m,n) == 1:
+                a = m**2 + n**2
+                b = m**2 - n**2
+                c = 2*m*n
+                
+                p = max(a,b,c)
+                
+                for k in range(1,int(limit/p)+1):
+                    triples.append([k*b,k*c,k*a])
+    return triples
