@@ -51,7 +51,6 @@ MC = 1100
 Anwser:
     743
 --- 0.007270097732543945 seconds ---
-    
 '''
 
 import time, math, eulerlib, itertools
