@@ -13,7 +13,7 @@ and keeping track of first 9 numbers by not letting one set of numbers get bigge
 
 Anwser:
 329468
---- 17.35551619529724 seconds ---    
+--- 3.7371561527252197 seconds ---    
 '''
 
 import time
@@ -33,17 +33,7 @@ def fib(n):
             v1, v2, v3 = v1+v2, v1, v2
     return str(v2)[:9]
 
-def compute():
-    S = set("123456789")
-    f1last9, f2last9, f1first9, f2first9, i = 1, 1, 1, 1, 2
-    while set(str(f2last9 % 10**9)) != S or set(str(f2first9)[:9]) != S:
-        f1last9, f2last9, f1first9, f2first9, i = f2last9, f1last9 + f2last9, f2first9, f2first9 + f1first9, i + 1
-        if f2first9 > 10**9:
-            f1first9, f2first9 = f1first9 / 10, f2first9 / 10
-
-    return i
-
-def compute1(a, b, k):
+def compute(a, b, k):
     
     S = [str(x) for x in range(1,k+1)]
     f1 = a
@@ -61,9 +51,8 @@ def compute1(a, b, k):
         f1 = (f2 % 10**9)
         f2 = fn
     
-    
 if __name__ == "__main__":
-    print(compute1(1,1,9))
+    print(compute(1,1,9))
     print("--- %s seconds ---" % (time.time() - start_time))
     
     
