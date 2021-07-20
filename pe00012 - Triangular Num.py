@@ -1,6 +1,13 @@
-#Euler Problem 12
+'''
+Project Euler Problem 12
 
-import math 
+Anwser:
+    76576500.0
+--- 5.815737247467041 seconds ---
+    
+'''
+
+import math, time
 
 def totalsum(y):
     totalsum1 = int((sum(x for x in range(1,y+1))))
@@ -10,19 +17,22 @@ def TriangleNumber(x):#This calculates the xth triangle number
     nth = (x*(x+1))/2
     return nth
 
-def Divisors(x):
-    count = 0
-    end = math.sqrt(x)
-    for i in range(1, int(end) + 1):
+def Divisors(x): #Find the divisors of a number
+    divisors = []
+    for i in range(1, int(math.sqrt(x)) + 1):
         if x % i == 0:
-            count = count + 2
-    return count
+            divisors.append(i)
+            divisors.append(int(x/i))
+    return len(divisors)
 
-def Compute():
+def compute(limit):
     x = 1
     while True:
-        if Divisors(TriangleNumber(x)) >= 500:
+        if Divisors(TriangleNumber(x)) >= limit:
             return TriangleNumber(x)
-        else:
-            print(Divisors(TriangleNumber(x)))
-            x = x + 1        
+        x = x + 1     
+
+if __name__ == "__main__":
+    start_time = time.time()
+    print(compute(500))
+    print("--- %s seconds ---" % (time.time() - start_time))

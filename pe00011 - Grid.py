@@ -1,5 +1,12 @@
-#Project Euler Problem 11
-#A grid with 20 rows each containing 20 numbers
+'''
+Project Euler Problem 11
+
+Anwser:
+    70600674
+--- 0.0009050369262695312 seconds ---
+'''
+
+import time
 
 grid = [
 	[ 8, 2,22,97,38,15, 0,40, 0,75, 4, 5, 7,78,52,12,50,77,91, 8],
@@ -23,11 +30,6 @@ grid = [
 	[20,73,35,29,78,31,90, 1,74,31,49,71,48,86,81,16,23,57, 5,54],
 	[ 1,70,54,71,83,51,54,69,16,92,33,48,61,43,52, 1,89,19,67,48],
 ]
-def AdjacentProduct(y): #This will compute the product between adjacent numbers and return the anwser
-    product = 1
-    for x in y:
-        product = product * int(x)
-    return product
 
 def horizontalsum():
     horizontalsumlist = []
@@ -63,11 +65,10 @@ def stairsumtotheleft():
             stairsumleftlist.append(stairsum1)
     return max(stairsumleftlist)    
 
-def overall():
-    overalllist = [stairsumtotheright(), verticalsum(), horizontalsum(), stairsumtotheleft()]
-    return max(overalllist) 
-
-print(overall())
+if __name__ == "__main__":
+    start_time = time.time()
+    print(max([stairsumtotheright(), verticalsum(), horizontalsum(), stairsumtotheleft()]))
+    print("--- %s seconds ---" % (time.time() - start_time))
 
     
     
