@@ -4,14 +4,9 @@ Project Euler Problem 12
 Anwser:
     76576500.0
 --- 5.815737247467041 seconds ---
-    
 '''
 
 import math, time
-
-def totalsum(y):
-    totalsum1 = int((sum(x for x in range(1,y+1))))
-    return int(totalsum1)
 
 def TriangleNumber(x):#This calculates the xth triangle number
     nth = (x*(x+1))/2
