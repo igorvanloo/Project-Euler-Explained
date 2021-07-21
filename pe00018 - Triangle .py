@@ -1,5 +1,9 @@
-#Euler Problem 18
+'''
+Project Euler Problem 18
 
+Anwser:
+    
+'''
 import time
 start_time = time.time()
 
@@ -20,18 +24,48 @@ triangle = [
 	[63,66, 4,68,89,53,67,30,73,16,69,87,40,31],
 	[ 4,62,98,27,23, 9,70,98,73,93,38,53,60, 4,23],
 ]
+triangle1 = [  
+	[75],
+	[95,64],
+	[17,47,82],
+	[18,35,87,10],
+	[20, 4,82,47,65],
+	[19, 1,23,75, 3,34],
+	[88, 2,77,73, 7,63,67],
+	[99,65, 4,28, 6,16,70,92],
+	[41,41,26,56,83,40,80,70,33],
+	[41,48,72,33,47,32,37,16,94,29],
+	[53,71,44,65,25,43,91,52,97,51,14],
+	[70,11,33,28,77,73,17,78,39,68,17,57],
+	[91,71,52,38,17,14,91,43,58,50,27,29,48],
+	[63,66, 4,68,89,53,67,30,73,16,69,87,40,31],
+	[ 4,62,98,27,23, 9,70,98,73,93,38,53,60, 4,23],
+]
 
-def compute():
+def compute(tri):
     for i in reversed(range(len(triangle) - 1)):
         for j in range(len(triangle[i])):
             if triangle[i + 1][j] >= triangle[i + 1][j + 1]:
                 triangle[i][j] += triangle[i + 1][j]
             else:
                 triangle[i][j] += triangle[i + 1][j + 1]
-    return str(triangle[0][0])
+    return triangle[0][0]
 
+def compute1(tri):
+    for i in range(1,len(tri)):
+        a = len(triangle[i])
+        for j in range(0, a):
+            if j == 0:
+                tri[i][j] += tri[i-1][j]
+            elif j == a-1:
+                tri[i][j] += tri[i-1][j-1]
+            else:
+                tri[i][j] += max(tri[i-1][j],tri[i-1][j-1])
+    return max(tri[-1])
+            
 if __name__ == "__main__":
-    print(compute())
+    print(compute(triangle))
+    print(compute1(triangle1))
     print("--- %s seconds ---" % (time.time() - start_time))
 
             

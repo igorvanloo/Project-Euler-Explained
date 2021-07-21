@@ -1,12 +1,25 @@
-#Euler Problem 16
-#2^15 = 32768 and the sum of its digits is 3 + 2 + 7 + 6 + 8 = 26.
-#What is the sum of the digits of the number 2^1000?
+'''
+Project Euler Problem 16
 
-def sumofdigits(x):
-    y = str(x)
-    sumlist = list(y)
+Anwser:
+    1366
+--- 0.00029397010803222656 seconds ---
+    
+'''
+
+import time, math
+
+def sum_digits(x):
     totalsum = 0
-    for i in sumlist:
-        totalsum = totalsum + int(i)   
+    while x != 0:
+        totalsum += x % 10
+        x = x // 10
     return totalsum
+
+if __name__ == "__main__":
+    start_time = time.time()
+    print(sum_digits(2**1000))
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+
 
