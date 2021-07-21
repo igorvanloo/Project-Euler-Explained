@@ -123,29 +123,24 @@ def is_quadratic(x):
         return True
     return False
 
-def canonical_form(x):
-    if is_quadratic(x) == True: #Start by making sure its not a perfect square
-        return []
-    else:
-        m0 = 0
-        d0 = 1
-        a0 = math.floor(math.sqrt(x)) #These are the starting values
-        test_mn = d0*a0 - m0
-        test_dn = (x - test_mn**2)/d0
-        test_an = math.floor((math.sqrt(x) + test_mn) / test_dn) #These are the test values, if we encounter them twice its over
-        count = 0
-        temp_list = []
-        while count != 2:
-            mn = int(d0*a0 - m0) 
-            dn = int((x - mn**2)/d0)
-            an = int(math.floor((math.sqrt(x) + mn) / dn)) #new values
-            if mn == test_mn and dn == test_dn and an == test_an:
-                count += 1 
-            temp_list.append(an)
-            m0 = mn
-            d0 = dn
-            a0 = an #Replace values
-    return temp_list[0:-1]
+def continued_fraction(x):
+    m0 = 0
+    d0 = 1
+    a0 = math.floor(math.sqrt(x)) #These are the starting values
+    temp_list = [a0]
+    while True:
+        mn = int(d0*a0 - m0) 
+        dn = int((x - mn**2)/d0)
+        an = int(math.floor((math.sqrt(x) + mn) / dn)) #new values
+        temp_list.append(an)
+        #if an == 2*math.floor(math.sqrt(x)):
+            #break
+        if len(temp_list) == 100:
+            break
+        m0 = mn
+        d0 = dn
+        a0 = an #Replace values
+    return temp_list
 
 def overall_fraction(cf): #Returns the fractional form of the canonical form
     numerator = 1
