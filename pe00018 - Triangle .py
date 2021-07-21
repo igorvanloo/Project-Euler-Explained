@@ -2,6 +2,8 @@
 Project Euler Problem 18
 
 Anwser:
+    1074
+--- 0.0001990795135498047 seconds ---
     
 '''
 import time

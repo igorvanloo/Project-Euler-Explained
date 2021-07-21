@@ -10,7 +10,13 @@ Created on Mon Dec  7 14:09:11 2020
 Project euler problem 67
 
 harder version of problem 18
+
+Anwser:
+    7273
+--- 0.0029408931732177734 seconds ---
 '''
+import time
+start_time = time.time()
 
 def compute():
     for i in reversed(range(len(triangle) - 1)):
@@ -21,8 +27,19 @@ def compute():
                 triangle[i][j] += triangle[i + 1][j + 1]
     return str(triangle[0][0])
 
+def compute1(tri):
+    for i in range(1,len(tri)):
+        a = len(triangle[i])
+        for j in range(0, a):
+            if j == 0:
+                tri[i][j] += tri[i-1][j]
+            elif j == a-1:
+                tri[i][j] += tri[i-1][j-1]
+            else:
+                tri[i][j] += max(tri[i-1][j],tri[i-1][j-1])
+    return max(tri[-1])
 
-triangle = [  # Mutable
+triangle = [
 	[59],
 	[73,41],
 	[52,40, 9],
@@ -126,4 +143,5 @@ triangle = [  # Mutable
 ]
 
 if __name__ == "__main__":
-    print(compute())
+    print(compute1(triangle))
+    print("--- %s seconds ---" % (time.time() - start_time))
