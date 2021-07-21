@@ -1,5 +1,6 @@
-#Euler Problem 23
 '''
+Project Euler Problem 23
+
 A perfect number is a number for which the sum of its proper divisors is exactly 
 equal to the number. For example, the sum of the proper divisors of 28 would be 1 + 2 + 4 + 7 + 14 = 28, 
 which means that 28 is a perfect number.
@@ -15,9 +16,13 @@ known that the greatest number that cannot be expressed as the sum of two abunda
 limit.
 
 Find the sum of all the positive integers which cannot be written as the sum of two abundant numbers.
+
+Anwser:
+    4179871
+--- 3.437476873397827 seconds ---
 '''
 
-import math 
+import math , time
 
 def Divisors(x):
     divisors = []
@@ -27,30 +32,23 @@ def Divisors(x):
             if i != int(x/i):
                 divisors.append(int(x/i))
     divisors.remove(x)
-    return sorted(divisors)
+    return sum(set(divisors))
 
-def AbundantNumbers():
-    limit = 28123
-    abundant = []
-    for j in range(1,limit+1):
-        if j < sum(Divisors(j)):
-            abundant.append(j)
-    return abundant
+def compute():
+    abundantnums = []
+    for x in range(1,28123 + 1):
+        if x < Divisors(x):
+            abundantnums.append(x)
+        
+    array = [True]*28124
+    for y in range(len(abundantnums)):
+        for z in range(y, len(abundantnums)):
+            if abundantnums[y]+abundantnums[z] < 28124:
+                array[abundantnums[y]+abundantnums[z]] = False
+    return sum([i for i in range(len(array)) if array[i]])
 
-def Compute():
-    limit = 28123
-    allnumberslessthan28124 = [x for x in range(1,limit+1)]
-    abundantsumnumbers = []
-    abundantnumbers = AbundantNumbers()
-    for i in range(12, limit + 1):
-        for j in range(len(abundantnumbers)):
-                if (i - abundantnumbers[j]) in abundantnumbers:
-                    abundantsumnumbers.append(i)
-                    break
-                elif i < abundantnumbers[j]:
-                    break
-    requiredsum = sum(allnumberslessthan28124) - sum(abundantsumnumbers)
-    return requiredsum
-
-print(Compute())
+if __name__ == "__main__":
+    start_time = time.time()
+    print(compute())
+    print("--- %s seconds ---" % (time.time() - start_time))
     

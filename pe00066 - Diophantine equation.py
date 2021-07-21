@@ -64,7 +64,6 @@ def canonical_form1(x):
     return temp_list[:-2]
 
 def continued_fraction(x):
-
     m0 = 0
     d0 = 1
     a0 = math.floor(math.sqrt(x)) #These are the starting values
