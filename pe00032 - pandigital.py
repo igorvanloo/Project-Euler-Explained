@@ -32,30 +32,25 @@ start_time = time.time()
 
 def compute():
     testlist = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
-    values = []
+    values = set()
     for x in range(9,99):
         for y in range(99,999):
-            anwser = x*y
-            str1 = str(anwser)
-            str2 = str(x) + str(y)
-            finalstr = str1 + str2
-            testingvalue = sorted(finalstr)
-            
-            if testingvalue == testlist and anwser < 10000:
-                if anwser not in values:
-                    values.append(anwser)
+            answer = x*y
+            if answer < 10000:
+                testingvalue = sorted(str(x) + str(y) + str(answer))
+                if testingvalue == testlist:
+                    values.add(answer)
     
     for x in range(9):
         for y in range(999,9999):
-            anwser = x*y
-            str1 = str(anwser)
+            answer = x*y
+            str1 = str(answer)
             str2 = str(x) + str(y)
             finalstr = str1 + str2
             testingvalue = sorted(finalstr)
             
-            if testingvalue == testlist and anwser < 10000:
-                if anwser not in values:
-                    values.append(anwser)
+            if testingvalue == testlist and answer < 10000:
+                values.add(answer)
 
     print(values)
     return sum(values)

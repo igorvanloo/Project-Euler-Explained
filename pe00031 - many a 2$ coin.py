@@ -18,8 +18,11 @@ It is possible to make £2 in the following way:
 1×£1 + 1×50p + 2×20p + 1×5p + 1×2p + 3×1p
 How many different ways can £2 be made using any number of coins?
 
+Answer:
+    73682
+--- 0.0004940032958984375 seconds ---
 '''
-import math
+import math, time
 
 def bruteforce():
     totalways = 1
@@ -49,9 +52,17 @@ def fasterway():
                                     totalways += 1
     return totalways
 
+def Partition(goal, alist):
+    ways = [1] + [0] * (goal)
+    for options in alist:
+        for i in range(len(ways) - options):
+            ways[i + options] += ways[i]
+    return ways[-1]
 
 if __name__ == "__main__":
-    print(fasterway())
+    start_time = time.time()
+    print(Partition(200, [1, 2, 5, 10, 20, 50, 100, 200]))
+    print("--- %s seconds ---" % (time.time() - start_time))
     
     
     

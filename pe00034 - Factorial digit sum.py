@@ -17,7 +17,7 @@ Note: As 1! = 1 and 2! = 2 are not sums they are not included.
 
 upper bound is 10000000 as 6*9! < 10,000,000
 
-anwser:
+answer:
 numbers: 145, 40585
 total: 40730
 --- 48.246071100234985 seconds ---
@@ -38,7 +38,7 @@ def factorial(x):
 def compute():
     
     overalltotal = []
-    for x in range(3,10000000):
+    for x in range(3,1000000):
         str1 = str(x)
         total = 0
         for y in range(len(str1)):
