@@ -23,30 +23,34 @@ Find the sum of all the numbers that can be written as the sum of fifth powers o
 x = ak*10^k +...+ a1*10^1 + a0*10^0
 we need to find when ak^5 + ... + a1^5 + a0^5 = x
 
-9^5 = 59049 therefore maximum is 9*5 * 5 = 295246 minimum is 2^5 * 2 = 64 therefore our range is 64 - 295245
-'''
-import math
+Notice that 7 * 9^5 = 413343 which is a 6 digit number => any 7 digit number can never have a fifth power digit sum
 
-def isfifthpower(x):
-    a = str(x)
-    length = len(a)
+We can further reduce our search because the greatest number possible to have a fifth power digit sum is 6 * 9^5 = 354294
+
+Answer:
+    443839
+--- 0.6351161003112793 seconds ---
+'''
+import math, time
+
+def sum_digits_mod(x, b):
     totalsum = 0
-    for i in range(0,length):
-        totalsum += (int(a[i]))**5
-    if totalsum == x:
-        return True
-    else:
-        return False
+    while x != 0:
+        totalsum += (x % 10)**b
+        x = x // 10
+    return totalsum
     
-def main():
-    totalsum = 0
-    for n in range(64,295246):
-        if isfifthpower(n) == True:
-            totalsum += n
+def compute(x):
+    totalsum = []
+    for n in range(2,354294):
+        if sum_digits_mod(n, x) == n:
+            totalsum.append(n)
     return totalsum
     
 if __name__ == "__main__":
-	print(main())
+    start_time = time.time()
+    print(compute(5))
+    print("--- %s seconds ---" % (time.time() - start_time))
 
     
     

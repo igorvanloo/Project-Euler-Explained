@@ -1,5 +1,7 @@
-#Project Euler Problem 28
 '''
+
+Project Euler Problem 28
+
 Starting with the number 1 and moving to the right in a clockwise direction a 5 by 5 
 spiral is formed as follows:
 
@@ -12,26 +14,20 @@ spiral is formed as follows:
 It can be verified that the sum of the numbers on the diagonals is 101.
 
 What is the sum of the numbers on the diagonals in a 1001 by 1001 spiral formed in the same way?
-'''
 
-def sumofcorners(x):
-    if x == 1:
-        return 1
-    elif x % 2 == 0:
-        return "Please put odd integer"
-    else:
-        d = x - 1
-        top_right_corner = x*x
-        top_left_corner = top_right_corner - d
-        bottom_left_corner = top_right_corner - 2*d
-        bottom_right_corner = top_right_corner - 3*d
-        #We could also compute sum of ring is 4x^2-6(x-1)
-        return top_right_corner + top_left_corner + bottom_left_corner + bottom_right_corner
+Answer:
+    669171001
+--- 0.0004291534423828125 seconds ---
+'''
+import time
     
-def sumofallcorners(x):
-    totalsum = 0
-    for i in range(1,x+1,2):
-        totalsum = totalsum + sumofcorners(i)
+def compute(x):
+    totalsum = 1
+    for i in range(3,x+1,2):
+        totalsum += 4*i**2 - 6*(i-1)
     return totalsum
-            
-print(sumofallcorners(1001))
+
+if __name__ == "__main__":
+    start_time = time.time()
+    print(compute(1001))
+    print("--- %s seconds ---" % (time.time() - start_time))
