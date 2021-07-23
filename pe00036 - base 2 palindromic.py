@@ -24,21 +24,19 @@ Anwser:
 import time, math, eulerlib
 start_time = time.time()
 
-
-def base2converter(x): #Simple base 2 converter we can also use bin function
-    if x < 0:
-        return "Wrong input"
-    base2version = ""
-    while x > 0:
-        temp = x % 2
-        base2version += str(int(temp))
-        x = (x - int(temp))/2
-    return base2version[::-1]
+def numberToBase(n, b):
+    if n == 0:
+        return [0]
+    digits = []
+    while n != 0:
+        digits.append(int(n % b))
+        n //= b
+    return digits[::-1]
     
 def compute():
     total = 0
     list1 = []
-    for x in range(1,1000000):
+    for x in range(1,int(1000000)):
         tempx = str(x)
         if tempx == tempx[::-1]:
             if bin(x)[2:] == bin(x)[2:][::-1]:

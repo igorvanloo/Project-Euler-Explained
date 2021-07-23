@@ -28,17 +28,17 @@ Anwser:
 --- 0.018409252166748047 seconds ---
 '''
 
-import time, math, eulerlib
+import time, math
 start_time = time.time()
 
 def compute():
     
     check = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     concatenated_product_list = []
-    for n in range(2,10):
-        for x in range(1,10**math.floor(9/n)):
+    for z in range(2,10):
+        for x in range(1,10**math.floor(9/z)):
             temp_str = ""
-            for y in range(1,n+1):
+            for y in range(1,z+1):
                 product = x*y
                 temp_str += str(product)
                 if sorted(temp_str) == check:

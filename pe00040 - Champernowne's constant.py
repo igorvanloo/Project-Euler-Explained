@@ -38,6 +38,7 @@ def compute():
     num = weird_decimal()
     total = 1
     for x in range(7):
+        print(int(num[10**x - 1]))
         total *= int(num[10**x - 1])
     return total
         

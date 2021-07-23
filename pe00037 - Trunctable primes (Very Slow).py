@@ -66,9 +66,9 @@ def compute(limit):
     for x in temp:
         if x < limit:
             total += x
-            #print(x)
+            print(x)
     return total
-
+            
 if __name__ == "__main__":
     print(compute(1000000))
     print("--- %s seconds ---" % (time.time() - start_time))

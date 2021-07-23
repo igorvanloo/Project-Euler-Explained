@@ -47,41 +47,10 @@ Reasoning:
     if n = 1, a + b + c = (2m^2 + 2m) < 1,500,000 => maximum m is 866
 Anwser:
     161667
---- 1.1126022338867188 seconds ---    
-'''
+--- 0.6635358333587646 seconds ---'''
 
 import time
 from math import gcd, ceil
-from itertools import count
-from collections import Counter
-start_time = time.time()
-
-def primitivepythagoreantriplet(limit): #This function will produce a list of all pythagorean triples under the limit
-    triples = []
-    for m in count(3,2):
-        for n in range(1,m,2):
-            if gcd(n,m) == 1:
-                a = (m**2 - n**2)//2
-                b = m*n
-                c = (m**2 + n**2)//2
-                if n==1 and a+b+c > limit:
-                    return sorted(triples)
-                    break
-                triples.append(a+b+c)
-                for z in range(2,ceil(limit/(a+b+c))):
-                    if z*(a+b+c) <= limit:
-                        triples.append(z*(a+b+c))
-    
-def compute():
-    count = 0
-    checking_list = primitivepythagoreantriplet(1500000)
-    counter_list = Counter(checking_list)
-    
-    for x in range(len(checking_list)):
-        if checking_list[x] <= 1500000:
-            if counter_list[checking_list[x]] == 1:
-                count += 1
-    return count
 
 def ppt(limit):
     arr = [0]*(limit+1)
@@ -101,5 +70,6 @@ def ppt(limit):
     return arr.count(1)
 
 if __name__ == "__main__":
-    print(ppt(1000000))
+    start_time = time.time()
+    print(ppt(1500000))
     print("--- %s seconds ---" % (time.time() - start_time))

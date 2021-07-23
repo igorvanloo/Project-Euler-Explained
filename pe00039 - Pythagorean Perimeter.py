@@ -21,7 +21,7 @@ Anwser:
 --- 4.679589748382568 seconds ---
 '''
 
-import time, math, eulerlib
+import time, math
 start_time = time.time()
             
 def ppt(limit): #Pythagorean Triplet generator
