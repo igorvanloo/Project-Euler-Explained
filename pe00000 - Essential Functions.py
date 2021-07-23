@@ -223,7 +223,7 @@ def ZeckendorfRepresentation(x, fibnumbers): #Returns list with zeckendorf decom
 
 def ppt(limit): #Pythagorean Triplet generator
     triples = []
-    for m in range(2,int(math.sqrt(1000))+1):
+    for m in range(2,int(math.sqrt(limit))+1):
         for n in range(1,m):
             if (m+n) % 2 == 1 and math.gcd(m,n) == 1:
                 a = m**2 + n**2
