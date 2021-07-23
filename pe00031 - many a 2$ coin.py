@@ -22,6 +22,7 @@ Answer:
     73682
 --- 0.0004940032958984375 seconds ---
 '''
+
 import math, time
 
 def bruteforce():
@@ -38,11 +39,10 @@ def bruteforce():
                                     totalways += 1
     return totalways
 
-def fasterway():
+def compute():
     totalways = 1
     for a in range(0,3):
         for b in range(0,(2-a)*2 + 1):
-            print(b)
             for c in range(0,math.ceil((2-a-b*0.5)*10)+1):
                 for d in range(0,math.ceil((2-a-b*0.5-c*0.2)*20)+1):
                     for e in range(0,math.ceil((2-a-b*0.5-c*0.2-d*0.1)*40)+1):
@@ -61,10 +61,13 @@ def Partition(goal, alist):
 
 if __name__ == "__main__":
     start_time = time.time()
-    print(Partition(200, [1, 2, 5, 10, 20, 50, 100, 200]))
+    print(compute())
+    t = time.time() - start_time
     print("--- %s seconds ---" % (time.time() - start_time))
-    
-    
+
+    print(Partition(200, [1, 2, 5, 10, 20, 50, 100, 200]))
+    print("--- %s seconds ---" % (time.time() - start_time - t))
+
     
     
     

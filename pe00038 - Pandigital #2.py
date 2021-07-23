@@ -23,10 +23,9 @@ The same can be achieved by starting with 9 and multiplying by 1, 2, 3, 4, and 5
 What is the largest 1 to 9 pandigital 9-digit number that can be formed as the concatenated product of an 
 integer with (1,2, ... , n) where n > 1?
 
-
 Anwser:
     932718654
-    --- 0.018409252166748047 seconds ---
+--- 0.018409252166748047 seconds ---
 '''
 
 import time, math, eulerlib
@@ -37,7 +36,7 @@ def compute():
     check = ['1', '2', '3', '4', '5', '6', '7', '8', '9']
     concatenated_product_list = []
     for n in range(2,10):
-        for x in range(1,10**(9//n)):
+        for x in range(1,10**math.floor(9/n)):
             temp_str = ""
             for y in range(1,n+1):
                 product = x*y

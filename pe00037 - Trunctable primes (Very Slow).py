@@ -19,43 +19,56 @@ NOTE: 2, 3, 5, and 7 are not considered to be truncatable primes
 
 Anwser:
     748317
-    Very slow
+--- 0.5134131908416748 seconds ---
 '''
 
 import time, math, eulerlib
 start_time = time.time()
-
-
-def truncate_primes(x):
-    list2 = []
-    str1 = str(x)
-    a = 1
-    for i in range(1, len(str1) + 1):
-        list2.append(int(str1[0:i]))
-        list2.append(int(str1[-i:]))
-    return set(list2)
-
-def compute():
-    final_list = []
-    count = 0
-    primes = eulerlib.primes(10000000)
-    for x in range(5, len(primes)):
-        
-        
-        if (primes[x]%10) % 2 == 0 or (primes[x]%10) % 5 == 0 :
-            pass
-        if x % 1000 == 0:
-            print(x)
-        else:
-            temp_list = truncate_primes(primes[x])
-            if set(temp_list) == set(temp_list).intersection(set(primes)):
-                count += 1
-                final_list.append(primes[x])
-                print(count, primes[x])
-                
-                if count == 11:
-                    return sum(final_list), final_list
+    
+def is_prime(x): #Test if giving value is a prime 
+	if x <= 1:
+		return False
+	elif x <= 3:
+		return True
+	elif x % 2 == 0:
+		return False
+	else:
+		for i in range(3, int(math.sqrt(x)) + 1, 2):
+			if x % i == 0:
+				return False
+		return True
+    
+def compute(limit):
+    stack = [2,3,5,7]
+    valid = []
+    while len(stack) != 0:
+        curr = stack.pop(0)
+        for y in [1,3,5,7,9]:
+            temp1 = int(str(curr) + str(y))
+            if is_prime(temp1):
+                stack.append(temp1)
+                valid.append(temp1)
+    
+    maximum = max(valid)
+    stack1 = [2,3,5,7]
+    valid1 = []
+    while len(stack1) != 0:
+        curr = stack1.pop(0)
+        for y in [1,2,3,4,5,6,7,8,9]:
+            temp2 = int(str(y) + str(curr))
+            if temp2 < maximum:
+                if is_prime(temp2):
+                    stack1.append(temp2)
+                    valid1.append(temp2)
+    
+    total = 0
+    temp = list(set(valid).intersection(set(valid1)))
+    for x in temp:
+        if x < limit:
+            total += x
+            #print(x)
+    return total
 
 if __name__ == "__main__":
-    print(compute())
+    print(compute(1000000))
     print("--- %s seconds ---" % (time.time() - start_time))

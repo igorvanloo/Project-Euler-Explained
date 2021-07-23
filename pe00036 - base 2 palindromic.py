@@ -21,7 +21,6 @@ Anwser:
 --- 0.283123254776001 seconds ---
 '''
 
-
 import time, math, eulerlib
 start_time = time.time()
 
@@ -36,15 +35,13 @@ def base2converter(x): #Simple base 2 converter we can also use bin function
         x = (x - int(temp))/2
     return base2version[::-1]
     
-    
 def compute():
-    
     total = 0
     list1 = []
     for x in range(1,1000000):
         tempx = str(x)
         if tempx == tempx[::-1]:
-            if base2converter(x) == base2converter(x)[::-1]:
+            if bin(x)[2:] == bin(x)[2:][::-1]:
                 list1.append(x)
                 total += x
     return total, list1

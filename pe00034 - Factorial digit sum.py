@@ -15,40 +15,34 @@ Find the sum of all numbers which are equal to the sum of the factorial of their
 
 Note: As 1! = 1 and 2! = 2 are not sums they are not included.
 
-upper bound is 10000000 as 6*9! < 10,000,000
+Reasoning
 
-answer:
-numbers: 145, 40585
-total: 40730
---- 48.246071100234985 seconds ---
+9! = 362880 is the largest one digit can contribute => 8*9! = 2903040 is the largest possible because this is a 7 digit number
+
+Answer:
+Numbers: 145, 40585
+    40730
+--- 2.839172124862671 seconds ---
 '''
 
 import time, math
 start_time = time.time()
 
-def factorial(x):
-    total = 1
-    if x == 0:
-        return total
-    else:
-        for y in range(1,x+1):
-            total *= y
-        return total
+def sum_digits_mod(x):
+    facts = [1, 1, 2, 6, 24, 120, 720, 5040, 40320, 362880]
+    totalsum = 0
+    while x != 0:
+        totalsum += facts[x % 10]
+        x = x // 10
+    return totalsum
 
 def compute():
-    
-    overalltotal = []
-    for x in range(3,1000000):
-        str1 = str(x)
-        total = 0
-        for y in range(len(str1)):
-            total += factorial(int(str1[y]))
-        if total == x:
-            overalltotal.append(x)
-            print(x)
-    return sum(overalltotal)
+    overalltotal = 0
+    for x in range(3,2903040):
+        if sum_digits_mod(x) == x:
+            overalltotal += x
+    return (overalltotal)
             
-
 if __name__ == "__main__":
     print(compute())
     print("--- %s seconds ---" % (time.time() - start_time))

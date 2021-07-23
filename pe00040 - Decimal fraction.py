@@ -34,7 +34,6 @@ def weird_decimal():
         x += str(i)
     return x
         
-        
 def compute():
     num = weird_decimal()
     total = 1

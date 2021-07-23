@@ -41,17 +41,13 @@ def compute():
                 if testingvalue == testlist:
                     values.add(answer)
     
-    for x in range(9):
+    for x in range(1,9):
         for y in range(999,9999):
             answer = x*y
-            str1 = str(answer)
-            str2 = str(x) + str(y)
-            finalstr = str1 + str2
-            testingvalue = sorted(finalstr)
-            
-            if testingvalue == testlist and answer < 10000:
-                values.add(answer)
-
+            if answer < 10000:
+                testingvalue = sorted(str(x) + str(y) + str(answer))
+                if testingvalue == testlist:
+                    values.add(answer)
     print(values)
     return sum(values)
 

@@ -26,31 +26,29 @@ answer:
 --- 0.0027740001678466797 seconds ---
 '''
 
-import time
+import time, math
 start_time = time.time()
 
-def func1():
+def compute():
     values = []
+    numer = 1
+    denom = 1
     for x in range(10,100):
-        for y in range(10, 100):
-            if x/y < 1 and x%10 != 0 and y%10 != 0:
+        for y in range(x+1, 100):
+            if x%10 != 0 and y%10 != 0:
                 value1 = str(x)
                 value2 = str(y)
-                if value1[0] == value2[1] or value1[1] == value2[0]:
-                    if x/y == int(value1[1])/int(value2[0]) or x/y == int(value1[0])/int(value2[1]):
-                        values.append([x,y])
+                for a in value1:
+                    for b in value2:
+                        if a == b:
+                            x1 = int(value1.replace(a,"",1))
+                            y1 = int(value2.replace(b,"",1))
+                            if x/y == x1/y1:
+                                numer *= x1
+                                denom *= y1
+                                values.append([x,y])
     print(values)
-    return values
-
-def compute():
-    test_list = func1()
-    denominator = 1
-    for x in range(len(test_list)):
-        denominator *= test_list[x][1]/test_list[x][0]
-    return denominator
-        
-                
-
+    return denom/math.gcd(denom,numer)
 
 if __name__ == "__main__":
     print(compute())

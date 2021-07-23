@@ -16,9 +16,8 @@ There are thirteen such primes below 100: 2, 3, 5, 7, 11, 13, 17, 31, 37, 71, 73
 How many circular primes are there below one million?
 
 Anwser:
-    
     55
---- 343.36782002449036 seconds ---
+--- 3.3826277256011963 seconds ---
 '''
 
 import time, math, eulerlib
@@ -44,9 +43,9 @@ def number_rotation(x):
         list2.append(is_prime(int(str1[i: ] + str1[ :i])))
     return list2
 
-def compute():
+def compute(limit):
     number_of_circular_primes = 0
-    list1 = eulerlib.primes(1000000)
+    list1 = eulerlib.primes(limit)
     for x in range(len(list1)):
         temp_list = number_rotation(list1[x])
         if all(temp_list):
@@ -54,5 +53,5 @@ def compute():
     return number_of_circular_primes
     
 if __name__ == "__main__":
-    print(compute())
+    print(compute(1000000))
     print("--- %s seconds ---" % (time.time() - start_time))

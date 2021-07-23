@@ -17,34 +17,28 @@ there are exactly three solutions for p = 120.
 For which value of p ≤ 1000, is the number of solutions maximised?
 
 Anwser:
-    
     (8, 840)
 --- 4.679589748382568 seconds ---
 '''
 
 import time, math, eulerlib
 start_time = time.time()
-
-def pythagorean_solution(p):
-    solutions = []
-    for a in range(1,p+1):
-        for b in range(a,(p-a)//2 + 1):
-            c = p - a - b
-            if a*a + b*b == c*c:
-                solutions.append(sorted([a,b,c]))
-    return len(solutions)
-                    
-def compute():
-    current_max = 0
-    number = 0
-    for x in range(1,1001):
-        if pythagorean_solution(x) > current_max:
-            current_max = pythagorean_solution(x)
-            number = x
-    return current_max, number
             
+def ppt(limit): #Pythagorean Triplet generator
+    triples = [0] * (limit+1)
+    for m in range(2,int(math.sqrt(limit))+1):
+        for n in range(1,m):
+            if (m+n) % 2 == 1 and math.gcd(m,n) == 1:
+                a = m**2 + n**2
+                b = m**2 - n**2
+                c = 2*m*n
+                
+                p = sum([a,b,c])
+                
+                for k in range(1,int(limit/p)+1):
+                    triples[k*p] += 1
+    return triples.index(max(triples))
         
-
 if __name__ == "__main__":
-    print(compute())
+    print(ppt(1000))
     print("--- %s seconds ---" % (time.time() - start_time))
