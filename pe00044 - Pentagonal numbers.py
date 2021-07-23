@@ -18,13 +18,11 @@ It can be seen that P4 + P7 = 22 + 70 = 92 = P8. However, their difference, 70 â
 Find the pair of pentagonal numbers, Pj and Pk, for which their sum and difference are pentagonal and 
 D = |Pk âˆ’ Pj| is minimised; what is the value of D?
 
-There is only one pair, we need to fidn the minimum therefore the it must be bigger - smaller therefore we want the first
-term to be bigger 
+We want Pk and Pj to be as close as possible to each other 
 
 Anwser:
     5482660
 --- 1.827820062637329 seconds ---
-    
 '''
 
 import time, math, eulerlib, itertools
@@ -38,14 +36,14 @@ def is_pentagonal(x):
 
 def compute():
     i = 1
-    test = 0
-    while test == 0:
+    while True:
         for j in range(1,i): # this ensures that a > b therefore a-b is minimised 
             a = int((i/2)*(3*i-1))
             b = int((j/2)*(3*j-1))
             if is_pentagonal(a+b) == True and is_pentagonal(abs(a-b)) == True: #Once we find given condition we are done
+                print(i,j)
                 return (abs(a-b))
-                test = abs(a-b)
+                
         i += 1 #Keep increasing till solution is found
         
 

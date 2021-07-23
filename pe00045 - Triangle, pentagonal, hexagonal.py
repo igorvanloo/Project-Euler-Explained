@@ -19,11 +19,11 @@ It can be verified that T285 = P165 = H143 = 40755.
 Find the next triangle number that is also pentagonal and hexagonal.
 
 Anwser:
-    
-    
+    1533776805.0
+--- 0.022198915481567383 seconds ---
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
 
 def is_pentagonal(x):
@@ -38,14 +38,12 @@ def is_hexagonal(x):
     return False
     
 def compute():
-    
-    next_triangle = False
     i = 286
-    while next_triangle == False:
+    while True:
         a = (i/2)*(i+1)
         if is_pentagonal(a) == True and is_hexagonal(a) == True:
             return a
-            next_triangle = True
+            break
         i += 1
 
 if __name__ == "__main__":

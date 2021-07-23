@@ -18,8 +18,8 @@ we form a word value. For example, the word value for SKY is 19 + 11 + 25 = 55 =
 triangle number then we shall call the word a triangle word. How many are triangle words?
 
 Anwser:
-    
-    
+    162
+--- 0.017420053482055664 seconds ---
 '''
 
 import time, math, eulerlib
@@ -35,7 +35,7 @@ def sumofname(x):
 
 def compute():
     count = 0
-    triangle_number = [int((n*(n+1))/2) for n in range(1,1000)]
+    triangle_number = [int((n*(n+1))/2) for n in range(1,500)]
     for x in range(len(words)):
         if sumofname(x) in triangle_number:
             count += 1
