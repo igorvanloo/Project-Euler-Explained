@@ -14,8 +14,8 @@ The series, 11 + 22 + 33 + ... + 10^10 = 10405071317.
 Find the last ten digits of the series, 11 + 22 + 33 + ... + 10001000.
 
 Anwser:
-    
-    
+    9110846700
+--- 0.0016629695892333984 seconds ---
 '''
 
 import time, math, eulerlib, itertools
@@ -23,11 +23,9 @@ start_time = time.time()
 
 def compute():
     total = 0
-
     for x in range(1,1001):
-        total += x**x
-    total = str(total)
-    return total, total[len(total)-10:]
+        total += pow(x,x,10**10)
+    return total % 10**10
 
 if __name__ == "__main__":
     print(compute())

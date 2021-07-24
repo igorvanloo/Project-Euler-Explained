@@ -23,11 +23,11 @@ Anwser:
     
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
 
 def compute():
-    return ((28433 * (2**7830457)) % 10**10 + 1)
+    return ((28433 * pow(2,7830457, 10**10)) % 10**10 + 1)
 
 if __name__ == "__main__":
     print(compute())

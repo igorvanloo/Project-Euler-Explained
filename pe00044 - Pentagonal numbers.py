@@ -25,7 +25,7 @@ Anwser:
 --- 1.827820062637329 seconds ---
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
 
 def is_pentagonal(x):
@@ -35,17 +35,15 @@ def is_pentagonal(x):
     return False
 
 def compute():
-    i = 1
+    k = 1
     while True:
-        for j in range(1,i): # this ensures that a > b therefore a-b is minimised 
-            a = int((i/2)*(3*i-1))
+        for j in range(1,k): # this ensures that a > b therefore a-b is minimised 
+            a = int((k/2)*(3*k-1))
             b = int((j/2)*(3*j-1))
             if is_pentagonal(a+b) == True and is_pentagonal(abs(a-b)) == True: #Once we find given condition we are done
-                print(i,j)
+                print(k,j)
                 return (abs(a-b))
-                
-        i += 1 #Keep increasing till solution is found
-        
+        k += 1 #Keep increasing till solution is found
 
 if __name__ == "__main__":
     print(compute())

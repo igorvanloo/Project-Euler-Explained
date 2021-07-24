@@ -24,65 +24,48 @@ Find the first four consecutive integers to have four distinct prime factors eac
 
 Anwser:
     134043
-    --- 1.868906021118164 seconds ---
+--- 1.868906021118164 seconds ---
 '''
 
 import time, math, eulerlib, itertools
 start_time = time.time()
 
-def npf(x):
-    i = 2
-    a = set()
-    while i < x**0.5 or x == 1:
-        if x % i == 0:
-            x = x/i
-            a.add(i)
-            i -= 1
-        i += 1
-    return (len(a) + 1)
-    
-def Prime_fac(x):
-    i = 2
-    a = []
-    while i < x**0.5 or x == 1:
-        if x % i == 0:
-            x = x/i
-            a.append(i)
-            i -= 1
-        i += 1
-    a.append(int(x))
-    return a
+def prime_factors(n):
+    factors = []
+    d = 2
+    while n > 1:
+        while n % d == 0:
+            factors.append(d)
+            n /= d
+        d = d + 1
+        if d*d > n:
+            if n > 1: 
+                factors.append(n)
+            break
+    return len(set(factors))
 
-def prime_factorization(x):
-    number = x
-    prime_factors = []
-    possible_prime_factors = eulerlib.primes(x)
-    while number != 1:
-        
-        
-        for y in range(len(possible_prime_factors)):
-            if number % possible_prime_factors[y] == 0:
-                prime_factors.append(possible_prime_factors[y])
-                number = number / possible_prime_factors[y]
-    return prime_factors
-        
-def compute():
-    count = 0
-    x = 2*3*5*7
-    a = 1
+def list_primality_modified(n):
+	result = [0] * (n + 1)
+	result[0] = result[1] = 1
+	for i in range(int((n)) + 1):
+		if result[i] == 0:
+			for j in range(2 * i, len(result), i):
+				result[j] += 1
     
-    while count != 4:
-        if npf(x) != 4:
-            x += 1
-            count = 0
-        else:
-            count += 1
-            x += 1
-    return x-4
-    
-
+	return result
+        
+def compute(N, K):
+    result = list_primality_modified(N)
+    for x in range(1, len(result)-K):
+        count = 0
+        for y in range(K):
+            if result[x+y] == K:
+                count += 1
+        if count == K:
+            return x
+        
 if __name__ == "__main__":
-    print(compute())
+    print(compute(10**6, 4))
     print("--- %s seconds ---" % (time.time() - start_time))
     
     

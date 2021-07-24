@@ -26,37 +26,30 @@ Anwser:
 
 import time, math, eulerlib, itertools
 start_time = time.time()
-
-def compute():
-    primes_to_check = sorted(list(set(eulerlib.primes(10000)) - set((eulerlib.primes(1000)))))
-    
-    for x in range(len(primes_to_check)):
-        temp_permutation = sorted(list(set(itertools.permutations(str(primes_to_check[x]))))) #sorted to ensure ascending order
-        count = 0
-        possible_seq = []
-        for y in range(len(temp_permutation)):
-            
-            temp_var = "".join(str(temp_permutation[y][i]) for i in range(4))
-              
-            if int(temp_var) in primes_to_check:
-                
-                count += 1
-                possible_seq.append(int(temp_var))
-
-                if count >= 3:
-                    for i in range(len(possible_seq)):
-                        for j in range(i,len(possible_seq)):
-                            for k in range(i,len(possible_seq)):
-                                if possible_seq[j] - possible_seq[i] == possible_seq[k] - possible_seq[j] and possible_seq[j] - possible_seq[i] != 0:
-                                    anwser_str = str(possible_seq[i]) + str(possible_seq[j]) + str(possible_seq[k])
-                                    if anwser_str != "148748178147":
-                                        return anwser_str
                                 
-                            
-
-                    
-                    
-
+def compute():
+    primes = sorted(list(set(eulerlib.primes(10000)) - set((eulerlib.primes(1000)))))
+    
+    supercandidates = []
+    while len(primes) != 0:
+        curr = primes.pop()
+        candidates = [curr]
+        for y in primes:
+            if sorted(str(curr)) == sorted(str(y)):
+                candidates.append(y)
+                primes.remove(y)
+        if len(candidates) >= 3:
+            supercandidates.append(sorted(candidates))
+    
+    for possible_seq in supercandidates:
+        for i in range(len(possible_seq)):
+            for j in range(i,len(possible_seq)):
+                for k in range(i,len(possible_seq)):
+                    if possible_seq[j] - possible_seq[i] == possible_seq[k] - possible_seq[j] and possible_seq[j] - possible_seq[i] != 0:
+                        anwser_str = str(possible_seq[i]) + str(possible_seq[j]) + str(possible_seq[k])
+                        if anwser_str != "148748178147":
+                            return anwser_str
+             
 if __name__ == "__main__":
     print(compute())
     print("--- %s seconds ---" % (time.time() - start_time))

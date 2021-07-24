@@ -18,10 +18,11 @@ The longest sum of consecutive primes below one-thousand that adds to a prime, c
 
 Which prime, below one-million, can be written as the sum of the most consecutive primes?
 
+Reasoning 
+
 After 546 primes we go over million therefore this is out limit
 
 Anwser:
-    
     [543, 997651]
 --- 0.5129101276397705 seconds ---
 '''
@@ -43,11 +44,11 @@ def is_prime(x):
 		return True
 
 def maximum(): #To find limit
-    primes = eulerlib.primes(1000000)
+    primes = eulerlib.primes(10**7 * (9/16))
     maximum = 0
     for x in range(len(primes)):
         maximum += primes[x]
-        if maximum > 1000000:
+        if maximum > 10**12:
             return x
     
 def compute():
@@ -61,12 +62,8 @@ def compute():
         for x in range(i,546):
             total += primes[x]
             count += 1
-            if total > 1000000:
-                break
-            
-            else: 
-                if is_prime(total) == True:
-                    consecutive_primes.append([count, total])
+            if is_prime(total) == True:
+                consecutive_primes.append([count, total])
         i += 1
     return max(sorted(consecutive_primes))
             

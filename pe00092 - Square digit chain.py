@@ -27,50 +27,38 @@ The sum of the square digits has a maximum of 9^2 * 7 because of 9,999,999. So w
 know the solution
 
 Anwser:
-    (1418854, 8581146, 10000000)
---- 40.76573419570923 seconds ---
+    8581146
+--- 27.841413736343384 seconds ---
     
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
+
+def sum_digits(x):
+    totalsum = 0
+    while x != 0:
+        totalsum += (x % 10)**2
+        x = x // 10
+    return totalsum
 
 def square_digit_terminal_finder(x):
     while True:
-        
-        x = str(x)
-        x = sum([int(x[y])**2 for y in range(len(x))])
+        x = sum_digits(x)
         if x == 89:
             return 89
         if x == 1:
             return 1
 
-def compute():
-    
+def compute(limit):
     count = 0
-    count2 = 0
-    
-    values = [square_digit_terminal_finder(x) for x in range(1,568)]
-        
-    
-    print(values)
-    
-    
-    for y in range(1,10000001):
-        y = str(y)
-        try:
-            temp_var = values[sum([int(z)**2 for z in y]) - 1]
-        except IndexError:
-            print(y)
-
-        if temp_var == 1:
-            count += 1
-        elif temp_var == 89:
-            count2 += 1
-            
-    return count, count2, count + count2
-        
+    values = [0] + [square_digit_terminal_finder(x) for x in range(1,len(str(limit)) * 9**2)]     
+    for y in range(1,limit + 1):
+        temp_var = values[sum_digits(y)]
+        if temp_var == 89:
+            count += 1    
+    return count
 
 if __name__ == "__main__":
-    print(compute())
+    print(compute(10**7))
     print("--- %s seconds ---" % (time.time() - start_time))

@@ -42,8 +42,8 @@ def compute():
     while True:
         a = (i/2)*(i+1)
         if is_pentagonal(a) == True and is_hexagonal(a) == True:
+            print(i)
             return a
-            break
         i += 1
 
 if __name__ == "__main__":
