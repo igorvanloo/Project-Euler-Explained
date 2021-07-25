@@ -101,7 +101,6 @@ def compute(limit): #Final version, gets anwser in ~ 40 seconds
                     while f[curr2] % div == 0:
                         f[curr2] //= div
                 curr2 += div
-                
     return sum(maxelem) % 10**18
 
 if __name__ == "__main__":
