@@ -19,7 +19,7 @@ Anwser:
 --- 0.16759133338928223 seconds ---    
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
 
 def compute():
@@ -33,7 +33,23 @@ def compute():
         if count == 6:
             return x
         x += 1
-                            
+
+def HackerRankVer(N, K):
+    x = 100
+    while x != N+1:
+        count = 1
+        for i in range(2, K+1):
+            if sorted(str(x)) != sorted(str(i*x)):
+                break
+            count += 1
+        tempstr = ""
+        if count == K:
+            for y in range(1,K+1):
+                tempstr += str(y*x)
+                tempstr += " "
+            print(tempstr)
+        x += 1
+        
 if __name__ == "__main__":
-    print(compute1())
+    print(compute())
     print("--- %s seconds ---" % (time.time() - start_time))

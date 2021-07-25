@@ -18,7 +18,7 @@ Anwser:
     
 '''
 
-import time, math, eulerlib, itertools
+import time, math
 start_time = time.time()
 
 def n_choose_r(n, r):

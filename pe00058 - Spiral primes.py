@@ -29,12 +29,10 @@ both diagonals first falls below 10%?
 Anwser:
     26241
 --- 2.1476309299468994 seconds ---
-    
 '''
 
-import time, math, eulerlib, itertools
+import time, math
 start_time = time.time()
-
 
 def is_prime(x): #Test if giving value is a prime 
 	if x <= 1:
@@ -49,29 +47,19 @@ def is_prime(x): #Test if giving value is a prime
 				return False
 		return True
     
-def compute():
-
+def compute(percent):
     prime_numbers = 0
-    for x in itertools.count(1,2):
-        
+    x = 3
+    while True:
         for y in range(1,4):
-            if is_prime(x*x - y* (x-1)) == True:
+            if is_prime(x*x - y*(x-1)) == True:
                 prime_numbers += 1
         
-        total_numers = 2*x-1
-        if x > 1 and prime_numbers/total_numers < 1/10:
-            print(prime_numbers/total_numers)
-            return x
-        
-        
-        
-        
-        
-        
-        
-        
-        
+        total_numbers = 2*x-1
+        if prime_numbers/total_numbers < percent/100:
+            return x, prime_numbers
+        x += 2
         
 if __name__ == "__main__":
-    print(compute())
+    print(compute(10))
     print("--- %s seconds ---" % (time.time() - start_time))

@@ -34,11 +34,6 @@ How many Lychrel numbers are there below ten-thousand?
 
 NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretical nature of Lychrel numbers.
 
-N=5000 -> 12221 88
-N=10000 -> 79497 215
-N=50000 -> 79497 295
-N=100000 -> 4964444694 583
-
 Anwser:
     249
 --- 0.047447919845581055 seconds ---
@@ -70,6 +65,28 @@ def compute(limit):
                 not_lycherl_count += 1
                 break
     return limit - not_lycherl_count    
+
+def HackerRankVer(limit):
+    mydict = dict()
+    for x in range(1,limit+1):
+        x = str(x)
+        if is_palindrome(x):
+            if int(x) in mydict:
+                mydict[int(x)] += 1
+            else:
+                mydict[int(x)] = 1
+            continue
+        else:
+            temp_var = str(x)
+        
+        for y in range(59):
+            temp_var = str(int(temp_var) + int(str(temp_var[::-1])))
+            if is_palindrome(temp_var) == True:
+                if int(temp_var) in mydict:
+                    mydict[int(temp_var)] += 1
+                else:
+                    mydict[int(temp_var)] = 1
+                break
             
 if __name__ == "__main__":
     print(compute(10000))

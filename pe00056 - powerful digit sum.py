@@ -23,12 +23,19 @@ Anwser:
 import time
 start_time = time.time()
 
+def sum_digits(x):
+    totalsum = 0
+    while x != 0:
+        totalsum += x % 10
+        x = x // 10
+    return totalsum
+
 def compute():
     maximum = 0
     for a in range(2,100):
         for b in range(1,100):
             x = a**b
-            temp_var = sum([int(y) for y in list(str(x))])
+            temp_var = sum_digits(x)
             if temp_var > maximum:
                 maximum = temp_var
     return maximum
