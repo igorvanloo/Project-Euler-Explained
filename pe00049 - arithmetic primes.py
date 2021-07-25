@@ -24,7 +24,7 @@ Anwser:
 --- 0.051260948181152344 seconds ---
 '''
 
-import time, math, eulerlib, itertools
+import time, eulerlib
 start_time = time.time()
                                 
 def compute():
@@ -40,15 +40,17 @@ def compute():
                 primes.remove(y)
         if len(candidates) >= 3:
             supercandidates.append(sorted(candidates))
-    
+            
+    supercandidates = sorted(supercandidates)
+    final = []
     for possible_seq in supercandidates:
         for i in range(len(possible_seq)):
-            for j in range(i,len(possible_seq)):
-                for k in range(i,len(possible_seq)):
+            for j in range(i+1,len(possible_seq)):
+                for k in range(i+2,len(possible_seq)):
                     if possible_seq[j] - possible_seq[i] == possible_seq[k] - possible_seq[j] and possible_seq[j] - possible_seq[i] != 0:
                         anwser_str = str(possible_seq[i]) + str(possible_seq[j]) + str(possible_seq[k])
-                        if anwser_str != "148748178147":
-                            return anwser_str
+                        final.append(anwser_str)
+    return final
              
 if __name__ == "__main__":
     print(compute())

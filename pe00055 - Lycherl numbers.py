@@ -34,13 +34,18 @@ How many Lychrel numbers are there below ten-thousand?
 
 NOTE: Wording was modified slightly on 24 April 2007 to emphasise the theoretical nature of Lychrel numbers.
 
+N=5000 -> 12221 88
+N=10000 -> 79497 215
+N=50000 -> 79497 295
+N=100000 -> 4964444694 583
+
 Anwser:
     249
 --- 0.047447919845581055 seconds ---
     
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
 
 def is_palindrome(x):
@@ -50,37 +55,22 @@ def is_palindrome(x):
     else:
         return False
 
-def compute():
-    count = 0
-    for x in range(1,10000):
+def compute(limit):
+    not_lycherl_count = 0
+    for x in range(1,limit+1):
         x = str(x)
-        if is_palindrome(x) == True:
-            iteration_count = 0
-            x = str(int(x) + int(str(x[::-1])))
-            
-            while True:
-                x = str(int(x) + int(str(x[::-1])))
-                iteration_count += 1
-                if iteration_count == 51:
-                    count += 1
-                    break
-                elif is_palindrome(x) == True:
-                    break
-            
+        if is_palindrome(x):
+            temp_var = str(int(x) + int(str(x[::-1])))
         else:
-            iteration_count = 0
-            while True:
-                x = str(int(x) + int(str(x[::-1])))
-                iteration_count += 1
-                if iteration_count == 51:
-                    count += 1
-                    break
-                elif is_palindrome(x) == True:
-                    break
+            temp_var = str(x)
             
-    return count
-        
-
+        for y in range(50):
+            temp_var = str(int(temp_var) + int(str(temp_var[::-1])))
+            if is_palindrome(temp_var) == True:
+                not_lycherl_count += 1
+                break
+    return limit - not_lycherl_count    
+            
 if __name__ == "__main__":
-    print(compute())
+    print(compute(10000))
     print("--- %s seconds ---" % (time.time() - start_time))

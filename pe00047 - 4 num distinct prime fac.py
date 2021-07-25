@@ -24,10 +24,10 @@ Find the first four consecutive integers to have four distinct prime factors eac
 
 Anwser:
     134043
---- 1.868906021118164 seconds ---
+--- 0.39154982566833496 seconds ---
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
 
 def prime_factors(n):
@@ -46,12 +46,10 @@ def prime_factors(n):
 
 def list_primality_modified(n):
 	result = [0] * (n + 1)
-	result[0] = result[1] = 1
-	for i in range(int((n)) + 1):
+	for i in range(2,int((n)) + 1):
 		if result[i] == 0:
 			for j in range(2 * i, len(result), i):
 				result[j] += 1
-    
 	return result
         
 def compute(N, K):

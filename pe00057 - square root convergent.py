@@ -14,10 +14,9 @@ We note that if p/q oncverges each next term will be p+2q/q+p
 Anwser:
     153
 --- 0.002134084701538086 seconds ---
-    
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
 
 def compute():
@@ -30,7 +29,7 @@ def compute():
         
         if len(str(temp_num)) > len(str(temp_denom)):
             count += 1
-        
+    
         numerator = temp_num
         denominator = temp_denom
     return count

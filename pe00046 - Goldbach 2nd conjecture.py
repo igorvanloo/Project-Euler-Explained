@@ -23,7 +23,6 @@ It turns out that the conjecture was false.
 
 What is the smallest odd composite that cannot be written as the sum of a prime and twice a square?
 
-
 Anwser:
     5777
 --- 0.01988387107849121 seconds ---
@@ -44,42 +43,25 @@ def is_prime(x):
 			if x % i == 0:
 				return False
 		return True
-    
+
+def goldbachs(number):
+    for x in range(1, int(math.sqrt(number))+1):
+        temp_var = number - 2*(x**2)
+        if is_prime(temp_var) == True:
+            return True
+    return False
+
 def compute():
     count = 33
     while True:
-        for x in range(1, int(math.sqrt(count))+1):
-            
-            temp_var = count - 2*(x**2)
-            
-            if is_prime(temp_var) == True:
+        if is_prime(count):
+            count += 2
+        else:
+            if goldbachs(count):
                 count += 2
-                if is_prime(count) == True:
-                    count += 2
-                    break
-                break
-                    
-            elif is_prime(temp_var) == False:
-                if x == int(math.sqrt(count)):
-                    return count
+            else:
+                return count
                 
 if __name__ == "__main__":
     print(compute())
     print("--- %s seconds ---" % (time.time() - start_time))
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    

@@ -13,7 +13,6 @@ How many, not necessarily distinct, values of N choose r
  for 1 <= n <= 100, are greater than one-million?
 
 Anwser:
-    
     4075
 --- 0.009176015853881836 seconds ---
     
@@ -36,7 +35,6 @@ def compute():
                 count += 1
     return count
             
-
 if __name__ == "__main__":
     print(compute())
     print("--- %s seconds ---" % (time.time() - start_time))

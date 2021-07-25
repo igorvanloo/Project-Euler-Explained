@@ -17,11 +17,10 @@ Considering natural numbers of the form, ab, where a, b < 100, what is the maxim
 
 Anwser:
     972
---- 0.10810613632202148 seconds ---
-    
+--- 0.10810613632202148 seconds --- 
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
 
 def compute():
@@ -33,7 +32,6 @@ def compute():
             if temp_var > maximum:
                 maximum = temp_var
     return maximum
-            
 
 if __name__ == "__main__":
     print(compute())

@@ -51,23 +51,22 @@ def maximum(): #To find limit
         if maximum > 10**12:
             return x
     
-def compute():
-    primes = eulerlib.primes(1000000)
+def compute(limit):
+    primes = eulerlib.primes(4000)
     consecutive_primes = []
-    
-    i = 0
-    while i != 546:
+    for y in range(546):
         total = 0
         count = 0
-        for x in range(i,546):
+        for x in range(y+1,546):
             total += primes[x]
             count += 1
-            if is_prime(total) == True:
+            if total > limit:
+                break
+            elif is_prime(total) == True:
                 consecutive_primes.append([count, total])
-        i += 1
     return max(sorted(consecutive_primes))
             
 
 if __name__ == "__main__":
-    print(compute())
+    print(compute(10**6))
     print("--- %s seconds ---" % (time.time() - start_time))
