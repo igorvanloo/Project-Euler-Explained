@@ -48,33 +48,27 @@ def compute():
     for x in range(rows):
         mask[x][0] = matrix[x][0]
         
-    def mindistance(x,y):
+    def mindistance(x,y): 
+        #This function will find the minimum distance from every cell in the previous column
+        #to the currect cell (x,y)
         lengths = []
-        curr = 0
-        for down in range(x-1, -1, -1):
-            lengths.append(curr + matrix[down][y] + mask[down][y-1])
-            curr += matrix[down][y]
+        up_curr = 0 #This will keep a running total of the matrix cells above the starting cell
+        for up in range(x-1, -1, -1):
+            #This will append the length of the cells up and to the left
+            lengths.append(up_curr + matrix[up][y] + mask[up][y-1])
+            up_curr += matrix[up][y] #Updated the down_curr
         
-        curr1 = 0
-        for up in range(x+1, rows):
-            lengths.append(curr1 + matrix[up][y] + mask[up][y-1])
-            curr1 += matrix[up][y]
-        return min(lengths)
+        down_curr = 0 #Same as above
+        for down in range(x+1, rows):
+            lengths.append(down_curr + matrix[down][y] + mask[down][y-1])
+            down_curr += matrix[down][y]
+        return min(lengths) #We return the least value (shortest path)
             
     for y in range(1,columns):
         for x in range(rows):
-            if 0 < x < rows-1: #Check that we are not on the bottom or top row
-                                #We want to to find the minimum path from the up + left, down + left and just left
-                temp = min(mask[x][y-1], mindistance(x,y))
-            elif x == 0: #We are on the first row
-                         #We want to find the minimum path from the just left or down + left
-                temp = min(mask[x][y-1], (matrix[x+1][y] + mask[x+1][y-1]))
-            else: #We are on the last row
-                  #We want to find the minimum path from the just left or up + left
-                temp = min(mask[x][y-1], (matrix[x-1][y] + mask[x-1][y-1]))
-            mask[x][y] += (matrix[x][y] + temp)
+            mask[x][y] += (matrix[x][y] + min(mask[x][y-1], mindistance(x,y)))
+            
     return min([mask[x][columns-1] for x in range(0, rows)])
-
 if __name__ == "__main__":
     start_time = time.time()
     print(compute())

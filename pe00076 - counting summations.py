@@ -19,19 +19,12 @@ It is possible to write five as a sum in exactly six different ways:
 
 How many different ways can one hundred be written as a sum of at least two positive integers?
 
-Reasoning:
-We use eulers Pentagonal number theorem
-The identity implies a recurrence for calculating {\displaystyle p(n)}p(n), the number of partitions of n:
-p(n)=p(n-1)+p(n-2)-p(n-5)-p(n-7)+... until p(x) x <0 
-
-
 Anwser:
     190569291
---- 0.0005931854248046875 seconds ---
-    
+--- 0.0005931854248046875 seconds ---    
 '''
 
-import time, math, eulerlib, itertools
+import time
 start_time = time.time()
 
 def sum_of_partitions(number):
