@@ -18,7 +18,6 @@ Anwser:
 import time
 
 def dicecomb(): #Produces all dice combinations, there are 10 C 6 = 210
-    
     dicecombs = set()
     for a in range(0,10):
         for b in range(0,9):
@@ -32,10 +31,7 @@ def dicecomb(): #Produces all dice combinations, there are 10 C 6 = 210
 
 def valid_dice_pair(dice1, dice2):
     #Dice 1 and Dice 2 are both tuples
-    #Square numbers are 0, 1, 2, 3, 4, 5, 6, 8, 9, only 7 not needed
-    
     square_numbers = [(0,1), (0,4), (0,9), (1,6), (2,5), (3,6), (4,9), (6,4), (8,1)]
-    
     squares_generated = set()
     for x in dice1:
         for y in dice2:
@@ -44,33 +40,26 @@ def valid_dice_pair(dice1, dice2):
                 squares_generated.add((9,y))
                 squares_generated.add((y,9))
                 squares_generated.add((y,6))
-            
             elif y == 6 or y == 9:
                 squares_generated.add((6,x))
                 squares_generated.add((9,x))
                 squares_generated.add((x,9))
-                squares_generated.add((x,6))
-                
+                squares_generated.add((x,6))     
             else:
                 squares_generated.add((x,y))
                 squares_generated.add((y,x))
-    
     for x in square_numbers:
         if x not in squares_generated:
-            return False
-        
+            return False 
     return True
 
 def compute():
-    
     dice = dicecomb()
-    
     count = 0
     for x in range(len(dice)):
         for y in range(x+1,len(dice)):
             if valid_dice_pair(dice[x], dice[y]):
                 count += 1
-    
     return count
 
 if __name__ == "__main__":
