@@ -53,7 +53,7 @@ Anwser:
 --- 0.024382829666137695 seconds ---
 '''
 
-import time, math, eulerlib
+import time, math
 
 def combinations(a, bc):
     if 2*a < bc:
