@@ -38,7 +38,7 @@ Let 2A = C + 1 => A = (C+1)/2 => Area = A*sqrt(C^2 - (C+1)^2 / 4) = A*sqrt((3C^2
 
 Anwser:
     518408346
---- 0.0001652240753173828 seconds ---
+--- 0.00039196014404296875 seconds ---
 '''
 
 import time, math, eulerlib
@@ -95,25 +95,24 @@ def compute(limit):
     
     while True:
         
-        C = ((7 - 4*math.sqrt(3))**n + (7 + 4*math.sqrt(3))**n + 1)/3 #Integer solutions of 3C^2 - 2C - 1 - 4k^2 = 0, 2A = C + 1
+        C = (((7 - 4*math.sqrt(3))**n + (7 + 4*math.sqrt(3))**n + 1)/3) #Integer solutions of 3C^2 - 2C - 1 - 4k^2 = 0, 2A = C + 1
         
-        C1 = ((2 + math.sqrt(3)) * (7 - 4*math.sqrt(3))**(n+1) - (math.sqrt(3) - 2)*(7 + 4*math.sqrt(3))**(n+1) - 1)/3 #Integer solutions of 3C^2 + 2C - 1 - 4k^2 = 0, 2A = C - 1)
+        C1 = (((2 + math.sqrt(3)) * (7 - 4*math.sqrt(3))**(n+1) - (math.sqrt(3) - 2)*(7 + 4*math.sqrt(3))**(n+1) - 1)/3) #Integer solutions of 3C^2 + 2C - 1 - 4k^2 = 0, 2A = C - 1)
         
         perC = 3*C + 1
         perC1 = 3*C1 - 1
         
-        if perC > limit and perC1 > limit:
+        if perC > limit:
             break
-        
-        if perC < limit:
-            total += perC
-        
-        if perC1 < limit:
-            total += perC1
-        
+            
+        total += perC
+        if perC1 > limit:
+            break
+            
+        total += perC1
         n += 1
         
-    return total
+    return int(total)
 
 if __name__ == "__main__":
     start_time = time.time()
