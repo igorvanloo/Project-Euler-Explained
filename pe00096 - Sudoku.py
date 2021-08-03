@@ -19,7 +19,7 @@ import time
 start_time = time.time()
 
 def ReadFile(): #Create the inital list 
-    file = open("/Users/igorvanloo/Dropbox/My Mac (Igors-MacBook-Air.local)/Desktop/Project Euler/0. Files/p096_sudoku.txt")
+    file = open("/Users/igorvanloo/Dropbox/My Mac (Igors-MacBook-Air.local)/Desktop/Python Projects/0. Files/p096_sudoku.txt")
     data = file.readlines()
     file.close()
     datalist = []
