@@ -11,6 +11,7 @@ Project Euler Essential Functions
 
 import math
 
+#------------------------------------------------------------------------------------------------------------------#
 def ReadFile(): #Create the inital list 
     file = open("Input File name")
     data = file.readlines()
@@ -21,7 +22,9 @@ def ReadFile(): #Create the inital list
         datalist.append(x)
     return datalist
 
-def list_primality(n):
+#------------------------------------------------------------------------------------------------------------------#
+
+def Prime_sieve(n):
 	result = [True] * (n + 1)
 	result[0] = result[1] = False
 	for i in range(int(math.sqrt(n)) + 1):
@@ -30,8 +33,14 @@ def list_primality(n):
 				result[j] = False
 	return result
 
+#Returns a list containing True or False, list[x] = True => x is a prime
+#------------------------------------------------------------------------------------------------------------------#
+
 def list_primes(n):
-	return [i for (i, isprime) in enumerate(list_primality(n)) if isprime]
+	return [i for (i, isprime) in enumerate(Prime_sieve(n)) if isprime]
+
+#Converts list above to a list of primes
+#------------------------------------------------------------------------------------------------------------------#
 
 def is_prime(x): #Test if giving value is a prime 
 	if x <= 1:
@@ -45,6 +54,9 @@ def is_prime(x): #Test if giving value is a prime
 			if x % i == 0:
 				return False
 		return True
+
+#is_prime function, checks if a number if prime
+#------------------------------------------------------------------------------------------------------------------#
 
 def primefactorization(n, listofprimes): #Requires a preloaded list of primes
     if is_prime(n) == True:
@@ -73,30 +85,29 @@ def prime_factors(n):
             break
     return factors
 
-def factorial(x): #Factorial function we can just use math.factorial
-    total = 1
-    if x == 0:
-        return total
-    else:
-        for y in range(1,x+1):
-            total *= y
-        return total
-    
-def base2converter(x): #Simple base 2 converter we can also use bin function
-    if x < 0:
-        return "Wrong input"
-    base2version = ""
-    while x > 0:
-        temp = x % 2
-        base2version += str(int(temp))
-        x = (x - int(temp))/2
-    return base2version[::-1]
+#2 Prime factoriation function, first one is slower because it requires a list of primes
+#------------------------------------------------------------------------------------------------------------------#
+
+def Divisors(x): #Find the divisors of a number
+    divisors = []
+    for i in range(1, int(math.sqrt(x)) + 1):
+        if x % i == 0:
+            divisors.append(i)
+            divisors.append(int(x/i))
+    divisors.remove(x)
+    return (divisors)
+
+#Find all divisors of a number x
+#------------------------------------------------------------------------------------------------------------------#
 
 def n_choose_r(n, r): #nCr function
     if r > n:
         return "n must be greter than r"
     else:
         return int(math.factorial(n) / (math.factorial(r) * math.factorial(n-r)))
+
+#Simple n C r function
+#------------------------------------------------------------------------------------------------------------------#
 
 def numberToBase(n, b):
     if n == 0:
@@ -107,21 +118,17 @@ def numberToBase(n, b):
         n //= b
     return digits[::-1]
 
-def permutations(number): #Returns list containing strings of permutations, can be edited to suit need
-    final_list = []
-    string = str(number)
-    temp_permutations = list(itertools.permutations(string))
-    for y in range(len(temp_permutations)):
-            temp_var = "".join(str(temp_permutations[y][i]) for i in range(len(temp_permutations[y])))
-            final_list.append(temp_var)
-            
-    return final_list
+#Base changing function, number = n, base = b
+#------------------------------------------------------------------------------------------------------------------#
 
-def is_quadratic(x):
-    cube__root = (x**(1/2))
-    if round(cube__root) ** 2 == x:
+def is_square(x):
+    square_root = (x**(1/2))
+    if round(square_root) ** 2 == x:
         return True
     return False
+
+#Simple is square number function
+#------------------------------------------------------------------------------------------------------------------#
 
 def continued_fraction(x):
     m0 = 0
@@ -142,7 +149,10 @@ def continued_fraction(x):
         a0 = an #Replace values
     return temp_list
 
-def overall_fraction(cf): #Returns the fractional form of the canonical form
+#Returns the continued fraction of sqrt(x) 
+#------------------------------------------------------------------------------------------------------------------#
+
+def overall_fraction(cf): 
     numerator = 1
     denominator = cf[0]
     
@@ -151,7 +161,10 @@ def overall_fraction(cf): #Returns the fractional form of the canonical form
                 
     return denominator, numerator
 
-def fibonnaci(n): #Finds the nth fibonnaci number
+#Returns the fractional form of the continued fraction
+#------------------------------------------------------------------------------------------------------------------#
+
+def fibonacci(n): #Finds the nth fibonnaci number
     v1, v2, v3 = 1, 1, 0    # initialise a matrix [[1,1],[1,0]]
     for rec in bin(n)[3:]:  # perform fast exponentiation of the matrix (quickly raise it to the nth power)
         calc = v2*v2
@@ -160,24 +173,21 @@ def fibonnaci(n): #Finds the nth fibonnaci number
             v1, v2, v3 = v1+v2, v1, v2  
     return v2
 
+#Fins the nth fibonnaci number, using fast exponentiation
+#------------------------------------------------------------------------------------------------------------------#
+
 def Fibtill(x):
     fibnumbers = []
     n = 1
-    while fibonnaci(n) <= x:
-        fibnumbers.append(fibonnaci(n))
+    while fibonacci(n) <= x:
+        fibnumbers.append(fibonacci(n))
         n += 1
     return fibnumbers
-    
-def Divisors(x): #Find the divisors of a number
-    divisors = []
-    for i in range(1, int(math.sqrt(x)) + 1):
-        if x % i == 0:
-            divisors.append(i)
-            divisors.append(int(x/i))
-    divisors.remove(x)
-    return (divisors)
-   
-def phi(n, primes): #Eulers Totient Function requires primefactorization and isprime function
+
+#Additional function for fibonnaci(n) to find all fibonacci numbers up till x
+#------------------------------------------------------------------------------------------------------------------#
+
+def phi(n, primes): 
     total = n
     prime_factor = primefactorization(n, primes)
     
@@ -185,6 +195,9 @@ def phi(n, primes): #Eulers Totient Function requires primefactorization and isp
         total *= (1-1/p)
         
     return int(total)
+
+#Eulers Totient Function requires primefactorization and isprime function, not very efficent
+#------------------------------------------------------------------------------------------------------------------#
 
 def partition(k,n): #Partition function, fast up till n = 85 works with sum of partition function
     if k == 0 and n == 0:
@@ -200,6 +213,10 @@ def Partition(goal, alist):
             ways[i + options] += ways[i]
     return ways[-1]-1  
 
+#First function uses mathematical recursion equation, it is extremely slow
+#Second function uses dynamic programming, it is very quick
+#------------------------------------------------------------------------------------------------------------------#
+
 def sum_digits(x):
     totalsum = 0
     while x != 0:
@@ -207,7 +224,10 @@ def sum_digits(x):
         x = x // 10
     return totalsum
 
-def ZeckendorfRepresentation(x, fibnumbers): #Returns list with zeckendorf decomposition, requires a list of fibonnaci numbers
+#Simple sum of digits function
+#------------------------------------------------------------------------------------------------------------------#
+
+def ZeckendorfRepresentation(x, fibnumbers): 
     rep = []
     number = x
     count = 0
@@ -221,7 +241,10 @@ def ZeckendorfRepresentation(x, fibnumbers): #Returns list with zeckendorf decom
         
     return rep
 
-def ppt(limit): #Pythagorean Triplet generator
+#Returns list with zeckendorf decomposition, requires a list of fibonnaci numbers
+#------------------------------------------------------------------------------------------------------------------#
+
+def ppt(limit): 
     triples = []
     for m in range(2,int(math.sqrt(limit))+1):
         for n in range(1,m):
@@ -235,3 +258,6 @@ def ppt(limit): #Pythagorean Triplet generator
                 for k in range(1,int(limit/p)+1):
                     triples.append([k*b,k*c,k*a])
     return triples
+
+#Pythagorean Triplet generator
+#------------------------------------------------------------------------------------------------------------------#
