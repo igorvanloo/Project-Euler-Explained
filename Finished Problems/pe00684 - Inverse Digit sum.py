@@ -38,12 +38,12 @@ def fibonnaci(x):
 def sn(b):
     return ((b % 9 + 1)*(pow(10,(b // 9), 1000000007)) - 1) % 1000000007
 
-def S(k):
+def S(k, mod):
     q = k // 9
     r = k % 9
-    sum1 = (6*(pow(10,q,1000000007) - 1)) - (9*q % 1000000007)
-    sum2 = sum([i*pow(10,q,1000000007) - 1 for i in range(2,r+2)])
-    return (sum1+sum2) % 1000000007
+    sum1 = (6*(pow(10,q,mod) - 1)) - (9*q % mod)
+    sum2 = sum([i*pow(10,q,mod) - 1 for i in range(2,r+2)])
+    return (sum1+sum2) % mod
 
 def finals(k):
     q = k // 9
@@ -65,7 +65,13 @@ def compute1():
         total += finals(temp_list[x])
     return total % 1000000007
 
+def tempcompute():
+    for x in range(1,100):
+        if S(x, x) == 0:
+            print(x)
+
 if __name__ == "__main__":
+    print(tempcompute())
     print(compute1())
     print(compute())
     print("--- %s seconds ---" % (time.time() - start_time))
