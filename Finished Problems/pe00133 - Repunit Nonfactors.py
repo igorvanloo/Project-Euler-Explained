@@ -7,7 +7,7 @@ Created on Thu Dec  2 20:09:59 2021
 """
 
 '''
-Project Euler Problem 132
+Project Euler Problem 133
 
 we want all p such that p|R(10^k) => p|(10^(10^k) - 1)/9 => (10^(10^k) - 1)/9 = 0 mod p
 
