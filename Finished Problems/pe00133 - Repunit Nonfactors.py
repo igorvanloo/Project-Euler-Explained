@@ -14,8 +14,8 @@ we want all p such that p|R(10^k) => p|(10^(10^k) - 1)/9 => (10^(10^k) - 1)/9 = 
 => 10^(10^k) = 1 mod 9p, for every prime I just test the first 100 cases, not really fully understood.
 
 Anwser:
-    843296
---- 0.3167259693145752 seconds ---
+    453647705
+--- 11.325398921966553 seconds ---
 '''
     
 import time, math
