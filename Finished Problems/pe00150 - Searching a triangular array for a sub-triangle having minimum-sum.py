@@ -5,13 +5,14 @@ Created on Mon Dec  6 10:16:54 2021
 
 @author: igorvanloo
 """
-
 '''
 Project Euler Problem 150
 
 Generate the triangle in a triangle format so it's easier to understand what you are doing
 
-If you start at an apex (a,b) then you can form triangles 
+If you start at an apex (a,b) then you can form triangles under it (a+1, b) + (a+1, b+1), (a+2, b) + (a+2, b+1) + (a+2, b+2), etc
+
+Works like this already but to greatly increase the speed we can precompute the sum's in each rows as described below
 
 Anwser:
     -271248680
@@ -52,7 +53,7 @@ def compute():
         for col in range(1, len(row_sum_triangle[row])):
             row_sum_triangle[row][col] += row_sum_triangle[row][col-1]
     #With this we have a running total of the sum in a row, so if we want to calculate a partial sum say from
-    #triangle[5][2] to triangle[5][6] all we need is row_sum_triangle[5][6] - row_sum_triangle[5][1]
+    #triangle[5][2] to triangle[5][6] all we need is row_sum_triangle[5][7] - row_sum_triangle[5][2]
     minimum = 0
     for x in range(len(triangle)): #Denotes row
         for y in range(len(triangle[x])): #Denotes position in row
@@ -61,7 +62,7 @@ def compute():
             if curr_sum < minimum:
                 minimum = curr_sum
                 
-            curr_y = y + 2 #We need to offset by 2 because row_sum_triangle 
+            curr_y = y + 2 #We need to offset by 2 because row_sum_triangle starts with 0
             for next_x in range(x+1,1000):
                 curr_sum += row_sum_triangle[next_x][curr_y] - row_sum_triangle[next_x][y]
                 if curr_sum < minimum:
