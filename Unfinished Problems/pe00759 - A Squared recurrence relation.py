@@ -28,6 +28,7 @@ f(6) = 2f(3) = 12
 f(7) = 7 + 2f(3) + f(3)/3 = 7 + 12 + 2 = 21
 
 f(n) = n*(number of 1's in the base 2 conversion of n)
+https://oeis.org/A245788
 
 Anwser:
     
@@ -49,6 +50,6 @@ def compute1(limit):
     return sum([pow(n*bin(n)[2:].count('1'),2,1000000007) for n in range(limit + 1)]) % 1000000007
 
 if __name__ == "__main__":
-    print(compute(10**7))
+    print(compute(10**4))
     #print(compute1(10**7))
     print("--- %s seconds ---" % (time.time() - start_time))

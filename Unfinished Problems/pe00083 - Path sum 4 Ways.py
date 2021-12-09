@@ -9,6 +9,8 @@ Created on Wed Jul 28 21:00:50 2021
 '''
 Project Euler Problem 83
 
+Tried something with bellmandford algorithm but not working 
+
 Anwser:
 
 '''

@@ -9,8 +9,12 @@ Created on Thu Aug  5 01:50:43 2021
 '''
 Project Euler Problem 127
 
+Got correct answer for test case, but it is too slow to finish
+
+
 Anwser:
-    
+    12523 ~ 1000
+--- 3.4965250492095947 seconds ---
 '''
 
 import time, math, eulerlib
@@ -49,5 +53,5 @@ def compute(limit):
 
 if __name__ == "__main__":
     start_time = time.time()
-    print(compute(10000))
+    print(compute(1000))
     print("--- %s seconds ---" % (time.time() - start_time))

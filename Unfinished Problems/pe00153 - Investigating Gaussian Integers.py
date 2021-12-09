@@ -63,7 +63,7 @@ def compute(limit):
                 curr_sum += 2*a + 2*(int(x/temp))*a
         total += curr_sum
         #print(total)
-        print(x, curr_sum)
+        #print(x, curr_sum)
     return total
     
     

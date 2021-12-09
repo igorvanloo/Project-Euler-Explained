@@ -37,10 +37,9 @@ so the anwser for m = 6 are
 
 Usuing the Divisors of a number we can quickly do a chinese remainder theorem to find all the roots in the quickcrt function
 however, it is too slow to finish the problem
-    
 
 Anwser:
-    
+    Get correct answers but code is too slow to finish, up to 10^5
 '''
 
 import time, math, eulerlib
@@ -144,7 +143,7 @@ def compute(value):
     return total
     
 if __name__ == "__main__":
-    print(compute(10**5))
+    print(compute(10**4))
     print("--- %s seconds ---" % (time.time() - start_time - primegen))
     
     

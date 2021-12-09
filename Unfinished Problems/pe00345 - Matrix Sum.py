@@ -20,6 +20,8 @@ For example, the Matrix Sum of the matrix below equals 3315 ( = 863 + 383 + 343 
 627 343 773 959 943
 767 473 103 699 303
 
+Not much progress here
+
 Anwser:
     
 '''

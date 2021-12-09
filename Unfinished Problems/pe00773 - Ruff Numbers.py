@@ -9,6 +9,8 @@ Created on Tue Nov 30 23:47:04 2021
 '''
 Project Euler Problem 773
 
+Get F(3) correct but way too slow, haven't made the key discovery yet
+
 Anwser:
 
 '''
@@ -27,19 +29,19 @@ def compute(n):
         N_k *= x
     print(N_k)
     
-    k_ruff = [x for x in range(1,N_k + 1)]
+    k_ruff = []
     
-    for x in range(len(k_ruff)):
-        if str(k_ruff[x])[-1] == "7":
-            for y in S_k:
-                if k_ruff[x] % y == 0:
-                    k_ruff[x] = 0
-                    break
-        else:
-            k_ruff[x] = 0
+    for x in range(7, N_k + 1, 10):
+        is_k_ruff = True
+        for y in S_k:
+            if x % y == 0:
+                is_k_ruff = False
+                break
+        if is_k_ruff:
+            k_ruff.append(x)
                 
     return sum(k_ruff) % 1000000007
 
 if __name__ == "__main__":
-    print(compute(97))
+    print(compute(5))
     print("--- %s seconds ---" % (time.time() - start_time))
