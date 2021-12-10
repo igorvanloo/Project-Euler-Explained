@@ -72,35 +72,24 @@ def is_prime(x): #Test if giving value is a prime
 
 def d(p,n,k):
     array = []
-    
     array.append([pow(i,-1,p) for i in range(1,n+1)])
-    
     for x in range(1,k):
         row = [1]
         for y in range(1,n):
             row.append(array[x-1][y] + row[y-1])
         array.append(row)
-    
     return sum(array[k-1])
     
 def D(a,b,k):
     primes = [x for x in range(a, a+b) if is_prime(x)]
     total = 0
-    
-    
     for p in primes:
-        inv = [0] + [pow(i,-1,p) for i in range(1,p)]
-        
-        total_1 = (sum([n_choose_r(p-x-2,k-1)*inv[x] for x in range(1,p-1)]) % p)
-        
-        total_2 = (d(p,p-1,k) % p)
-        
-        print(p, total_1, total_2)
-    
+        total += (d(p,p-1,k) % p)        
     return total
 
 if __name__ == "__main__":
     #print(D(101,1,10))
     print(D(10**3,10**2,10**2))
     #print(D(10**6,10**3,10**3))
+    #print(D(10**9,10**5,10**5))
     print("--- %s seconds ---" % (time.time() - start_time))
