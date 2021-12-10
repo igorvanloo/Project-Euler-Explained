@@ -34,8 +34,11 @@ Create array = [
                 .
                 [d(101,1,10), d(101,2,10), d(101,3,10), ... , d(101,100,10)]
                 ]
+Then d(101, a, b) = d(101, a-1, b) + d(101, a, b-1) a,b ≥ 1
 
-D(10^3,10^2,10^2) = 8334: Got it ~21 sec
+Now we can notice everything is essentialy a sum of the the first row, just need to figure out how many times to pick it
+
+D(10^3,10^2,10^2) = 8334: Got it ~0.3 sec but having trouble moving forward
 
 D(10^6,10^3,10^3) = 38162302
 Find D(10^9,10^5,10^5).
@@ -48,6 +51,12 @@ Anwser:
 import time, math
 start_time = time.time()
 
+def n_choose_r(n, r): #nCr function
+    if r > n:
+        return 0
+    else:
+        return int(math.factorial(n) / (math.factorial(r) * math.factorial(n-r)))
+    
 def is_prime(x): #Test if giving value is a prime 
 	if x <= 1:
 		return False
@@ -71,28 +80,27 @@ def d(p,n,k):
         for y in range(1,n):
             row.append(array[x-1][y] + row[y-1])
         array.append(row)
-        
     
     return sum(array[k-1])
-
-def d2(p,n,k):
-    
-    array = []
-    array.append([1 for x in range(k)])
-    
-    
     
 def D(a,b,k):
     primes = [x for x in range(a, a+b) if is_prime(x)]
     total = 0
     
+    
     for p in primes:
-        print(p)
-        total += (d(p,p-1,k) % p)
+        inv = [0] + [pow(i,-1,p) for i in range(1,p)]
+        
+        total_1 = (sum([n_choose_r(p-x-2,k-1)*inv[x] for x in range(1,p-1)]) % p)
+        
+        total_2 = (d(p,p-1,k) % p)
+        
+        print(p, total_1, total_2)
     
     return total
 
 if __name__ == "__main__":
+    #print(D(101,1,10))
     print(D(10**3,10**2,10**2))
     #print(D(10**6,10**3,10**3))
     print("--- %s seconds ---" % (time.time() - start_time))
