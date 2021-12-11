@@ -21,29 +21,21 @@ In general every time H(3n) we add n new types of hexagons
 
 H(3) we have a 1 side length hexagons
 H(6) we have 2 side length and also sqrt(3) side length 
-H(9) we have 3, 
-
 
 Anwser:
     265695031399260211
---- 9.085942029953003 seconds ---
-'''
+--- 5.640542984008789 seconds ---'''
 
 import time
 start_time = time.time()
 
-def tri_num(n):
-    return int((n*(n+1))/2)
-
 def compute(limit):
     total = 0
+    tri_numbers = [0] + [int((n*(n+1))/2) for n in range(1, 12344)]
     
     for x in range(3, limit + 1):
-        temp_total = 0
         for y in range(1, x//3 + 1):
-            temp_total += y*tri_num(x - 2 - 3*(y-1))
-        total += temp_total
-    
+            total += y*tri_numbers[x - 2 - 3*(y-1)]    
     return total
         
 if __name__ == "__main__":
