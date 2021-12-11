@@ -261,3 +261,14 @@ def ppt(limit):
 
 #Pythagorean Triplet generator
 #------------------------------------------------------------------------------------------------------------------#
+
+def lcm(a_list):
+    n = sorted(a_list)
+    curr = n.pop(-1)
+    while len(n) != 0:
+        temp = n.pop(-1)
+        curr = int(abs(curr*temp)/math.gcd(curr, temp))
+    return curr
+
+#Takes a list of numbers and returns the lcm of all numbers
+#------------------------------------------------------------------------------------------------------------------#
