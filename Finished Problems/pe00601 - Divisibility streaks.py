@@ -25,15 +25,8 @@ P(5,10^3) = 0 = floor(998/lcm(1,2,3,4,5)) - floor(998/lcm(1,2,3,4,5,6)) (Now the
 
 This exact trend continues for first 100,000 values so theres definetly a pattern
 
-P(5,10^3) = 0 is an odd case so I investigate this first
-
-If we want streak(n) = 5 this means
-1|n, 2|n+1, 3|n+2, 4|n+3, 5|n+4, 6-|n+5
-2|n+1 => n is odd => n+4 is odd => because 5|n+4 then n+4 ends in a 5 => n ends in a 1
-=> n+5 ends in a 6 => 2|n+5 and furthermore because 3|n+2 => 3|sum of digits(n+2) => 3|sum of digits(n+5) => 3|n+5 => 6|n+5
-So we have proved that a number with streak(n) = 5 is not possible as 6 will always divide n+5
-
-Therefore we have that P(a, b) = floor((b-2)/lcm(1,2,...,a)) - floor((b-2)/lcm(1,2,...,a,a+1))
+Therefore we have that P(a, b) = floor((b-2)/lcm(1,2,...,a)) - floor((b-2)/lcm(1,2,...,a,a+1)), the reason for this is due to the
+chinese remainder theorem
 
 Anwser:
     1617243
