@@ -35,19 +35,6 @@ Anwser:
 import time, math
 
 start_time = time.time()
-
-def is_prime(x): #Test if giving value is a prime 
-	if x <= 1:
-		return False
-	elif x <= 3:
-		return True
-	elif x % 2 == 0:
-		return False
-	else:
-		for i in range(3, int(math.sqrt(x)) + 1, 2):
-			if x % i == 0:
-				return False
-		return True
     
 def list_primality(n):
 	result = [True] * (n + 1)
