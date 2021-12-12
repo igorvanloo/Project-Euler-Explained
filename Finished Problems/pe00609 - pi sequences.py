@@ -7,7 +7,7 @@ Created on Sat Dec 11 20:49:49 2021
 """
 
 '''
-Project Euler Problem 
+Project Euler Problem 609
 
 pi(n) = number of primes not exceeding n
 u = (u_0, u_1, ..., u_n)
@@ -61,55 +61,7 @@ def list_primality(n):
 def list_primes(n):
 	return [i for (i, isprime) in enumerate(list_primality(n)) if isprime]
 
-def P(limit): #Uses list to store values, slightly faster than dictionary
-    prime_gen = list_primality(limit + 50)
-    primes = [x for x in range(len(prime_gen)) if prime_gen[x]]
-    
-    print("Primes done")
-    print("--- %s seconds ---" % (time.time() - start_time))
-    array = [0]*(limit+1)
-    p_index = 0
-    for x in range(1, limit + 1):
-        while True:
-            if primes[p_index] > x:
-                array[x] = p_index
-                break
-            p_index += 1
-    print("Array done")
-    print("--- %s seconds ---" % (time.time() - start_time))
-    
-    def c(u):
-        count = len(u)
-        for x in u:
-            if prime_gen[x]:
-                count -= 1
-        return count
-    
-    array2 = [0]*(limit+1)
-    for x in range(1, limit+1):
-        if x % 1000000 == 0:
-            print(x)
-        u = [x]
-        
-        while True:
-            temp = array[u[-1]]
-            if temp == 0:
-                break
-            else:
-                u.append(temp)
-                array2[c(u)] += 1
-
-    print("array2 done") 
-    print("--- %s seconds ---" % (time.time() - start_time))
-
-    total = 1
-    for x in array2:
-        if x != 0:
-            total *= x
-            total %= 1000000007
-    return total % 1000000007
-
-def P2(limit): #Uses list to store values, slightly faster than dictionary
+def P(limit):
     prime_gen = list_primality(limit + 50)
     primes = [x for x in range(len(prime_gen)) if prime_gen[x]]
     
@@ -156,5 +108,5 @@ def P2(limit): #Uses list to store values, slightly faster than dictionary
     return total % 1000000007
 
 if __name__ == "__main__":
-    print(P2(10**8))
+    print(P(10**8))
     print("--- %s seconds ---" % (time.time() - start_time))
