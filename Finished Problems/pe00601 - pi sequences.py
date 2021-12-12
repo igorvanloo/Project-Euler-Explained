@@ -25,12 +25,14 @@ First thing to notice is u is deteremined by u_0, an array with all the pi(n) ma
 
 
 Anwser:
-    369967776 ~ 10^6 Best I could make, theoretically my code could finish in < 10 mins I think but the memory usage is way too high
---- 17.419255018234253 seconds ---
+    742870469 ~ 10^7
+--- 24.488229036331177 seconds ---
+
+    172023848 ~ 10^8
+--- 302.72959208488464 seconds ---
 '''
 
 import time, math
-from collections import Counter
 
 start_time = time.time()
 
@@ -59,19 +61,16 @@ def list_primality(n):
 def list_primes(n):
 	return [i for (i, isprime) in enumerate(list_primality(n)) if isprime]
 
-def P(limit):
+def P(limit): #Uses list to store values, slightly faster than dictionary
     prime_gen = list_primality(limit + 50)
-    primes = list_primes(limit + 50)
+    primes = [x for x in range(len(prime_gen)) if prime_gen[x]]
     
     print("Primes done")
     print("--- %s seconds ---" % (time.time() - start_time))
     array = [0]*(limit+1)
-    count = 0
     p_index = 0
     for x in range(1, limit + 1):
-        
         while True:
-            count += 1
             if primes[p_index] > x:
                 array[x] = p_index
                 break
@@ -86,10 +85,9 @@ def P(limit):
                 count -= 1
         return count
     
-    sequences = []
-    
+    array2 = [0]*(limit+1)
     for x in range(1, limit+1):
-        if x % 100000 == 0:
+        if x % 1000000 == 0:
             print(x)
         u = [x]
         
@@ -99,27 +97,64 @@ def P(limit):
                 break
             else:
                 u.append(temp)
-                t = [x for x in u]
-                sequences.append(t)
-    print("Sequences done", len(sequences)) 
-    print("--- %s seconds ---" % (time.time() - start_time))
-    array2 = []
-    total = 1
-    for seq in sequences:
-        array2.append(c(seq))
-        
+                array2[c(u)] += 1
+
     print("array2 done") 
     print("--- %s seconds ---" % (time.time() - start_time))
 
-    temp = Counter(array2)
-    temp1 = list(temp.values())
     total = 1
-    for x in temp1:
-        total *= x
-        total %= 1000000007
-        
+    for x in array2:
+        if x != 0:
+            total *= x
+            total %= 1000000007
     return total % 1000000007
+
+def P2(limit): #Uses list to store values, slightly faster than dictionary
+    prime_gen = list_primality(limit + 50)
+    primes = [x for x in range(len(prime_gen)) if prime_gen[x]]
     
+    print("Primes done")
+    print("--- %s seconds ---" % (time.time() - start_time))
+    array = [0]*(limit+1)
+    p_index = 0
+    for x in range(1, limit + 1):
+        while True:
+            if primes[p_index] > x:
+                array[x] = p_index
+                break
+            p_index += 1
+    print("Array done")
+    print("--- %s seconds ---" % (time.time() - start_time))
+    
+    array2 = [0]*(limit+1)
+    for x in range(1, limit+1):
+        if x % 1000000 == 0:
+            print(x)
+        prime_non_count = 0
+        if prime_gen[x] == False:
+            prime_non_count += 1
+        curr = x
+        while True:
+            temp = array[curr]
+            if temp == 0:
+                break
+            else:
+                if prime_gen[temp] == False:
+                    prime_non_count += 1
+                    
+            array2[prime_non_count] += 1
+            curr = temp
+
+    print("array2 done") 
+    print("--- %s seconds ---" % (time.time() - start_time))
+
+    total = 1
+    for x in array2:
+        if x != 0:
+            total *= x
+            total %= 1000000007
+    return total % 1000000007
+
 if __name__ == "__main__":
-    print(P(10**6))
+    print(P2(10**8))
     print("--- %s seconds ---" % (time.time() - start_time))
