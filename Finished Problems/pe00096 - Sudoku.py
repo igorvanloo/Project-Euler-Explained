@@ -94,7 +94,6 @@ def SolveSudoku(sudoku):
     if emptyslot != None:
         row, column = emptyslot
     else:
-        
         return True
     
     for i in range(1,10):
