@@ -41,6 +41,7 @@ which is that same as (61305790721611591 - (99194853094755497 - 4459742654737774
 
 Anwser:
     56342087360542122
+--- 0.0018181800842285156 seconds ---
 '''
 
 import time, math
@@ -62,8 +63,7 @@ def Fibtill(x):
         fibnumbers.append(fibonnaci(n))
         n += 1
     return list(reversed(fibnumbers))
-
-    
+  
 def find_poss_num(path, fib, limit):
     x = path[-1]
     options = []
@@ -97,11 +97,38 @@ def find_path(path, limit):
 def compute(limit):
     path = [max(Fibtill(limit))]
     find_path(path, limit)
-    difference = []
-    for x in range(len(path)-1):
-        difference.append(path[x] + path[x+1])
-    return path, difference
+    #difference = []
+    #for x in range(len(path)-1):
+        #difference.append(path[x] + path[x+1])
+    return path#, difference
+
+def position(pos, limit):
+    fib = Fibtill(fibonnaci(len(Fibtill(limit)) + 1))
+    x = fib[0] #we never need to use it but it makes it more readable
+    y = fib[1] #We always start with y
+    z = fib[2]
+    
+    def func1(a): #a -> z - a mod y, not actually used
+        return (z - a) % y
+    
+    def func2(a): #a -> y - a mod y = -a mod y
+        return (-a) % y
+    
+    def func3(a, n): #both function composed give a -> a - z mod y if we repeat n times we have a -> a - z*n mod y
+        return (a - z*n) % y
+    
+    if pos == 1:
+        return y
+    if pos % 2 != 0:
+        mult = pos//2
+        temp = func3(y, mult)
+    else:
+        mult = pos//2
+        temp = func3(y, mult)
+        temp = func2(temp)
+    return temp
     
 if __name__ == "__main__":
     print(compute(34))
+    print(position(89194853094755498, 99194853094755497))
     print("--- %s seconds ---" % (time.time() - start_time))
