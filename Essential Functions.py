@@ -191,14 +191,26 @@ def Fibtill(x):
 #Additional function for fibonnaci(n) to find all fibonacci numbers up till x
 #------------------------------------------------------------------------------------------------------------------#
 
-def phi(n): #Euler's Totient Function
-    total = 1
-    prime_factor = prime_factors_with_exponent(n)
-    for p in prime_factor:
-        total *= (p[0]**(p[1] - 1)) * (p[0] - 1)
-    return int(total)
+def phi(n):
+    if n == 1:
+        return 1
+    phi = 1
+    d = 2 
+    while n > 1:
+        count = 0 
+        while n % d == 0:
+            count += 1
+            n /= d
+        if count > 0:
+            phi *= (d**(count-1))*(d-1)
+        d = d + 1
+        if d*d > n:
+            if n > 1: 
+                phi *= int(n - 1)
+            break
+    return phi
 
-#Eulers Totient Function requires prime_factors_with_exponent function
+#Eulers Totient Function counts the positive integers up to a given integer n that are relatively prime to n
 #------------------------------------------------------------------------------------------------------------------#
 
 def Mobius(n):
