@@ -29,7 +29,7 @@ We can do this because we have r = 10^(n - 3^i - 1)/3^i - 10^(n - 3^i - 1)//3^i 
 = (10^(n - 3^i - 1) mod 3^i) / 3^i
 
 Anwser:
-    0.6086371427
+    6086371427
 --- 0.0004830360412597656 seconds ---
 '''
 
@@ -44,7 +44,7 @@ def compute(n):
         exp = n - div - 1
         temp = pow(10,exp,div)
         total += temp/div
-    return str((total) - (math.floor(total)))[0:12]
+    return str((total) - (math.floor(total)))[2:12]
     
 if __name__ == "__main__":
     print(compute(10**16))
