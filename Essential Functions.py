@@ -57,19 +57,6 @@ def is_prime(x): #Test if giving value is a prime
 
 #is_prime function, checks if a number if prime
 #------------------------------------------------------------------------------------------------------------------#
-
-def primefactorization(n, listofprimes): #Requires a preloaded list of primes
-    if is_prime(n) == True:
-        return [n]
-    else:
-        factors = []
-        while n != 1:
-            for x in listofprimes:
-                if n % x == 0:
-                    factors.append(x)
-                    n = n/x
-                    break
-        return factors
     
 def prime_factors(n):
     factors = []
@@ -81,11 +68,28 @@ def prime_factors(n):
         d = d + 1
         if d*d > n:
             if n > 1: 
-                factors.append(n)
+                factors.append(int(n))
             break
     return factors
 
-#2 Prime factoriation function, first one is slower because it requires a list of primes
+def prime_factors_with_exponent(n):
+    factors = []
+    d = 2
+    while n > 1:
+        count = 0
+        while n % d == 0:
+            count += 1
+            n /= d
+        if count > 0:
+            factors.append([d, count])
+        d = d + 1
+        if d*d > n:
+            if n > 1: 
+                factors.append([int(n),1])
+            break
+    return factors
+
+#Prime factorisation function's, with or without exponent's
 #------------------------------------------------------------------------------------------------------------------#
 
 def Divisors(x): #Find the divisors of a number
@@ -187,16 +191,35 @@ def Fibtill(x):
 #Additional function for fibonnaci(n) to find all fibonacci numbers up till x
 #------------------------------------------------------------------------------------------------------------------#
 
-def phi(n, primes): 
-    total = n
-    prime_factor = primefactorization(n, primes)
-    
+def phi(n): #Euler's Totient Function
+    total = 1
+    prime_factor = prime_factors_with_exponent(n)
     for p in prime_factor:
-        total *= (1-1/p)
-        
+        total *= (p[0]**(p[1] - 1)) * (p[0] - 1)
     return int(total)
 
-#Eulers Totient Function requires primefactorization and isprime function, not very efficent
+#Eulers Totient Function requires prime_factors_with_exponent function
+#------------------------------------------------------------------------------------------------------------------#
+
+def Mobius(n):
+    if n == 1:
+        return 1
+    d = 2
+    num_of_primes = 0
+    while n > 1:
+        while n % d == 0:
+            num_of_primes += 1
+            if n % (d*d) == 0:
+                return 0
+            n /= d
+        d = d + 1
+        if d*d > n:
+            if n > 1: 
+                num_of_primes += 1
+            break
+    return (-1)**num_of_primes
+
+#Mobius function, returns 0 if n is divisible by p^2, otherwise returns (-1)^k, where k is number of distinct prime factors
 #------------------------------------------------------------------------------------------------------------------#
 
 def partition(k,n): #Partition function, fast up till n = 85 works with sum of partition function
@@ -271,4 +294,33 @@ def lcm(a_list):
     return curr
 
 #Takes a list of numbers and returns the lcm of all numbers
+#------------------------------------------------------------------------------------------------------------------#
+
+def legendre_factorial(x):
+    primes = list_primes(x)
+    prime_fac = []
+    for y in primes:
+        total = 0
+        for i in range(1, int(math.floor(math.log(x,y))) + 1):
+            total += int(math.floor(x/(y**i)))
+        prime_fac.append([y, total])
+    return prime_fac
+
+#Calculates the prime factorisation of massive factorials
+#------------------------------------------------------------------------------------------------------------------#
+
+def primepi(limit): 
+    prime_gen = Prime_sieve(limit + 50)
+    primes = [x for x in range(len(prime_gen)) if prime_gen[x]]
+    array = [0]*(limit+1)
+    p_index = 0
+    for x in range(1, limit + 1):
+        while True:
+            if primes[p_index] > x:
+                array[x] = p_index
+                break
+            p_index += 1
+    return array
+
+#Returns an array such that array[x] = number of primes < x (this is commonly known as primepi)
 #------------------------------------------------------------------------------------------------------------------#
