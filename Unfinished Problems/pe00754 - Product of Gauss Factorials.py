@@ -112,15 +112,27 @@ def Divisors(x): #Find the divisors of a number
 
 def compute(limit, mod):
     G = 1
+    divisor = [0]*(limit+1)
+    divisor[1] = [1]
+    
+    for x in range(1, int(math.sqrt(limit)) + 1):
+        for y in range(x, limit + 1, x):
+            z = int(y/x)
+            
+            if divisor[y] == 0:
+                divisor[y] = [x, z]
+            else:
+                divisor[y] += [x, z]
+    
     for x in range(1,limit + 1):
         if x % 1000 == 0:
             print(x)
-        g = pow(x,phi(x), mod)
-        for d in Divisors(x):
+        g = pow(x,phi(x),mod)
+        for d in set(divisor[x]):
             g *= pow(modDivide(modfactorial(d, mod),pow(d,d,mod), mod), Mobius(x/d), mod)
-        G *= (g)
+        G *= g
         G %= mod
-    return G 
+    return G
     
 def compute1(limit): #Calculates small values of g quickly
     G = 1
