@@ -336,3 +336,14 @@ def primepi(limit):
 
 #Returns an array such that array[x] = number of primes < x (this is commonly known as primepi)
 #------------------------------------------------------------------------------------------------------------------#
+
+def ModDivision(a,b,m):
+    a = a % m
+    inv = pow(b,-1,m)
+    if inv == -1:
+        return "Division not defined"
+    else:
+        return (inv*a) % m
+
+#Performs Modular Division where a/b mod(m)
+#------------------------------------------------------------------------------------------------------------------#
