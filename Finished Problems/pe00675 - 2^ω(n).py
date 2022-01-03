@@ -35,7 +35,7 @@ Anwser:
 --- 135.02284979820251 seconds ---
 '''
 
-import time, math
+import time
 start_time = time.time()
 
 def sieve_factors(n):
