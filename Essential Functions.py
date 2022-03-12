@@ -1,8 +1,4 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
 """
-Created on Wed Dec  9 12:51:18 2020
-
 @author: igorvanloo
 """
 '''
@@ -267,7 +263,6 @@ def ZeckendorfRepresentation(x, fibnumbers):
     number = x
     count = 0
     while number != 0:
-        
         if number - fibnumbers[count] >= 0:
             number -= fibnumbers[count]
             rep.append(fibnumbers[count])
@@ -287,9 +282,7 @@ def ppt(limit):
                 a = m**2 + n**2
                 b = m**2 - n**2
                 c = 2*m*n
-                
                 p = max(a,b,c)
-                
                 for k in range(1,int(limit/p)+1):
                     triples.append([k*b,k*c,k*a])
     return triples
@@ -346,4 +339,23 @@ def ModDivision(a,b,m):
         return (inv*a) % m
 
 #Performs Modular Division where a/b mod(m)
+#------------------------------------------------------------------------------------------------------------------#
+
+def k_smooth_numbers(max_prime, limit):
+    k_s_n = [1]
+    p = list_primes(max_prime)
+    while len(p) != 0:
+        temp_k_s_n = []
+        curr_p = p.pop(0)
+        power_limit = int(math.log(limit, curr_p)) + 1
+        curr_multiples = [curr_p**x for x in range(1, power_limit + 1)]
+        for x in curr_multiples:
+            for y in k_s_n:
+                temp = x*y
+                if temp <= limit:
+                    temp_k_s_n.append(temp)
+        k_s_n += temp_k_s_n
+    return len(k_s_n)
+
+#Finds all k-smooth numbers ≤ limit where k = max_prime 
 #------------------------------------------------------------------------------------------------------------------#
