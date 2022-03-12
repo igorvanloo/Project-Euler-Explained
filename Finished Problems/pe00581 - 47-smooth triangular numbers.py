@@ -18,7 +18,7 @@ the largest 47 smooth number is 1109496723126, found from https://oeis.org/A1175
 After that I just generate all 47-smooth numbers under this limit and I go through the list
 
 Anwser:
-    (2227616372734, 1502)
+    2227616372734
 --- 24.79506015777588 seconds ---
 '''
 
@@ -40,6 +40,7 @@ def list_primes(n):
 def k_smooth_numbers(primes, limit):
     k_s_n = [1]
     p = primes
+    
     while len(p) != 0:
         temp_k_s_n = []
         curr_p = p.pop(0)
@@ -64,15 +65,13 @@ def compute(max_prime):
     possib = k_smooth_numbers(primes, limit)
     print("Done generating " + str(max_prime) + "-smooth-numbers")
     total = 0
-    count = 0
     for x in range(len(possib)-1):
         curr = possib[x]
         next_ = possib[x+1]
         if curr + 1 == next_:
-            count += 1
             total += curr
-    return total, count
+    return total
 
 if __name__ == "__main__":
-    print(compute(47))
+    print(compute(35))
     print("--- %s seconds ---" % (time.time() - start_time))
