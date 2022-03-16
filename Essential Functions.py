@@ -332,8 +332,9 @@ def primepi(limit):
 
 def ModDivision(a,b,m):
     a = a % m
-    inv = pow(b,-1,m)
-    if inv == -1:
+    try:
+        inv = pow(b,-1,m)
+    except ValueError:
         return "Division not defined"
     else:
         return (inv*a) % m
