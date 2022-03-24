@@ -61,23 +61,23 @@ def fermat_primality_test(n):
         return True
     return False
 
-def admissable(p, n, primes, limit):
-    a_n = [n] #admissiable numbers
+def admissible_numbers(p, n, primes, limit):
+    a_n = [n] #admissible numbers
     i = primes.index(p) #index
     if n > limit:
         return []
-    a_n += admissable(p, n*p, primes, limit)
+    a_n += admissible_numbers(p, n*p, primes, limit)
     if i + 1 < len(primes):
         n_p = primes[i + 1] #next prime
-        a_n += admissable(n_p, n*n_p, primes, limit)
+        a_n += admissible_numbers(n_p, n*n_p, primes, limit)
     return a_n
     
 def compute(limit):
     sqrt_limit = int(math.sqrt(limit)) + 1
     primes = list_primes(sqrt_limit)
-    admissiable = sorted(admissable(2, 2, primes, limit))
+    admissible = sorted(admissible_numbers(2, 2, primes, limit))
     p_f = set() #pseudo-fortunate
-    for n in admissiable:
+    for n in admissible:
         #print(n)
         m = 3
         cont = True
