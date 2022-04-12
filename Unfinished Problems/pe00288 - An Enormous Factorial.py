@@ -9,7 +9,7 @@ Created on Sat Mar 26 23:32:59 2022
 Project Euler Problem 
 
 Anwser:
-    605857431263981935
+    
 '''
 import time, math
 start_time = time.time()
