@@ -360,3 +360,56 @@ def k_smooth_numbers(max_prime, limit):
 
 #Finds all k-smooth numbers ≤ limit where k = max_prime 
 #------------------------------------------------------------------------------------------------------------------#
+
+def legendre_symbol(a, p):
+    t = pow(a, (p-1)//2, p)
+    if t == p - 1:
+        return -1
+    return t
+
+#Returns the legendre symbol of a/p: 
+# 1 if a is a quadratic residue modulo p and p does not divide a
+# -1 if a is a non-quadratic residue modulo p
+# 0 if p divides a
+#------------------------------------------------------------------------------------------------------------------#
+
+def tonelli_shanks(a, p):
+    if legendre_symbol(a, p) != 1:
+        return 0
+    elif a == 0:
+        return 0
+    elif p == 2:
+        return 0
+    elif p % 4 == 3:
+        return pow(a, (p + 1)//4, p)
+    s = p - 1
+    e = 0
+    while s % 2 == 0:
+        s /= 2
+        e += 1
+    s = int(s)
+    n = 2
+    while legendre_symbol(n, p) != -1:
+        n += 1
+    x = pow(a, (s + 1)//2, p)
+    b = pow(a, s, p)
+    g = pow(n, s, p)
+    r = e
+    while True:
+        t = b
+        m = 0
+        for m in range(r):
+            if t == 1:
+                break
+            t = pow(t, 2, p)
+        if m == 0:
+            return x
+        gs = pow(g, 2**(r - m - 1), p)
+        g = (gs * gs) % p
+        x = (x * gs) % p
+        b = (b * g) % p
+        r = m
+
+#Implementation of the Tonelli-Shanks Algorithm full credit goes to: 
+#https://eli.thegreenplace.net/2009/03/07/computing-modular-square-roots-in-python/
+#------------------------------------------------------------------------------------------------------------------#
