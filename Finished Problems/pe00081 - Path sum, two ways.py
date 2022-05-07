@@ -17,7 +17,7 @@ import time
 start_time = time.time()
 
 def ReadFile(): #Create the inital list 
-    file = open("/Users/igorvanloo/Dropbox/My Mac (Igors-MacBook-Air.local)/Desktop/Project Euler/0. Files/p081_matrix.txt")
+    file = open("/Users/igorvanloo/Dropbox/My Mac (Igors-MacBook-Air.local)/Desktop/Python-Projects/Project-Euler-Related/0. Project Euler Files/p082_matrix.txt")
     data = file.readlines()
     file.close()
     datalist = []
@@ -33,12 +33,12 @@ def ReadFile(): #Create the inital list
     return data2list
 
 def compute():
-    #matrix = ReadFile()
-    matrix = [[131, 673, 234, 103,18],
+    matrix = ReadFile()
+    '''matrix = [[131, 673, 234, 103,18],
               [201, 96, 342, 965, 150],
               [630, 803, 746, 422, 111],
               [537, 699, 497, 121, 956],
-              [805, 732, 524, 37, 331]]
+              [805, 732, 524, 37, 331]]'''
     
     y = len(matrix)
     x = len(matrix[0])
