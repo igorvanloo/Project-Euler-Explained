@@ -413,3 +413,61 @@ def tonelli_shanks(a, p):
 #Implementation of the Tonelli-Shanks Algorithm full credit goes to: 
 #https://eli.thegreenplace.net/2009/03/07/computing-modular-square-roots-in-python/
 #------------------------------------------------------------------------------------------------------------------#
+
+def PrimsAlgorithm(graph):
+    dimension = len(graph)
+    Previous_Weight = sum([graph[x][y] for x in range(dimension) for y in range(x+1, dimension) if graph[x][y] != 0])
+    Tree = set([0])
+    New_Weight = 0    
+    for x in range(dimension - 1):
+        Minimum_edge, Corresponding_vertex = min([(graph[x][y], y) for x in Tree for y in range(dimension) if y not in Tree and graph[x][y] != 0])
+        Tree.add(Corresponding_vertex)
+        New_Weight += Minimum_edge
+        if len(Tree) == dimension:
+            break
+    return Previous_Weight - New_Weight
+
+#My own implementation of Prim's Algorithm. Used to find Minimum Spanning Tree for weighted undirected graph
+#------------------------------------------------------------------------------------------------------------------#
+
+def DijkstrasAlgorithm(matrix):
+    rows = len(matrix)
+    columns = len(matrix[0])
+    INF = 10**8    
+    unvisisted_nodes = dict()
+    for x in range(rows):
+        for y in range(columns):
+            unvisisted_nodes[(x, y)] = INF
+    unvisisted_nodes[(0, 0)] = matrix[0][0]    
+    mask = [[INF]*columns for i in range(rows)]
+    mask[0][0] = matrix[0][0]    
+    def visit_neighbour(og_x, og_y, x, y, unvisisted_nodes):
+        if x < 0 or x >= rows or y < 0 or y >= columns:
+            return False
+        if (x, y) in unvisisted_nodes:
+            return min(mask[x][y], mask[og_x][og_y] + matrix[x][y])
+    curr = (0, 0) #Starting node
+    while True:
+        x, y = curr
+        for (a, b) in ((x + 1, y), (x, y+ 1), (x - 1, y), (x, y - 1)):
+            temp = visit_neighbour(x, y, a, b, unvisisted_nodes)
+            if temp:
+                mask[a][b] = temp
+                unvisisted_nodes[(a, b)] = temp
+        unvisisted_nodes.pop(curr)        
+        if len(unvisisted_nodes) != 0:
+            curr = min(unvisisted_nodes, key=unvisisted_nodes.get)
+        else:
+            break
+    return mask[rows - 1][columns - 1] #Ending node
+
+#My own implementation of Dijkstra's Algorithm. Used to find shortest path between nodes in a graph
+#------------------------------------------------------------------------------------------------------------------#
+
+
+
+
+
+
+
+
