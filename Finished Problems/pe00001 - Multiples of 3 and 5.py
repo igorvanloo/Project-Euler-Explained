@@ -14,7 +14,7 @@ The sum of these multiples is 23.
 
 Find the sum of all the multiples of 3 or 5 below 1000.
 
-Anwser:
+Answer:
     233168
 --- 0.00019812583923339844 seconds ---
     

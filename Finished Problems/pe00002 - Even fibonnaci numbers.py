@@ -17,7 +17,7 @@ By starting with 1 and 2, the first 10 terms will be:
 By considering the terms in the Fibonacci sequence whose values do not exceed four million, 
 find the sum of the even-valued terms.
 
-Anwser:
+Answer:
     4613732
 --- 0.0002269744873046875 seconds ---
     
