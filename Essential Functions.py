@@ -303,12 +303,12 @@ def lcm(a_list):
 
 def legendre_factorial(x):
     primes = list_primes(x)
-    prime_fac = []
+    prime_fac = {}
     for y in primes:
         total = 0
         for i in range(1, int(math.floor(math.log(x,y))) + 1):
             total += int(math.floor(x/(y**i)))
-        prime_fac.append([y, total])
+        prime_fac[y] = total
     return prime_fac
 
 #Calculates the prime factorisation of massive factorials
