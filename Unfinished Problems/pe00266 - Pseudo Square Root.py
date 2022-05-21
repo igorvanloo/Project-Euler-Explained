@@ -20,7 +20,7 @@ ln(2) + ln(3) + ... + ln(181) = ln(539734629280554978272021407767368780627551753
 
 Now we want to find a subset of [ln(2), ln(3), ..., ln(181)] such that its sum is closest to 83.73601705054666
 
-This is earlier familiar to the knapsack problem, should be fun to try and implement
+This is familiar to the knapsack problem, should be fun to try and implement
 
 
 Anwser:
