@@ -464,8 +464,18 @@ def DijkstrasAlgorithm(matrix):
 #My own implementation of Dijkstra's Algorithm. Used to find shortest path between nodes in a graph
 #------------------------------------------------------------------------------------------------------------------#
 
+def ChineseRemainderTheorem(a1, a2, n1, n2):
+    if a1 > n1 or a2 > n2:
+        return "Wrong values were input"
+    #x = a1 (mod n1)
+    #x = a2 (mod n2)
+    #We find p = n1^-1 (mod n2), q = n2^-1 (mod n1)
+    p, q = pow(n1, -1, n2), pow(n2, -1, n1)
+    #The unique solution to this system is a1*q*n2 + a2*p*n1 % n1*n2
+    return (a1*q*n2+ a2*p*n1) % (n1*n2)
 
-
+#Simple Chinese Remiander Theorem to solve x = a1 mod n1, x = a2 mod n2
+#------------------------------------------------------------------------------------------------------------------#
 
 
 
