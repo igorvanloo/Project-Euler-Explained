@@ -19,7 +19,7 @@ Anwser:
 import time
 
 def ReadFile(): #Create the graph
-    file = open("/Users/igorvanloo/Dropbox/My Mac (Igors-MacBook-Air.local)/Desktop/Python Projects/0. Files/p107_network.txt")
+    file = open("/Users/igorvanloo/Dropbox/My Mac (Igors-MacBook-Air.local)/Desktop/Python-Projects/Project-Euler-Related/0. Project Euler Files/p107_network.txt")
     datalist = []
     for x in file:
         datalist.append(x.split(","))
