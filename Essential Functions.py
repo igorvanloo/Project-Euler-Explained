@@ -3,6 +3,8 @@
 """
 '''
 Project Euler Essential Functions
+
+See https://mathslib.readthedocs.io/en/latest/ for full documentation on all the functions
 '''
 
 import math

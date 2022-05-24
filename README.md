@@ -10,6 +10,18 @@ Please take some time to read the code as it cannot be blindly copied!
 
 NOTE: Most files contain a solution at the top, so please view them with care if you are not looking for the solution!
 
+# Essential Functions
+
+The essential functions file contains almost all the function I have used semi regularly on Project Euler, however they are not optimised, and some have very limited capabilities.
+
+I have made a package called mathslib with all the relevant functions, with updated features!
+
+You may read the full documentation here: https://mathslib.readthedocs.io/en/latest/readme.html
+
+View it on Github here: https://github.com/igorvanloo/mathslib
+
+Or download it from PyPi here: https://pypi.org/project/mathslib/
+
 # Problems Finished
 
 I will update this now and then, for fully updated version see the website
@@ -107,6 +119,7 @@ I will update this now and then, for fully updated version see the website
   
 <table style="width: 100%; height: 100%;" border="2" cellspacing="5"><colgroup><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /></colgroup>
 <tbody>
+
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;"><a title="Project Euler 1 - Multiples of 3 & 5" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-1" target="_blank">1</a></td>
 
