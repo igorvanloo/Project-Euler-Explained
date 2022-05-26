@@ -43,7 +43,7 @@ def ChineseRemainderTheorem(a1, a2, n1, n2):
     #x = a2 (mod n2)
     #We find p = n1^-1 (mod n2), q = n2^-1 (mod n1)
     p ,q = pow(n1, -1, n2), pow(n2, -1, n1)
-    #The unique oslution to this system is a1*q*n2 + a2*p*n1 % n1*n2
+    #The unique solution to this system is a1*q*n2 + a2*p*n1 % n1*n2
     return (a1*q*n2+ a2*p*n1) % (n1*n2)
 
 def FindSolutions(p):
