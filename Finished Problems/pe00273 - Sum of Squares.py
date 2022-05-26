@@ -99,8 +99,6 @@ def compute(limit):
             temp_total += min(x)
         total += temp_total
     return total
-    
-    
 
 if __name__ == "__main__":
     print(compute(150))
