@@ -479,7 +479,109 @@ def ChineseRemainderTheorem(a1, a2, n1, n2):
 #Simple Chinese Remiander Theorem to solve x = a1 mod n1, x = a2 mod n2
 #------------------------------------------------------------------------------------------------------------------#
 
+def FrobeniusNumber(*integers):
+    #Set is first sorted
+    A = sorted(integers)
+    #Initalize n value for future reference
+    n = len(A) 
+    #Initalize a1 and an for readability
+    a1 = A[0]
+    an = A[n - 1]
+    #Step 1
+    #Initalize FIFO queue
+    Q = [0]
+    #Initalize P
+    P = [0]*a1
+    P[0] = n
+    #Initalize S, label vector, in which each currently known minimal path weight to a vertex is stored.
+    S = [a1*an]*a1
+    S[0] = 0
+    #initalize Amod
+    Amod = [a % a1 for a in A]
+    #Step 2
+    while len(Q) != 0:
+        #Step 2a
+        v = Q.pop(0) #Remove the head of Q and set it to the vertex v
+        #Step 2b
+        for j in range(2, P[v] + 1):
+            #Step 2bi
+            u = v + Amod[j - 1]
+            if u >= a1:
+                u -= a1
+            #Step 2bii
+            w = S[v] + A[j - 1]
+            #Step 2biii
+            if w < S[u]:
+                S[u] = w
+                P[u] = j
+                if u not in Q:
+                    Q.append(u)
+    #Step 3
+    return max(S) - a1
 
+#Finds the Frobenius number of a set of integers
+#------------------------------------------------------------------------------------------------------------------#
+
+def miller_rabin(n, milleronly = True, numoftests = 0):
+    if n == 1:
+        return False
+    if n == 2:
+        return True
+    if n == 3:
+        return True
+    if n % 2 == 0:
+        return False
+    
+    if milleronly:
+        if n < 1373653:
+            tests = [2, 3]
+        elif n < 9080191:
+            tests = [31, 73]
+        elif n < 25326001:
+            tests = [2, 3, 5]
+        elif n < 4759123141:
+            tests = [2, 7, 61]
+        elif n < 2152302898747:
+            tests = [2, 3, 5, 7, 11]
+        elif n < 3474749660383:
+            tests = [2, 3, 5, 7, 11, 13]
+        elif n < 341550071728321:
+            tests = [2, 3, 5, 7, 11, 13, 17]
+        elif n < 3825123056546413051:
+            tests = [2, 3, 5, 7, 11, 13, 17, 19, 23]
+        elif n < 318665857834031151167461: # < 2^64
+            tests = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37]
+        elif n < 3317044064679887385961981:
+            tests = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41]
+        else:
+            tests = [2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59]
+    else:
+        from random import randrange
+        numoftests %= n
+        tests = [randrange(2, n) for _ in range(numoftests)]
+        
+    d = n - 1
+    r = 0
+    
+    while d % 2 == 0:
+        d //= 2
+        r += 1
+    
+    def is_composite(a):
+        if pow(a, d, n) == 1:
+            return False
+        for i in range(r):
+            if pow(a, 2**i * d, n) == n-1:
+                return False
+        return True
+    
+    for k in tests:
+        if is_composite(k):
+            return False
+    return True
+
+#Implementation of Rabin-Miller primality test with the option to use the Miller test
+#------------------------------------------------------------------------------------------------------------------#
 
 
 
