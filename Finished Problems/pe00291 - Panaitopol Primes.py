@@ -6,7 +6,7 @@ Created on Tue May 31 18:54:28 2022
 @author: igorvanloo
 """
 '''
-Project Euler Problem 
+Project Euler Problem 291
 
 p is a Panaitopol prime if p = (x^4 + y^4)/(x^3 + y^3) = (x - y)(x^2 + y^2)/(x^2 -xy + y^2)
 
