@@ -166,7 +166,7 @@ def overall_fraction(cf):
 #Returns the fractional form of the continued fraction
 #------------------------------------------------------------------------------------------------------------------#
 
-def fibonacci(n): #Finds the nth fibonnaci number
+def fibonacci(n): #Finds the nth fibonacci number
     v1, v2, v3 = 1, 1, 0    # initialise a matrix [[1,1],[1,0]]
     for rec in bin(n)[3:]:  # perform fast exponentiation of the matrix (quickly raise it to the nth power)
         calc = v2*v2
@@ -175,7 +175,7 @@ def fibonacci(n): #Finds the nth fibonnaci number
             v1, v2, v3 = v1+v2, v1, v2  
     return v2
 
-#Fins the nth fibonnaci number, using fast exponentiation
+#Fins the nth fibonacci number, using fast exponentiation
 #------------------------------------------------------------------------------------------------------------------#
 
 def Fibtill(x):
@@ -186,7 +186,7 @@ def Fibtill(x):
         n += 1
     return fibnumbers
 
-#Additional function for fibonnaci(n) to find all fibonacci numbers up till x
+#Additional function for fibonacci(n) to find all fibonacci numbers up till x
 #------------------------------------------------------------------------------------------------------------------#
 
 def phi(n):
