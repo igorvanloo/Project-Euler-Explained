@@ -40,7 +40,7 @@ def BruteForce(trials):
     return total/trials
     
 def compute(digits):
-    prev =0
+    prev = 0
     N = 1
     total = 0
     while True:

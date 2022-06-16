@@ -19,20 +19,20 @@ Example case Frog starts at x = 15
 x = 11 (N, 1/16 * 1/3),                   x = 13 (N, 4/16 * 1/3),                   x = 15 (N, 6/16 * 2/3),                    x = 17 (N, 4/16 * 1/3),                  x = 19 (N, 1/16 * 1/3)
 
 
-I literally have no idea what i'm doing wrong using Stephane Brummes Website I get the case 
-500 1 : correct 
-500 2 : correct
-500 3 : 6 cases different
-500 4 : 450 cases different   
-500 5 : 960 cases different  
-500 6 : 2100432 cases different
-500 7 : 259375104 cases different
+Came back to attack this problem, with renewed ability in recursion and dynamic programming was able to solve it!
+
+Given we start on one random number, say 15, the Denominator is always gonna be 2**14 * 3**15, let prob(x) denote the probability of the frog
+croaking the way it does
+
+Now the numerator is gonna be prob(15) = 1 * (prob(14)*(prob(13)... + prob(15)...) + prob(16)...)
 
 Anwser:
-    
+    (199740353, 29386561536000)
+--- 0.029585838317871094 seconds ---
 '''
 
 import time, math
+from functools import cache
 start_time = time.time()
 
 def is_prime(x): #Test if giving value is a prime 
@@ -47,7 +47,7 @@ def is_prime(x): #Test if giving value is a prime
 			if x % i == 0:
 				return False
 		return True
-    
+
 def prob(x, letter):
     if is_prime(x):
         if letter == "P":
@@ -61,51 +61,32 @@ def prob(x, letter):
             return 2
 
 def compute(pathlength, croaks):
+    seq = "_PPPPNNPPPNPPNPN"
     
-    seq = "PPPPNNPPPNPPNPN"
-    main_num = 0
-    main_den = 0
-    
-    for x in range(1, pathlength + 1):
+    @cache
+    def rec(square, croak):
+        value = prob(square, seq[croak])
         
-        curr = [x]
-        temp_num = prob(x, seq[0])
-        temp_den = 3
+        if croak == croaks:
+            return value
         
-        for y in range(1,croaks):
-            temp2_num = 0
-            temp2_den = 3 * 2**y
+        if square == 1:
+            move_left = 2
+            move_right = 2
+        elif square == pathlength:
+            move_left = square - 1
+            move_right = square - 1
+        else:
+            move_left = square - 1
+            move_right = square + 1 
+        
+        return value * (rec(move_left, croak + 1) + rec(move_right, croak + 1))
             
-            temp = []
-            letter = seq[y]
-            for z in curr:
-                a = z + 1
-                b = z - 1
-                
-                if b == 0:
-                    temp.append(a)
-                    temp.append(a)
-                elif a == (pathlength + 1):
-                    temp.append(b)
-                    temp.append(b)
-                else:
-                    temp.append(a)
-                    temp.append(b)
-            #print(temp)
-            curr = temp
-            for c in set(curr):
-                d = prob(c, letter)
-                temp2_num += (temp.count(c) * d)
-            temp_num *= temp2_num
-            temp_den *= temp2_den
-        
-        #print(temp_num, temp_den)
-        main_num += temp_num
-        main_den += temp_den
-    print(main_num, main_den)
-    g = math.gcd(main_num, main_den)
-    return main_num//g, main_den//g
+    num = sum(rec(x, 1) for x in range(1, pathlength + 1))
+    den = pathlength * pow(2, croaks - 1) * pow(3, croaks)
+    g = math.gcd(den, num)
+    return num//g, den//g
 
 if __name__ == "__main__":
-    print(compute(500,7))
+    print(compute(500, 15))
     print("--- %s seconds ---" % (time.time() - start_time))
