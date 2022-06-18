@@ -2,7 +2,7 @@
 
 Codes for Project Euler problems I have solved on https://www.ivl-projecteuler.com/
 
-200+ Problems solved at the moment! 
+250+ Problems solved at the moment! 
 
 There are also old algorithms I initially used accompanying the final ones in some files, comments are included for a large majority of the codes, if not then please see my website!
 
