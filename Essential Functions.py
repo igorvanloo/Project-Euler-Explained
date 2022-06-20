@@ -270,7 +270,6 @@ def ZeckendorfRepresentation(x, fibnumbers):
             rep.append(fibnumbers[count])
             count += 1
         count += 1
-        
     return rep
 
 #Returns list with zeckendorf decomposition, requires a list of fibonnaci numbers
