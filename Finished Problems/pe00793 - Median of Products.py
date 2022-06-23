@@ -1,12 +1,12 @@
 '''
 Project Euler Problem 793
 
-Instead of directly calculating the median by listing all elements (would take n^2 time), we do something smarter.
+Instead of directly calculating the median by listing all elements (would take n^2 +nlog(n) time), we do something smarter.
 
 1. First lets sort the set S = {S_0, ... S_{n-1}}
 
 2. Using a binary search let low = S_0*S_1, high = S_{n-2}*S_{n-1}, and m be the middle value, let this m
-be our intital guess for the median
+be our initial guess for the median
 
     2.1. There are going to be nC2 = n(n - 1)/2 pairwise products and therefore if there are n(n-1)/4 products which are 
     less than m, then m is the median of this set by definition.
@@ -15,7 +15,7 @@ be our intital guess for the median
     Let say we are on element S_i, then we find the maximal element, j, such that S_i*S_j ≤ m, we can do this with
     a binary search again in S by using m/S_i
     
-        2.2.1 Once we have found j, it means that there will be j - i products which do not exceed m becuase we must
+        2.2.1 Once we have found j, it means that there will be j - i products which do not exceed m because we must
         have that i < j by the problem definition
 
     2.3 Once we have found the total products less than m, if the number is greater than our goal (n(n-1)/4), then
