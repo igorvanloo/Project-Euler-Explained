@@ -156,6 +156,41 @@ def R(p):
     inv2 = (p*p - 1)//2
     return min(((n + 3)*inv2) % (p*p), ((p*p - n + 3)*inv2) % (p*p)) + 3
 
+def HenselsLemma(p):
+    #New method using new Number Theory Knowledge
+    #We are solving x^2 = 13 (mod p^2)
+    #Suppose r is a solution to x^2 = 13 (mod p) <=> f(x) = x^2 - 13 = 0 (mod p)
+    #We find r by using Tonelli Shanks algorithm to solve x^2 = 13 (mod p)
+    r = tonelli_shanks(13, p) #p - r is also a solution
+    
+    # 1 if f'(r) = 2r ≠ 0 (mod p) then x = r + tp where t = -(f'(r))^-1 * f(r)/p (mod p) is a solution to f(x) = x^2 - 13 = 0 (mod p)
+    
+    f_prime_r = 2*r
+    
+    if (f_prime_r % p) != 0:
+        t = -(pow(f_prime_r, -1, p) * (r*r - 13)//p) 
+        t %= p
+        n = (r + t*p) % (p*p) #We know n^2 = 13 (mod p^2) therefore the other solution is (p*p - n)
+        
+        if n % 2 != 0:
+            return (n + 3)//2
+        return (p*p - n + 3)//2
+    
+    # 2 if f'(r) = 0 (mod p):
+        
+    elif (f_prime_r % p) == 0:
+        
+        # 2.1 if f(r) = 0 (mod p^2) then x = r + tp, t is an integer modulop is a solution
+        
+        if (r*r - 13) % (p*p) == 0:
+            n = min([(r+t*p) % (p*p) for t in range(0, p)])
+            if n % 2 != 0:
+                return (n + 3)//2
+            return (p*p - n + 3)//2
+        
+        # 2.2 if f(r) ≠ 0 (mod p^2) then there are no solutions
+        return "No solution"
+        
 def compute(limit):
     primes = list_primes(limit + 1)
     total = 0
@@ -165,7 +200,8 @@ def compute(limit):
             if p == 3:
                 total += 5
             else:
-                total += R(p)
+                #print(p, R(p), HenselsLemma(p))
+                total += HenselsLemma(p)
     return total
             
 if __name__ == "__main__":
