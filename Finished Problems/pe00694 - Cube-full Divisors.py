@@ -5,9 +5,8 @@ Created on Tue Dec  7 00:37:34 2021
 
 @author: igorvanloo
 """
-
 '''
-Project Euler Problem 
+Project Euler Problem 694
 
 n is Cube full means that if for every prime, p, that divides n then p^3 also divides n
 
@@ -104,7 +103,29 @@ def S_estimate(n):
         total *= (1 + 1/(pow(p,3) - pow(p, 2)))
     
     return total
+
+def S1(n):
+    primes = list_primes(int(n**(1/3)) + 1)
+    l = len(primes)
+    
+    def generate(curr, primeIndex):
+        total = 0
+        p = primes[primeIndex]
+        curr *= pow(p, 3)
+        while curr <= n:
+            total += n//curr
+            for j in range(primeIndex + 1, l):
+                t = generate(curr, j)
+                if t == 0:
+                    break
+                else:
+                    total += t
+            curr *= p
+        return total   
+    
+    return n + sum([generate(1, i) for i in range(l)])             
+                
     
 if __name__ == "__main__":
-    print(S(10**18))
+    print(S1(10**18))
     print("--- %s seconds ---" % (time.time() - start_time))

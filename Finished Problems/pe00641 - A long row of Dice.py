@@ -160,7 +160,7 @@ def f(n):
                     v = curr*pow(p, t)
                     if v > n:
                         break
-                    # We continue the process with the next prime, and we keep the change the status of
+                    # We continue the process with the next prime, and we change the status of
                     # needAnotherPF4 because we've added a prime factor with exponent 4
                     total += generate(v, i + 1, not needAnotherPF4)
                     t += 6
