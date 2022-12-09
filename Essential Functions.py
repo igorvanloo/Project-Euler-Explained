@@ -232,6 +232,39 @@ def Mobius(n):
 #Mobius function, returns 0 if n is divisible by p^2, otherwise returns (-1)^k, where k is number of distinct prime factors
 #------------------------------------------------------------------------------------------------------------------#
 
+def mobius_k_sieve(n, k = 2):
+    prime = [1]*(n + 1)
+    prime[0] = prime[1] = 0
+    mob = [0] + [1]*(n)
+    for p in range(2, n + 1):
+        if prime[p]:
+            mob[p] *= -1
+            for i in range(2*p, n + 1, p):
+                prime[i] = 0
+                mob[i] *= -1
+            sq = pow(p, k)
+            if sq <= n:
+                for j in range(sq, n + 1, sq):
+                    mob[j] = 0
+    return mob
+
+#I redefined the the Mobius function:
+#                1 if n is k-free positive integer with even number of prime factors
+#    μ_{k}(n) = -1 if n is k-free positive integer with odd number of prime factors
+#                0 if n has a k power factor
+#Function returns an array such that array[x] = μ_{k}(x)
+#------------------------------------------------------------------------------------------------------------------#
+
+def count_kfree(n, k = 2):
+    sq = int(pow(n, 1/k))
+    mobius_k = mobius_k_sieve(sq, 2)
+    return sum([mobius_k[i]*(n//pow(i, k)) for i in range(1, sq + 1)])
+
+#Computes the number of integers x <= n such that x is k-power-free, denote this as S(n)
+#We use the fact that S(n) = sum_{d = 1}^n |μ_k(d)| = sum_{d = 1}^{floor{n^(1/k)}} μ_{2}(d)*floor{n/d^k}
+#Reference: https://projecteuclid.org/journals/pacific-journal-of-mathematics/volume-32/issue-1/M%C3%B6bius-functions-of-order-k/pjm/1102977519.pdf
+#------------------------------------------------------------------------------------------------------------------#
+
 def partition(k,n): #Partition function, fast up till n = 85 works with sum of partition function
     if k == 0 and n == 0:
         return 1
@@ -360,6 +393,50 @@ def k_smooth_numbers(max_prime, limit):
     return len(k_s_n)
 
 #Finds all k-smooth numbers ≤ limit where k = max_prime 
+#------------------------------------------------------------------------------------------------------------------#
+
+def kpowerful(k, upper_bound, count = True):
+    def prime_powers(k, upper_bound):
+        ub = int(math.pow(upper_bound, 1/k) + .5)
+        res = [(1,)]
+        for p in list_primes(ub):
+            a = [p**k]
+            u = upper_bound // a[-1]
+            while u >= p:
+                a.append(a[-1]*p)
+                u //= p
+            res.append(tuple(a))
+        return res
+    ps = prime_powers(k, upper_bound)
+    l = len(ps)
+    def generate(primeIndex, ub):
+        if count:
+            res = 0
+        else:
+            res = []
+        for p in ps[primeIndex]:
+            u = ub//p
+            if not u:
+                break
+            if count:
+                res += 1
+            else:
+                res += [p]
+            for j in range(primeIndex + 1, l):
+                if u < ps[j][0]:
+                    break
+                if count:
+                    res += generate(j, u)
+                else:
+                    res += [p*x for x in generate(j, u)]
+        return res
+    if count:
+        return generate(0, upper_bound)
+    else:
+        return sorted(generate(0, upper_bound))
+    
+#A k-powerful number is one such that if p divdes it then so does p^k
+#This function generates them all, inspired by https://rosettacode.org/wiki/Powerful_numbers#Python
 #------------------------------------------------------------------------------------------------------------------#
 
 def legendre_symbol(a, p):
@@ -581,6 +658,3 @@ def miller_rabin(n, milleronly = True, numoftests = 0):
 
 #Implementation of Rabin-Miller primality test with the option to use the Miller test
 #------------------------------------------------------------------------------------------------------------------#
-
-
-
