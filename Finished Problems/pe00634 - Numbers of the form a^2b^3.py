@@ -74,7 +74,7 @@ def F(n):
         
     b = 2
     while pow(b, 6) <= n:
-        v = math.floor(math.sqrt(n/pow(b, 6)))
+        v = math.floor(math.sqrt(n)/pow(b, 3))
         if isprime[b]:
             total += (count_kfree(v, 3) - 1)
         else:
