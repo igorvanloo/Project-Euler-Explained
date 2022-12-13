@@ -2,7 +2,7 @@
 
 Codes for Project Euler problems I have solved on https://www.ivl-projecteuler.com/
 
-250+ Problems solved at the moment! 
+260+ Problems solved at the moment! 
 
 There are also old algorithms I initially used accompanying the final ones in some files, comments are included for a large majority of the codes, if not then please see my website!
 
@@ -70,6 +70,52 @@ I will update this now and then, for fully updated version see the website
 <td style="background-color: #C0C0C0;"><a title="Project Euler - 100% Problems" href="https://www.ivl-projecteuler.com/overview-of-problems/100-difficulty" target="_blank">100%</a</td>
 
 <td style="background-color: #C0C0C0;">Total</td>
+
+</tr>
+<tr style="text-align: center;">
+<td style="background-color: #1eeea6;">70/70</td>
+
+<td>13/17</td>
+
+<td>17/22</td>
+
+<td>30/37</td>
+
+<td>23/42</td>
+
+<td>16/48</td>
+
+<td>20/61</td>
+
+<td>10/58</td>
+
+<td>14/49</td>
+
+<td>18/74</td>
+
+<td>10/49</td>
+
+<td>5/60</td>
+
+<td>8/44</td>
+
+<td>5/50</td>
+
+<td>1/31</td>
+
+<td>0/27</td>
+
+<td>0/12</td>
+
+<td>0/16</td>
+
+<td>0/13</td>
+
+<td>0/21</td>
+
+<td>260/826</td>
+
+</tr>
 
 </tr>
 <tr style="text-align: center;">
@@ -761,7 +807,7 @@ I will update this now and then, for fully updated version see the website
 <td>338</td>
 <td>339</td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 340 - Crazy function" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00340%20-%20Crazy%20Function.py">340</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 340 - Crazy Function" href="https://www.ivl-projecteuler.com/overview-of-problems/30-difficulty/problem-340" target="_blank">340</a></td>
 
 </tr>
 <tr style="text-align: center;">
@@ -913,7 +959,7 @@ I will update this now and then, for fully updated version see the website
 <td>455</td>
 <td>456</td>
 
-<td style="background-color: #1e9bee;"><a title="Project Euler 457 - A polynomial modulo the square of a prime" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-457" target="_blank">457</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 457 - A polynomial modulo the square of a prime" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-457" target="_blank">457</a></td>
 
 <td>458</td>
 <td>459</td>
@@ -979,7 +1025,9 @@ I will update this now and then, for fully updated version see the website
 <td>501</td>
 <td>502</td>
 <td>503</td>
-<td>504</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 504 - Square on the Inside" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-504" target="_blank">504</a></td>
+
 <td>505</td>
 <td>506</td>
 <td>507</td>
@@ -1149,9 +1197,13 @@ I will update this now and then, for fully updated version see the website
 <td style="background-color: #1eeea6;"><a title="Project Euler 630 - Crossed lines" href="https://www.ivl-projecteuler.com/overview-of-problems/20-difficulty/problem-630" target="_blank">630</a></td>
 
 <td>631</td>
-<td>632</td>
+
+<td style="background-color: #1e9bee;"><a title="Project Euler 632 - Square Prime Factors" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-632" target="_blank">632</a></td>
+
 <td>633</td>
-<td>634</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 634 - Numbers of the form a^2b^3" href="https://www.ivl-projecteuler.com/overview-of-problems/40-difficulty/problem-634" target="_blank">634</a></td>
+
 <td>635</td>
 <td>636</td>
 <td>637</td>
@@ -1160,7 +1212,8 @@ I will update this now and then, for fully updated version see the website
 <td>640</td>
 </tr>
 <tr style="text-align: center;">
-<td>641</td>
+
+<td style="background-color: #EE9E1E;"><a title="Project Euler 641 - A Long Row of Dice" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-641">641</a></td>
 
 <td style="background-color: #E41B17;"><a title="Project Euler 642 - sum of largest prime factor" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00642%20-%20Sum%20of%20largest%20prime%20factors.py">642</a></td>
 
@@ -1234,7 +1287,7 @@ I will update this now and then, for fully updated version see the website
 
 <td>693</td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 694 - Cube-full Divisors" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00694%20-%20Cube-full%20Divisors.py">694</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 694 - Cube-full Divisors" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-694">694</a></td>
 
 <td>695</td>
 <td>696</td>
@@ -1320,7 +1373,7 @@ I will update this now and then, for fully updated version see the website
 <td style="text-align: center;">752</td>
 <td style="text-align: center;">753</td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 754 - Product of Gauss Factorials" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00754%20-%20Product%20of%20Gauss%20Factorials.py">754</a></td>
+<td style="background-color: #EE9E1E;"><a title="Project Euler 754 - Product of Gauss Factorials" href="https://www.ivl-projecteuler.com/overview-of-problems/20-difficulty/problem-754" target="_blank">754</a></td>
 
 <td style="text-align: center;">755</td>
 
@@ -1373,14 +1426,16 @@ I will update this now and then, for fully updated version see the website
 <td>790</td>
 <td>791</td>
 <td>792</td>
-<td>793</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 793 - Median of Products" href="https://www.ivl-projecteuler.com/overview-of-problems/20-difficulty/problem-793" target="_blank">793</a></td>
+
 <td>794</td>
 <td>795</td>
 <td>796</td>
 <td>797</td>
 <td>798</td>
 <td>799</td>
-<td>800</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 800 - Hybrid Integers" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-800" target="_blank">800</a></td>
 </tr>
 <tr style="text-align: center;">
 <td>801</td>
@@ -1390,7 +1445,9 @@ I will update this now and then, for fully updated version see the website
 <td>805</td>
 <td>806</td>
 <td>807</td>
-<td>808</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 808 - Reversible Prime Squares" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-808" target="_blank">808</a></td>
+
 <td>809</td>
 <td>810</td>
 <td>811</td>
