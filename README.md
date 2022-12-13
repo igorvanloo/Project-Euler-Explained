@@ -118,50 +118,6 @@ I will update this now and then, for fully updated version see the website
 </tr>
 
 </tr>
-<tr style="text-align: center;">
-<td style="background-color: #1eeea6;">68/68</td>
-
-<td>13/16</td>
-
-<td>15/22</td>
-
-<td>28/35</td>
-
-<td>23/42</td>
-
-<td>15/46</td>
-
-<td>18/59</td>
-
-<td>9/57</td>
-
-<td>14/48</td>
-
-<td>18/69</td>
-
-<td>10/45</td>
-
-<td>5/59</td>
-
-<td>8/43</td>
-
-<td>5/50</td>
-
-<td>1/31</td>
-
-<td>0/26</td>
-
-<td>0/12</td>
-
-<td>0/14</td>
-
-<td>0/10</td>
-
-<td>0/21</td>
-
-<td>250/801</td>
-
-</tr>
   
 <table style="width: 100%; height: 100%;" border="2" cellspacing="5"><colgroup><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /></colgroup>
 <tbody>
