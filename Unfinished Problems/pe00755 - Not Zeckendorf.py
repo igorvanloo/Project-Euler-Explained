@@ -22,14 +22,15 @@ Between F_5 = 8, F_6 = 13: 11 rep
 Between F_6 = 13, F_7 = 21: 21 rep
 Between F_7 = 21, F_8 = 34: 43 rep
 Between F_8 = 34, F_9 = 55: 85 rep
-Between F_9 = 8, F_10 = 13: 171 rep
+Between F_9 = 55, F_10 = 89: 171 rep
 
 We can see a pattern start with 1, then 1*2 - 1 = 1, then 1*2 + 1 = 3, then 3*2 - 1 = 5
 5*2 + 1 = 11, 11*2 - 1 = 21, 21*2 + 1 = 43, etc
 
 Let T_n = # of representations between F_n and F_(n + 1)
-Then T_n = 2*T_(n - 1) - (-1)^(n - 1)
+Then T_n = 2*T_(n - 1) - (-1)^(n - 1) = T_(n - 1) + 2T_(n - 2): https://oeis.org/A001045
 
+But 10^13 is not a fibonnaci number, try taking away the biggest one?
 
 Anwser:
 
@@ -104,12 +105,26 @@ def S(n):
             total += generate2(v, i + 1)
         return total
     
-    #generate(0, 0)
-    #print(sorted([(x, final[x]) for x in final]))
+    generate(0, 0)
+    print(sorted([(x, final[x]) for x in final]))
     #for x in final:
     #    total += final[x]
     return generate2(0, 0)
-        
+
+def T(n):
+    fib = fib_till(n)
+    l = len(fib)
+    total = 2
+    t1 = 1
+    t2 = 1
+    for _ in range(l - 3):
+        tn = t2 + 2*t1
+        print(tn)
+        t1 = t2
+        t2 = tn
+        total += tn
+    return total + 1
+    
 if __name__ == "__main__":
-    print(S(10**4))
+    print(S(10**2))
     print("--- %s seconds ---" % (time.time() - start_time))
