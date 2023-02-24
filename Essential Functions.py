@@ -211,6 +211,19 @@ def phi(n):
 #Eulers Totient Function counts the positive integers up to a given integer n that are relatively prime to n
 #------------------------------------------------------------------------------------------------------------------#
 
+def phi_sieve(n):
+    phi = [i for i in range(n + 1)]
+    for p in range(2, n + 1):
+        if phi[p] == p:
+            # print(p)
+            phi[p] -= 1
+            for i in range(2*p, n + 1, p):
+                phi[i] -= (phi[i] // p)
+    return phi
+
+#A simple sieve to generate an array such that array[x] = phi(x)
+#------------------------------------------------------------------------------------------------------------------#
+
 def Mobius(n):
     if n == 1:
         return 1
@@ -542,6 +555,23 @@ def DijkstrasAlgorithm(matrix):
 #My own implementation of Dijkstra's Algorithm. Used to find shortest path between nodes in a graph
 #------------------------------------------------------------------------------------------------------------------#
 
+def ExtendedEuclideanAlgorithm(a, b): 
+    old_r, r = a, b
+    old_s, s = 1, 0
+    while r != 0:
+        q = old_r // r
+        old_r, r = r, old_r - q*r
+        old_s, s = s, old_s - q*s 
+    if b != 0:
+        bezout_t = (old_r - old_s*a) // b
+    else:
+        bezout_t = 0
+    return old_r, old_s, bezout_t
+
+#Standard Extended Euclidean Algorithm: https://en.wikipedia.org/wiki/Extended_Euclidean_algorithm#Pseudocode
+#Used to find g, s, t, where gcd(a, b) = g = sa + tb
+#------------------------------------------------------------------------------------------------------------------#
+
 def ChineseRemainderTheorem(a1, a2, n1, n2):
     if a1 > n1 or a2 > n2:
         return "Wrong values were input"
@@ -553,6 +583,18 @@ def ChineseRemainderTheorem(a1, a2, n1, n2):
     return (a1*q*n2+ a2*p*n1) % (n1*n2)
 
 #Simple Chinese Remiander Theorem to solve x = a1 mod n1, x = a2 mod n2
+#------------------------------------------------------------------------------------------------------------------#
+
+def Generalised_CRT(a1, a2, n1, n2):
+    g, u, v = ExtendedEuclideanAlgorithm(n1, n2)
+    if g == 1:
+        return (a1*v*n2 + a2*u*n1) % (n1*n2)
+    M = (n1*n2)//g
+    if a1 % g != a2 % g:
+        return 0    
+    return ((a1*v*n2 + a2*u*n1)//g) % M
+
+#A Generalised CRT: https://en.wikipedia.org/wiki/Chinese_remainder_theorem#Generalization_to_non-coprime_moduli
 #------------------------------------------------------------------------------------------------------------------#
 
 def FrobeniusNumber(*integers):
