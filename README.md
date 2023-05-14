@@ -2,7 +2,7 @@
 
 Codes for Project Euler problems I have solved on https://www.ivl-projecteuler.com/
 
-260+ Problems solved at the moment! 
+270+ Problems solved at the moment! 
 
 There are also old algorithms I initially used accompanying the final ones in some files, comments are included for a large majority of the codes, if not then please see my website!
 
@@ -14,7 +14,7 @@ NOTE: Most files contain a solution at the top, so please view them with care if
 
 The essential functions file contains almost all the function I have used semi regularly on Project Euler, however they are not optimised, and some have very limited capabilities.
 
-I have made a package called mathslib with all the relevant functions, with updated features!
+I am no longer updating this file, instead I am putting more effort into my mathslib python package, which contains all the functions, optimised to a greater degree and with proper documentation!
 
 You may read the full documentation here: https://mathslib.readthedocs.io/en/latest/readme.html
 
