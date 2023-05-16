@@ -26,7 +26,7 @@ And this must be an integer, therefore we need all triangles such that
 
 BruteForce works up to 10^3
 
-Let d = gcd(AC + BC) => AC = d * AC', BC = d * BC' where gcd(AC', BC') = 1
+Let d = gcd(AC, BC) => AC = d * AC', BC = d * BC' where gcd(AC', BC') = 1
 
 we then have that BE = AB * BC' / (AC' + BC') clearly AC' + BC' cannot divide BC' therefore AC' + BC' | AB
 
