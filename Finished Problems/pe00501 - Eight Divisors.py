@@ -23,7 +23,7 @@ Now lets go case by case:
     
     1. Find biggest prime, p < N^(1/7) there will be pi(p) numbers with 8 divisors
     
-    2. p_1 < (N/2)^(1/3), now if p_2 < n/p1^3 then there will be pi(n/p1^3) - 1 numbers with 8 divisors
+    2. p_1 < (N/2)^(1/3), now if p_1 < n/p1^3 then there will be pi(n/p1^3) - 1 numbers with 8 divisors
         otherwise there will be pi(n/p1^3) numbers with 8 divisors
         
     3. Assume p_1 < p_2 < p_3, then p_3 < N/(2*3) go through p1 and p2 then there will be 
@@ -124,7 +124,7 @@ def f(n):
             t = n/(p1*p2)
             t1 = pi(t)
             if t > p2:
-                total += t1 - (j + 1)
+                total += t1 - (j + 1) #j + 1 is the index of the primes, equivalent to pi(p2)
             else:
                 break
     return total
