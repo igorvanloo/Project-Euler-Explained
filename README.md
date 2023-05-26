@@ -73,49 +73,47 @@ I will update this now and then, for fully updated version see the website
 
 </tr>
 <tr style="text-align: center;">
-<td style="background-color: #1eeea6;">70/70</td>
+<td style="background-color: #1eeea6;">71/71</td>
 
-<td>13/17</td>
+<td>14/18</td>
 
-<td>17/22</td>
+<td>22/24</td>
 
-<td>30/37</td>
+<td>32/40</td>
 
-<td>23/42</td>
+<td>29/43</td>
 
 <td>16/48</td>
 
-<td>20/61</td>
+<td>22/62</td>
 
-<td>10/58</td>
+<td>11/59</td>
 
-<td>14/49</td>
+<td>14/52</td>
 
-<td>18/74</td>
+<td>18/77</td>
 
 <td>10/49</td>
 
-<td>5/60</td>
+<td>5/62</td>
 
-<td>8/44</td>
+<td>8/45</td>
 
 <td>5/50</td>
 
-<td>1/31</td>
+<td>1/32</td>
 
-<td>0/27</td>
+<td>0/26</td>
 
-<td>0/12</td>
+<td>0/15</td>
 
 <td>0/16</td>
 
-<td>0/13</td>
+<td>0/14</td>
 
-<td>0/21</td>
+<td>0/23</td>
 
-<td>260/826</td>
-
-</tr>
+<td>278/830</td>
 
 </tr>
   
@@ -315,7 +313,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 92 - Square digit chains" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-92" target="_blank">92</a></td>
 
-<td>93</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 93 - Arithmetic expressions" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-93" target="_blank">93</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 94 - Almost equilateral triangles" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-94" target="_blank">94</a></td>
 
@@ -699,7 +697,7 @@ I will update this now and then, for fully updated version see the website
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;"><a title="Project Euler 301 - Nim" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-301" target="_blank">301</a></td>
 
-<td>302</td>
+<td style="background-color: #E41B17;"><a title="Project Euler 302 - Srong Achilles Numbers" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00302%20-%20Strong%20Achilles%20Numbers.py">302</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 303 - Multiples with small digits" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-303" target="_blank">303</a>
 
@@ -714,7 +712,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 309 - Integer Ladders" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-309" target="_blank">309</a>
 
-<td>310</td>
+<td style="background-color: #E41B17;"><a title="Project Euler 310 - Nim Square" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00310%20-%20Nim%20Square.py">310</a></td>
 
 <td>311</td>
 
@@ -759,7 +757,9 @@ I will update this now and then, for fully updated version see the website
 <td style="background-color: #1eeea6;"><a title="Project Euler 335 - Gathering the beans" href="https://www.ivl-projecteuler.com/overview-of-problems/65-difficulty/problem-335" target="_blank">335</a></td>
 
 <td>336</td>
-<td>337</td>
+
+<td style="background-color: #E41B17;"><a title="Project Euler 337 - Totient Stairstep Sequences" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00337%20-%20Totient%20Stairstep%20Sequences.py">337</a></td>
+
 <td>338</td>
 <td>339</td>
 
@@ -772,7 +772,7 @@ I will update this now and then, for fully updated version see the website
 <td>343</td>
 <td>344</td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 345 - Matrix Sum" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00345%20-%20Matrix%20Sum.py">345</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 345 - Matrix Sum" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-345" target="_blank">345</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 346 - Strong Repunits" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-346" target="_blank">346</a></td>
 
@@ -782,7 +782,9 @@ I will update this now and then, for fully updated version see the website
 
 <td>349</td>
 <td>350</td>
-<td>351</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 351 - Hexagonal Orchards" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-351" target="_blank">351</a></td>
+
 <td>352</td>
 <td>353</td>
 <td>354</td>
@@ -877,7 +879,9 @@ I will update this now and then, for fully updated version see the website
 <td>422</td>
 <td>423</td>
 <td>424</td>
-<td>425</td>
+
+<td style="background-color: #FFD700;"><a title="Project Euler 425 - Prime Connection" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-425" target="_blank">425</a></td>
+
 <td>426</td>
 <td>427</td>
 <td>428</td>
@@ -908,7 +912,9 @@ I will update this now and then, for fully updated version see the website
 <td>448</td>
 <td>449</td>
 <td>450</td>
-<td>451</td>
+
+<td style="background-color: #E41B17;"><a title="Project Euler 451 - Modular Inverses" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00451%20-%20Modular%20Inverses.py">451</a></td>
+
 <td>452</td>
 <td>453</td>
 <td>454</td>
@@ -978,7 +984,9 @@ I will update this now and then, for fully updated version see the website
 
 </tr>
 <tr style="text-align: center;">
-<td>501</td>
+
+<td style="background-color: #EE9E1E;"><a title="Project Euler 501 - Eight Divisors" href="https://www.ivl-projecteuler.com/overview-of-problems/40-difficulty/problem-501" target="_blank">501</a></td>
+
 <td>502</td>
 <td>503</td>
 
@@ -1021,13 +1029,17 @@ I will update this now and then, for fully updated version see the website
 <td>528</td>
 <td>529</td>
 <td>530</td>
-<td>531</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 531 - Chinese Leftovers" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-531" target="_blank">531</a></td>
+
 <td>532</td>
 <td>533</td>
 <td>534</td>
 <td>535</td>
 <td>536</td>
-<td>537</td>
+
+<td style="background-color: #EE9E1E;"><a title="Project Euler 537 - Counting Tuples" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-537" target="_blank">537</a></td>
+
 <td>538</td>
 <td>539</td>
 <td>540</td>
@@ -1141,7 +1153,9 @@ I will update this now and then, for fully updated version see the website
 </tr>
 <tr style="text-align: center;">
 <td>621</td>
-<td>622</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 622 - Riffle Shuffles" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-622" target="_blank">622</a>
+
 <td>623</td>
 <td>624</td>
 <td>625</td>
@@ -1260,22 +1274,31 @@ I will update this now and then, for fully updated version see the website
 <td>701</td>
 <td>702</td>
 <td>703</td>
-<td>704</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 704 - Factors of Two in Binomial Coefficients" href="https://www.ivl-projecteuler.com/overview-of-problems/20-difficulty/problem-704" target="_blank">704</a></td>
 
 <td>705</td>
 
 <td>706</td>
 <td>707</td>
 <td>708</td>
-<td>709</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 709 - Even Stevens" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-709" target="_blank">709</a></td>
+
 <td>710</td>
 <td>711</td>
-<td>712</td>
+
+<td style="background-color: #EE9E1E;"><a title="Project Euler 712 - Exponent Difference" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-712" target="_blank">712</a></td>
+
 <td>713</td>
-<td>714</td>
+
+<td style="background-color: #EE9E1E;"><a title="Project Euler 714 - Duodigits" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-714" target="_blank">714</a></td>
+
 <td>715</td>
 <td>716</td>
-<td>717</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 717 - Summation of a Modular Formula" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-717" target="_blank">717</a></td>
+
 <td>718</td>
 
 <td style="background-color: #EE9E1E;"><a title="Project Euler 719 - Number Splitting" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-719" target="_blank">719</a></td>
@@ -1405,17 +1428,70 @@ I will update this now and then, for fully updated version see the website
 <td style="background-color: #1eeea6;"><a title="Project Euler 808 - Reversible Prime Squares" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-808" target="_blank">808</a></td>
 
 <td>809</td>
-<td>810</td>
+
+<td style="background-color: #EE9E1E;"><a title="Project Euler 810 - XOR-Primes" href="https://www.ivl-projecteuler.com/overview-of-problems/20-difficulty/problem-810" target="_blank">810</a></td>
+
 <td>811</td>
 <td>812</td>
 <td>813</td>
 <td>814</td>
 <td>815</td>
-<td>816</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 816 - Shortest distance among points" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-816" target="_blank">816</a></td>
+
 <td>817</td>
 <td>818</td>
 <td>819</td>
-<td>820</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 820 - Nth digit of Reciprocals" href="https://www.ivl-projecteuler.com/overview-of-problems/10-difficulty/problem-820" target="_blank">820</a></td>
+</tr>
+<tr style="text-align: center;">
+<td>821</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 822 - Square the Smallest" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-822" target="_blank">822</a></td>
+
+<td>823</td>
+<td>824</td>
+<td>825</td>
+<td>826</td>
+<td>827</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 828 - Numbers Challenge" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-828" target="_blank">828</a></td>
+
+<td>829</td>
+<td>830</td>
+<td>831</td>
+<td>832</td>
+<td>833</td>
+<td>834</td>
+<td>835</td>
+<td>836</td>
+<td>837</td>
+<td>838</td>
+<td>839</td>
+<td>840</td>
+</tr>
+<tr style="text-align: center;">
+<td>841</td>
+<td>842</td>
+<td>843</td>
+<td>844</td>
+<td>845</td>
+<td>846</td>
+<td>847</td>
+<td>848</td>
+<td>849</td>
+<td>850</td>
+<td>851</td>
+<td>852</td>
+<td>853</td>
+<td>854</td>
+<td>855</td>
+<td>856</td>
+<td>857</td>
+<td>858</td>
+<td>859</td>
+<td>860</td>
 </tr>
 </tbody>
 </table>
