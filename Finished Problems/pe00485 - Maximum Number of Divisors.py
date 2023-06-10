@@ -20,30 +20,28 @@ I do it by comparing new_element in a bit of a brute force way
 
 Anwser:
     51281274340
---- 120.8487536907196 seconds ---
---- 86.31504249572754 seconds --- after using gpf instead of spf
+--- 86.31504249572754 seconds ---
 '''
 import time, math
 start_time = time.time()
 
-def gpf_sieve(N):
-    #smallest prime factor sieve
-    gpf = [i for i in range(N + 1)]
-        
+def spf_sieve(N):
+    spf = [i for i in range(N + 1)]
+    
     for i in range(2, int(math.sqrt(N)) + 1):
-        if gpf[i] == i:
+        if spf[i] == i:
             for j in range(i*i, N + 1, i):
-                gpf[j] = i
-    return gpf
+                spf[j] = i
+    return spf
 
 def S_original(u, k):
-    gpf = gpf_sieve(u + 2)
+    spf = spf_sieve(u + 2)
     print("spf sieve done")
     print("--- %s seconds ---" % (time.time() - start_time))
     def d(n):
         total = 1
         while n != 1:
-            p = gpf[n]
+            p = spf[n]
             c = 1
             while n % p == 0:
                 c += 1
@@ -84,15 +82,15 @@ def S_original(u, k):
     return total
     
 def S(u, k):
-    gpf = gpf_sieve(u + 1)
-    print("gpf sieve done")
-    d = gpf
+    spf = spf_sieve(u + 1)
+    print("spf sieve done")
+    d = spf
     for i in range(2, u + 2):
-        if gpf[i] == i:
+        if spf[i] == i:
             d[i] = 2
         else:
             #We use the fact that d[n] = (e + 1) * d[n/p^e]
-            p = gpf[i]
+            p = spf[i]
             t = i // p
             e = 2
             while t % p == 0:
