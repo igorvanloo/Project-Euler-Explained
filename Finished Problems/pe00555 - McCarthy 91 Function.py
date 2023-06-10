@@ -54,7 +54,7 @@ note that we restrict k <= p
 
 Anwser:
     208517717451208352
---- 6.045825481414795 seconds ---
+--- 4.337734699249268 seconds ---
 '''
 import time, math
 start_time = time.time()
