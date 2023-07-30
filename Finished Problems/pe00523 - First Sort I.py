@@ -2,7 +2,7 @@
 """
 Created on Thu Jul  6 17:41:32 2023
 
-@author: IP176077
+@author: igorvanloo
 """
 '''
 Project Euler Problem 523
