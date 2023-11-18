@@ -24,21 +24,9 @@ Answer:
 '''
 
 import math, time
+from functools import cache
 
-def bruteforce():
-    totalways = 1
-    for a in range(0,3):
-        for b in range(0,5):
-            print(b)
-            for c in range(0,11):
-                for d in range(0,21):
-                    for e in range(0,41):
-                        for f in range(0,101):
-                            for g in range(0,201):
-                                if a*100 + b*50 + c*20 + d*10 + e*5 + f*2 + g*1 == 200:
-                                    totalways += 1
-    return totalways
-
+# Method 1: Complete Brute Force
 def compute():
     totalways = 1
     for a in range(0,3):
@@ -52,12 +40,65 @@ def compute():
                                     totalways += 1
     return totalways
 
+#Method 2: Using a good partition function
 def Partition(goal, alist):
     ways = [1] + [0] * (goal)
     for options in alist:
         for i in range(len(ways) - options):
             ways[i + options] += ways[i]
     return ways[-1]
+
+#Method 3: Using generating functions
+class Poly:
+    def __init__(self, poly_dict):
+        #Takes in poly dictionary for example {0:1, 4:1} = 1 + x^4
+        self.poly_dict = poly_dict
+        
+    def __mul__(self, other):
+        new_dict = {}
+            
+        for a in self.poly_dict:
+            b = self.poly_dict[a]
+            
+            for c in other.poly_dict:
+                d = other.poly_dict[c]
+                
+                if a + c in new_dict:
+                    new_dict[a + c] += b*d
+                else:
+                    new_dict[a + c] = b*d
+        return Poly(new_dict)
+    
+    def __str__(self):
+        poly = ""
+        for i, a in enumerate(self.poly_dict):
+            b = self.poly_dict[a]
+            poly += str(b) +"x^" + str(a)
+            if i + 1 != len(self.poly_dict):
+                poly += " + "
+        return poly
+
+def D(n, options):
+    p = Poly({0:1, options[0]:-1})
+    for x in options[1:]:
+        p *= Poly({0:1, x:-1})
+    
+    rec_points = []
+    for x in p.poly_dict:
+        rec_points.append((x, -p.poly_dict[x]))
+
+    @cache
+    def C(n):
+        if n < 0:
+            return 0
+        if n <= 1:
+            return 1
+        ans = 0
+        for (a, b) in rec_points[1:]:
+            ans += b*C(n - a)
+        return ans
+    
+    return C(n)
 
 if __name__ == "__main__":
     start_time = time.time()
@@ -66,8 +107,11 @@ if __name__ == "__main__":
     print("--- %s seconds ---" % (time.time() - start_time))
 
     print(Partition(200, [1, 2, 5, 10, 20, 50, 100, 200]))
+    t1 = time.time() - start_time - t
     print("--- %s seconds ---" % (time.time() - start_time - t))
-
+    
+    print(D(200, [1, 2, 5, 10, 20, 50, 100, 200]))
+    print("--- %s seconds ---" % (time.time() - start_time - t - t1))
     
     
     

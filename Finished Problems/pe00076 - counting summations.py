@@ -25,24 +25,10 @@ Anwser:
 '''
 
 import time
+from functools import cache
 start_time = time.time()
 
-def sum_of_partitions(number):
-    total = 0
-    for x in range(number+1):
-        total += partition(x, number)
-    return total
-    
-def partition(k,n):
-    
-    if k == 0 and n == 0:
-        return 1
-    elif k <= 0 or n <= 0:
-        return 0
-    
-    return partition(k, n-k) + partition(k-1, n-1) 
-
-def Partition(goal, alist):
+def print_table(goal, alist):
     ways = [1] + [0] * (goal)
     for options in alist:
         print("Current Table " + str(ways))
@@ -54,6 +40,70 @@ def Partition(goal, alist):
 
     return ways[-1]-1
 
+#Method 1: partition function
+def Partition(goal, alist):
+    ways = [1] + [0] * (goal)
+    for options in alist:
+        for i in range(len(ways) - options):
+            ways[i + options] += ways[i]
+    return ways[-1]-1
+
+#Method 2: generating functions
+class Poly:
+    def __init__(self, poly_dict):
+        #Takes in poly dictionary for example {0:1, 4:1} = 1 + x^4
+        self.poly_dict = poly_dict
+        
+    def __mul__(self, other):
+        new_dict = {}
+            
+        for a in self.poly_dict:
+            b = self.poly_dict[a]
+            
+            for c in other.poly_dict:
+                d = other.poly_dict[c]
+                
+                if a + c in new_dict:
+                    new_dict[a + c] += b*d
+                else:
+                    new_dict[a + c] = b*d
+        return Poly(new_dict)
+    
+    def __str__(self):
+        poly = ""
+        for i, a in enumerate(self.poly_dict):
+            b = self.poly_dict[a]
+            poly += str(b) +"x^" + str(a)
+            if i + 1 != len(self.poly_dict):
+                poly += " + "
+        return poly
+
+def D(n, options):
+    p = Poly({0:1, options[0]:-1})
+    for x in options[1:]:
+        p *= Poly({0:1, x:-1})
+    
+    rec_points = []
+    for x in p.poly_dict:
+        rec_points.append((x, -p.poly_dict[x]))
+
+    @cache
+    def C(n):
+        if n < 0:
+            return 0
+        if n <= 1:
+            return 1
+        ans = 0
+        for (a, b) in rec_points[1:]:
+            ans += b*C(n - a)
+        return ans
+    
+    return C(n)
+
 if __name__ == "__main__":
-    print("Total number of ways to partition 5 is " +str(Partition(5, [x for x in range(2,6)])))
+    print(Partition(100, [x for x in range(1,101)]))
+    t = time.time() - start_time
     print("--- %s seconds ---" % (time.time() - start_time))
+    
+    print(D(100, [x for x in range(1, 100)]))
+    print("--- %s seconds ---" % (time.time() - start_time - t))
