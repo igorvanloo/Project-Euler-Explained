@@ -12,9 +12,9 @@ NOTE: Most files contain a solution at the top, so please view them with care if
 
 # Essential Functions
 
-The essential functions file contains almost all the function I have used semi regularly on Project Euler, however they are not optimised, and some have very limited capabilities.
+I created my own Python Library called mathslib which contains almost all of the function I use for Project Euler (and more!)
 
-I am no longer updating this file, instead I am putting more effort into my mathslib python package, which contains all the functions, optimised to a greater degree and with proper documentation!
+I have also put in place some proper documentation which you can see below!
 
 You may read the full documentation here: https://mathslib.readthedocs.io/en/latest/readme.html
 
