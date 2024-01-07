@@ -37,6 +37,19 @@ Anwser:
 import time, math
 start_time = time.time()
 
+def f(n):
+    if n == 1:
+        return 1
+    if n % 2 == 0:
+        #n = 2k
+        k = n//2
+        return 2*f(k)
+    else:
+        #n = 2k + 1
+        k = (n - 1)//2
+        return 2*k + 1 + 2*f(k) + f(k)/k
+    
+    
 def compute(limit):
     f = [0,1]
     
