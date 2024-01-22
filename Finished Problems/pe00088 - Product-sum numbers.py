@@ -66,7 +66,7 @@ def compute(limit):
         for y in set(PossFact(x, x, 1, 0, 0)):
             array[y] = min(array[y], x)
     
-    array = array[2:limit]
+    array = array[2:limit + 1]
     return sum(set(array))
 
 if __name__ == "__main__":
