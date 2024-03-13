@@ -30,7 +30,7 @@ f(7) = 7 + 2f(3) + f(3)/3 = 7 + 12 + 2 = 21
 f(n) = n*(number of 1's in the base 2 conversion of n)
 https://oeis.org/A245788
 
-Anwser:
+Answer:
     
 '''
 
