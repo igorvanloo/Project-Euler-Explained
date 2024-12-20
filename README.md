@@ -4,6 +4,8 @@ Codes for Project Euler problems I have solved on https://www.ivl-projecteuler.c
 
 300+ Problems solved at the moment! 
 
+Side note: as of 13/03/2024, when I posted the solution to Problem 869 (bringing the total number of problems solved to 311), this website has become the largest source of detailed explanations for Project Euler available (in English)!
+
 There are also old algorithms I initially used accompanying the final ones in some files, comments are included for a large majority of the codes, if not then please see my website!
 
 Please take some time to read the code as it cannot be blindly copied!
@@ -73,52 +75,53 @@ I will update this now and then, for fully updated version see the website
 
 </tr>
 <tr style="text-align: center;">
-<td style="background-color: #1eeea6;">72/72</td>
+<td style="background-color: #1eeea6;">74/74</td>
 
-<td>14/18</td>
+<td>14/20</td>
 
-<td>22/24</td>
+<td>23/29</td>
 
-<td>32/40</td>
+<td>31/46</td>
 
-<td>31/43</td>
+<td>32/53</td>
 
-<td>34/48</td>
+<td>33/51</td>
 
-<td>22/62</td>
+<td>23/69</td>
 
-<td>11/59</td>
+<td>12/63</td>
 
-<td>14/52</td>
+<td>18/59</td>
 
-<td>18/77</td>
+<td>19/82</td>
 
-<td>10/49</td>
+<td>11/53</td>
 
-<td>5/62</td>
+<td>5/65</td>
 
-<td>8/45</td>
+<td>8/51</td>
 
-<td>5/50</td>
+<td>7/53</td>
 
-<td>1/32</td>
+<td>1/35</td>
 
-<td>0/26</td>
+<td>0/28</td>
 
-<td>0/15</td>
+<td>0/17</td>
 
-<td>1/16</td>
+<td>1/17</td>
 
-<td>0/14</td>
+<td>0/16</td>
 
-<td>0/23</td>
+<td>0/27</td>
 
-<td>300/851</td>
+<td>312/921</td>
 
 </tr>
   
 <table style="width: 100%; height: 100%;" border="2" cellspacing="5"><colgroup><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /></colgroup>
 <tbody>
+
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;"><a title="Project Euler 1 - Multiples of 3 & 5" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-1" target="_blank">1</a></td>
 
@@ -335,18 +338,19 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 102 - Triangle containment" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-102" target="_blank">102</a></td>
 
-<td>103</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 103 - Special Subset Sums: Optimum" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-103" target="_blank">103</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 104 - Pandigital Fibonacci ends" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-104" target="_blank">104</a></td>
 
-<td>105</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 105 - Special Subset Sums: Testing" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-105" target="_blank">105</a></td>
+
 <td>106</td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 107 - Minimal network" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-107" target="_blank">107</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 108 - Diophantine Reciprocals I" href="https://www.ivl-projecteuler.com/overview-of-problems/30-difficulty/problem-108" target="_blank">108</a></td>
 
-<td>109</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 109 - Darts" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-109" target="_blank">109</a></td>
 
 <td style="background-color: #1e9bee;"><a title="Project Euler 110 - Diophantine Reciprocals II" href="https://www.ivl-projecteuler.com/overview-of-problems/40-difficulty/problem-110" target="_blank">110</a></td>
 
@@ -374,7 +378,7 @@ I will update this now and then, for fully updated version see the website
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;"><a title="Project Euler 121 - Disc game prize fund" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-121" target="_blank">121</a></td>
 
-<td>122</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 122 - Efficient Exponentiation" href="https://www.ivl-projecteuler.com/overview-of-problems/40-difficulty/problem-122" target="_blank">122</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 123 - Prime square remainders" href="https://www.ivl-projecteuler.com/overview-of-problems/30-difficulty/problem-123" target="_blank">123</a></td>
 
@@ -382,9 +386,9 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 125 - Palindromic sums" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-125" target="_blank">125</a></td>
 
-<td>126</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 126 - Cuboid Layers" href="https://www.ivl-projecteuler.com/overview-of-problems/55-difficulty/problem-126" target="_blank">126</a></td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 127 - abc-hits" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00127%20-%20abc-hits.py">127</a></td>
+<td style="background-color: #EE9E1E;"><a title="Project Euler 127 - abc-hits" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-127" target="_blank">127</a></td>
 
 <td>128</td>
 
@@ -570,7 +574,7 @@ I will update this now and then, for fully updated version see the website
 <td>227</td>
 <td>228</td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 229 - Four Representations using a Square" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00229%20-%20Four%20Representations%20using%20Squares.py">229</a></td>
+<td style="background-color: #EE9E1E;"><a title="Project Euler 229 - Four Representations Using Squares" href="https://www.ivl-projecteuler.com/overview-of-problems/70-difficulty/problem-229" target="_blank">229</a></td>
 
 <td>230</td>
 
@@ -608,7 +612,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 250 - 250250" href="https://www.ivl-projecteuler.com/overview-of-problems/55-difficulty/problem-250" target="_blank">250</a></td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 251 - Cardano Triplets" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00251%20-%20Cardano%20Triplets.py">251</a></td>
+<td style="background-color: #EE9E1E;"><a title="Project Euler 251 - Cardano Triplets" href="https://www.ivl-projecteuler.com/overview-of-problems/70-difficulty/problem-251" target="_blank">251</a></td>
 
 <td>252</td>
 <td>253</td>
@@ -853,7 +857,8 @@ I will update this now and then, for fully updated version see the website
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;"><a title="Project Euler 401 - Sum of squares of divisors" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-401" target="_blank">401</a></td>
 
-<td>402</td>
+<td style="background-color: #E41B17;"><a title="Project Euler 402- Integer Valued Polynomials" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00402%20-%20Integer%20valued%20polynomials.py">402</a></td>
+
 <td>403</td>
 <td>404</td>
 <td>405</td>
@@ -1051,7 +1056,7 @@ I will update this now and then, for fully updated version see the website
 
 <td>538</td>
 
-<td style="background-color: #1eeea6;"><a title="Project Euler 539 - Odd Elimination" href="https://www.ivl-projecteuler.com/overview-of-problems/30-difficulty/problem-539" target="_blank">539</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 539 - Odd Elimination" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-539" target="_blank">539</a></td>
 
 <td style="background-color: #EE9E1E;"><a title="Project Euler 540 - Counting Primitive Pythagorean Triples" href="https://www.ivl-projecteuler.com/overview-of-problems/30-difficulty/problem-540" target="_blank">540</a></td>
 
@@ -1105,7 +1110,7 @@ I will update this now and then, for fully updated version see the website
 <td>575</td>
 <td>576</td>
 
-<td style="background-color: #1eeea6;"><a title="Project Euler 577 - Counting Hexagons" href="https://www.ivl-projecteuler.com/overview-of-problems/20-difficulty/problem-577" target="_blank">577</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 577 - Counting Hexagons" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-577" target="_blank">577</a></td>
 
 <td>578</td>
 <td>579</td>
@@ -1204,7 +1209,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #EE9E1E;"><a title="Project Euler 641 - A Long Row of Dice" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-641">641</a></td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 642 - sum of largest prime factor" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00642%20-%20Sum%20of%20largest%20prime%20factors.py">642</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 642 - Sum of Largest Prime Factors" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-642" target="_blank">642</a></td>
 
 <td>643</td>
 <td>644</td>
@@ -1271,7 +1276,9 @@ I will update this now and then, for fully updated version see the website
 <td style="background-color: #1eeea6;"><a title="Project Euler 686 - Powers of Two" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-686" target="_blank">686</a></td>
 
 <td>687</td>
-<td>688</td>
+
+<td style="background-color: #E41B17;"><a title="Project Euler 688 - Piles of Plates" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00688%20-%20Piles%20of%20Plates.py">688</a></td>
+
 <td>689</td>
 <td>690</td>
 <td>691</td>
@@ -1346,13 +1353,17 @@ I will update this now and then, for fully updated version see the website
 <td style="background-color: #1eeea6;"><a title="Project Euler 731 - A Stoneham Number" href="https://www.ivl-projecteuler.com/overview-of-problems/20-difficulty/problem-731" target="_blank">731</a></td>
 
 <td>732</td>
-<td>733</td>
+
+<td style="background-color: #E41B17;"><a title="Project Euler 733 - Ascending Subsequences" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00733%20-%20Ascending%20Subsequences.py">733</a></td>
+
 <td>734</td>
 <td>735</td>
 <td>736</td>
 <td>737</td>
 <td>738</td>
-<td>739</td>
+
+<td style="background-color: #E41B17;"><a title="Project Euler 739 - Summation of Summations" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00739%20-%20Summation%20of%20Summations.py">739</a></td>
+
 <td>740</td>
 </tr>
 <tr style="text-align: center;">
@@ -1368,7 +1379,9 @@ I will update this now and then, for fully updated version see the website
 <td style="text-align: center;">746</td>
 <td style="text-align: center;">747</td>
 <td style="text-align: center;">748</td>
-<td style="text-align: center;">749</td>
+
+<td style="background-color: #E41B17;"><a title="Project Euler 749 - Near Power Sums" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00749%20-%20Near%20Power%20sums.py">749</a></td>
+
 <td style="text-align: center;">750</td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 751 - Concatenation Coincidence" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-751" target="_blank">751</a></td>
@@ -1380,7 +1393,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #EE9E1E;"><a title="Project Euler 754 - Product of Gauss Factorials" href="https://www.ivl-projecteuler.com/overview-of-problems/20-difficulty/problem-754" target="_blank">754</a></td>
 
-<td style="text-align: center;">755</td>
+<td style="background-color: #E41B17;"><a title="Project Euler 755 - Not Zeckendorf" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00755%20-%20Not%20Zeckendorf.py">755</a></td>
 
 <td style="background-color: #E41B17;"><a title="Project Euler 756 - Approximating a sum" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00756%20-%20Approximating%20a%20sum.py">756</a></td>
 
@@ -1463,7 +1476,9 @@ I will update this now and then, for fully updated version see the website
 
 <td>811</td>
 <td>812</td>
-<td>813</td>
+
+<td style="background-color: #E41B17;"><a title="Project Euler 813 - XOR-powers" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00813%20-%20XOR-Powers.py">813</a></td>
+
 <td>814</td>
 <td>815</td>
 
@@ -1518,7 +1533,9 @@ I will update this now and then, for fully updated version see the website
 <td>850</td>
 <td>851</td>
 <td>852</td>
-<td>853</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 853 - Pisano Periods 1" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-853" target="_blank">853</a></td>
+
 <td>854</td>
 <td>855</td>
 <td>856</td>
@@ -1526,6 +1543,131 @@ I will update this now and then, for fully updated version see the website
 <td>858</td>
 <td>859</td>
 <td>860</td>
+</tr>
+<tr style="text-align: center;">
+<td>861</td>
+<td>862</td>
+<td>863</td>
+<td>864</td>
+<td>865</td>
+<td>866</td>
+<td>867</td>
+<td>868</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 869 - Prime Guessing" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-869" target="_blank">869</a></td>
+
+<td>870</td>
+<td>871</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 872 - Recursive Tree" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-872" target="_blank">872</a></td>
+
+<td>873</td>
+<td>874</td>
+<td>875</td>
+<td>876</td>
+<td>877</td>
+<td>878</td>
+<td>879</td>
+<td>880</td>
+</tr>
+
+<tr style="text-align: center;">
+<td>881</td>
+<td>882</td>
+<td>883</td>
+<td>884</td>
+<td>885</td>
+<td>886</td>
+<td>887</td>
+<td>888</td>
+<td>889</td>
+<td>890</td>
+<td>891</td>
+<td>892</td>
+<td>893</td>
+<td>894</td>
+<td>895</td>
+<td>896</td>
+<td>897</td>
+<td>898</td>
+<td>899</td>
+<td>900</td>
+</tr>
+
+<tr style="text-align: center;">
+<td>901</td>
+<td>902</td>
+<td>903</td>
+<td>904</td>
+<td>905</td>
+<td>906</td>
+<td>907</td>
+<td>908</td>
+<td>909</td>
+<td>910</td>
+<td>911</td>
+<td>912</td>
+<td>913</td>
+<td>914</td>
+<td>915</td>
+<td>916</td>
+<td>917</td>
+<td>918</td>
+<td>919</td>
+<td>920</td>
+</tr>
+
+<tr style="text-align: center;">
+<td>921</td>
+<td>922</td>
+<td>923</td>
+<td>924</td>
+<td>925</td>
+<td>926</td>
+<td>927</td>
+<td>928</td>
+<td>929</td>
+<td>930</td>
+<td>931</td>
+<td>932</td>
+<td>933</td>
+<td>934</td>
+<td>935</td>
+<td>936</td>
+<td>937</td>
+<td>938</td>
+<td>939</td>
+<td>940</td>
+</tr>
+</tbody>
+</table>
+
+<h3 style="text-align: center"> Bonus Problems <h3>
+
+<table style="width: 100%; height: 50%;" border="2" cellspacing="5"><colgroup><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /><col /></colgroup>
+<tbody>
+
+<tr style="text-align: center;">
+<td style="background-color: #1eeea6;"><a title="Bonus Problem - Problem -1" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-1" target="_blank">-1</a></td>
+<td>18i</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
+<td>?</td>
 </tr>
 </tbody>
 </table>
