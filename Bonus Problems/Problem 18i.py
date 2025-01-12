@@ -24,11 +24,15 @@ Else R(p) = 18i, where i = sqrt(-1), that is find a such that a^2 = 1 (mod p)
 
 Need to find a way to pick the correct a, they can be found with tonelli shanks algorithm.
 
+R(p)^2 = -324
+
+Note that for a^2 = -1 (mod p) to exist we require p = 1 (mod 4)
+
 Answer:
 
 '''
 
-import time, math, galois
+import time, math
 start_time = time.time()
 
 def list_primality(n):
@@ -41,7 +45,7 @@ def list_primality(n):
     return result
 
 def list_primes(n):
-    return [i for (i, isprime) in enumerate(list_primality(n)) if isprime]
+    return [i for (i, isprime) in enumerate(list_primality(n)) if isprime and i % 4 == 1]
 
 def legendre_symbol(a, p):
     t = pow(a, (p - 1) // 2, p)
@@ -103,15 +107,17 @@ def compute(upp_lim, low_lim = 4):
     for p in primes:
         if low_lim < p:
             v = R(p)
+            t = tonelli_shanks(-324 % p, p)
             if v != 0:
-                print("prime: ", p)
+                print("prime: ", p, t, -t % p, v)
                 a = tonelli_shanks(-1, p)
                 total += v
                 if 18*a % p == v:
-                    print(a)
+                    print('+', a)
                 if -18*a % p == v:
-                    print(-a % p)
+                    print('-', -a % p)
                 #print(p, R(p), a, 18*a % p, -18*a % p)
+    return total 
 
 if __name__ == "__main__":
     print(compute(1000))
