@@ -24,14 +24,14 @@ def smartbin(n,k):
         total %= 1000000007
     return int(total) % 1000000007
 
-def A(k,n): 
+def A1(k,n): 
     total = 0
     for x in range(0, math.floor(k/2) + 1):
         total += pow(2,int(n*(k-2*x)/k), 1000000007) * smartbin(k, x) * smartbin(k-x,x)
         total %= 1000000007
     return total % 1000000007
 
-def A1(k,n): #faster version
+def A(k,n): #faster version
     total = 0
     f0 = 1
     modulo = 1000000007
@@ -45,5 +45,5 @@ def A1(k,n): #faster version
 
 if __name__ == "__main__":
     start_time = time.time()
-    print(A1(10**4, 10**8))
+    print(A(10**8, 10**16))
     print("--- %s seconds ---" % (time.time() - start_time))
