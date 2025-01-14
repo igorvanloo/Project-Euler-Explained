@@ -77,7 +77,7 @@ I will update this now and then, for fully updated version see the website
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;">74/74</td>
 
-<td>14/20</td>
+<td style="background-color: #1eeea6;">20/20</td>
 
 <td>23/29</td>
 
@@ -115,7 +115,7 @@ I will update this now and then, for fully updated version see the website
 
 <td>0/27</td>
 
-<td>312/921</td>
+<td>318/921</td>
 
 </tr>
   
@@ -1220,7 +1220,9 @@ I will update this now and then, for fully updated version see the website
 
 <td>648</td>
 <td>649</td>
-<td>650</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 650 - Divisors of Binomial Product" href="https://www.ivl-projecteuler.com/overview-of-problems/10-difficulty/problem-650">650</a></td>
+
 <td>651</td>
 <td>652</td>
 <td>653</td>
@@ -1315,7 +1317,8 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 709 - Even Stevens" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-709" target="_blank">709</a></td>
 
-<td>710</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 710 - One Million Members" href="https://www.ivl-projecteuler.com/overview-of-problems/10-difficulty/problem-710" target="_blank">710</a></td>
+
 <td>711</td>
 
 <td style="background-color: #EE9E1E;"><a title="Project Euler 712 - Exponent Difference" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-712" target="_blank">712</a></td>
@@ -1343,7 +1346,9 @@ I will update this now and then, for fully updated version see the website
 
 <td>723</td>
 <td>724</td>
-<td>725</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 725 - Digit Sum Numbers" href="https://www.ivl-projecteuler.com/overview-of-problems/10-difficulty/problem-725">725</a></td>
+
 <td>726</td>
 <td>727</td>
 <td>728</td>
@@ -1441,7 +1446,9 @@ I will update this now and then, for fully updated version see the website
 <td>785</td>
 <td>786</td>
 <td>787</td>
-<td>788</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 788 - Dominating Numbers" href="https://www.ivl-projecteuler.com/overview-of-problems/10-difficulty/problem-788" target="_blank">788</a></td>
+
 <td>789</td>
 <td>790</td>
 <td>791</td>
@@ -1546,7 +1553,10 @@ I will update this now and then, for fully updated version see the website
 </tr>
 <tr style="text-align: center;">
 <td>861</td>
-<td>862</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 862 - Larger Digit Permutation
+" href="https://www.ivl-projecteuler.com/overview-of-problems/10-difficulty/problem-862" target="_blank">862</a></td>
+
 <td>863</td>
 <td>864</td>
 <td>865</td>
@@ -1576,7 +1586,10 @@ I will update this now and then, for fully updated version see the website
 <td>882</td>
 <td>883</td>
 <td>884</td>
-<td>885</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 885 - Sorted Digits
+" href="https://www.ivl-projecteuler.com/overview-of-problems/10-difficulty/problem-885" target="_blank">885</a></td>
+
 <td>886</td>
 <td>887</td>
 <td>888</td>
