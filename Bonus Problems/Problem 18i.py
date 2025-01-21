@@ -2,7 +2,7 @@
 """
 Created on Fri Dec 20 10:19:33 2024
 
-@author: IP176077
+@author: Igor Van Loo
 """
 '''
 Project Euler Bonus Problem 18i
@@ -29,23 +29,15 @@ R(p)^2 = -324
 Note that for a^2 = -1 (mod p) to exist we require p = 1 (mod 4)
 
 Answer:
-
+    842507000531275
+--- 457.4489896297455 seconds --- Using my  prime sieve
+--- 65.27984952926636 seconds --- Using mCodings prime sieve
+--- 55.798606157302856 seconds --- Using ModExp for both cases 
 '''
 
 import time, math
+from prime_sieve.array import PrimeArraySieve
 start_time = time.time()
-
-def list_primality(n):
-    result = [True] * (n + 1)
-    result[0] = result[1] = False
-    for i in range(int(math.sqrt(n)) + 1):
-        if result[i]:
-            for j in range(2 * i, len(result), i):
-                result[j] = False
-    return result
-
-def list_primes(n):
-    return [i for (i, isprime) in enumerate(list_primality(n)) if isprime and i % 4 == 1]
 
 def legendre_symbol(a, p):
     t = pow(a, (p - 1) // 2, p)
@@ -91,34 +83,116 @@ def tonelli_shanks(a, p):
         b = (b * g) % p
         r = m
 
-def f(x):
-    return x*x*x - 3*x + 4
+def bin_exp(a, b, c, n, m = None):
+    if m == None:
+        a_res, b_res = a, b
+        for bit in bin(n)[3:]:
+            a_res, b_res = (a_res*a_res + c*b_res*b_res), 2*a_res*b_res
+            if bit == "1":
+                a_res, b_res = (a*a_res + b*c*b_res), (b*a_res + a*b_res)
+    else:
+        a_res, b_res = a, b
+        for bit in bin(n)[3:]:
+            a_res, b_res = (a_res*a_res + c*b_res*b_res) % m, 2*a_res*b_res % m
+            if bit == "1":
+                a_res, b_res = (a*a_res + b*c*b_res) % m, (b*a_res + a*b_res) % m
+    return a_res, b_res
 
 def R(p):
-    prod = 1
-    for x in range(p):
-        prod *= f(x)
-        prod %= p
-    return prod
+    if p % 12 == 1:
+        v = bin_exp(-2, 1, 3, (p - 1)//3, p)
+        if v[1] == 0:
+            return 0
 
-def compute(upp_lim, low_lim = 4):
-    primes = list_primes(upp_lim)
+        Rp = -18*v[1]*(1 - 2*v[0]) % p
+        return Rp
+    
+    if p % 12 == 5:
+        v = bin_exp(-2, 1, 3, (p + 1)//3, p)
+        if v[1] == 0:
+            return 0
+
+        Rp = 18*v[1]*(1 - 2*v[0]) % p
+        return Rp
+    return 0
+
+def prime_sieve(limit, segment = False, values = True):
+    if (type(limit) != int) or (type(segment) != bool) or (type(values) != bool):
+        return "n must be an integer"
+    
+    if segment:
+        primes = []
+        sqrtN = int(math.sqrt(limit))
+        result = [True]*(sqrtN + 2)
+        result[0] = result[1] = False
+        for i in range(2, sqrtN + 1):
+            if result[i]:
+                primes.append(i)
+                for j in range(2*i, sqrtN + 1, i):
+                    result[j] = False
+        all_primes = []
+        marker = [0]*len(primes)
+        block_size = sqrtN
+        for k in range(1, limit//block_size):
+            block_start = k*block_size + 1
+            block_end = (k + 1)*block_size
+            curr_result = [True]*block_size
+            if k == 1:
+                for p_index, p in enumerate(primes):
+                    count = 0
+                    while (block_start + count) % p != 0:
+                        count += 1
+                    for j in range(block_start + count, block_end + 1, p):
+                        curr_result[j - block_start] = False
+                        marker[p_index] = j
+            else:
+                for p_index, p in enumerate(primes):
+                    for j in range(marker[p_index] + p, block_end + 1, p):
+                        curr_result[j - block_start] = False
+                        marker[p_index] = j
+            if values:
+                all_primes += [block_start + i for (i, isprime) in enumerate(curr_result) if isprime]
+            else:
+                all_primes = all_primes[:block_start + 1] + curr_result
+        if values:
+            return primes + all_primes
+        else:
+            return result[:sqrtN + 1] + all_primes
+    else:
+       	result = [True] * (limit + 1)
+       	result[0] = result[1] = False
+       	for i in range(int(math.sqrt(limit)) + 1):
+       		if result[i]:
+       			for j in range(2 * i, len(result), i):
+       				result[j] = False
+        if values:
+            return [i for (i, isprime) in enumerate(result) if isprime]
+        else:
+            return result
+        
+def compute_tonelli(upp_lim, low_lim):
+    sieve = PrimeArraySieve()
+    primes = sieve.primes_in_range(low_lim, upp_lim)
     total = 0
     for p in primes:
-        if low_lim < p:
-            v = R(p)
-            t = tonelli_shanks(-324 % p, p)
-            if v != 0:
-                print("prime: ", p, t, -t % p, v)
-                a = tonelli_shanks(-1, p)
-                total += v
-                if 18*a % p == v:
-                    print('+', a)
-                if -18*a % p == v:
-                    print('-', -a % p)
-                #print(p, R(p), a, 18*a % p, -18*a % p)
-    return total 
+        p =  int(p)
+        if p % 12 == 1:
+            s = tonelli_shanks(3, p)
+            z = pow(-2 + s, (p - 1)//3, p)
+            Rp = -6*s*z*(1 - z) % p
+            total += Rp
+        if p % 12 == 5:
+            v = bin_exp(-2, 1, 3, (p + 1)//3, p)
+            if v[1] != 0:
+                Rp = 18*v[1]*(1 - 2*v[0]) % p
+                total += Rp
+    return total
+
+def compute(upp_lim, low_lim):
+    sieve = PrimeArraySieve()
+    primes = sieve.primes_in_range(low_lim, upp_lim)
+    return sum(R(int(p)) for p in primes)
 
 if __name__ == "__main__":
-    print(compute(1000))
+    print(compute(1.1*10**9,10**9))
     print("--- %s seconds ---" % (time.time() - start_time))
