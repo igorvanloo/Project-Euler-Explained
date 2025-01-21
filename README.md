@@ -77,7 +77,7 @@ I will update this now and then, for fully updated version see the website
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;">74/74</td>
 
-<td style="background-color: #1eeea6;">20/20</td>
+<td style="background-color: #1eeea6;">21/21</td>
 
 <td>23/29</td>
 
@@ -115,7 +115,7 @@ I will update this now and then, for fully updated version see the website
 
 <td>0/27</td>
 
-<td>318/921</td>
+<td>319/921</td>
 
 </tr>
   
@@ -1625,7 +1625,9 @@ I will update this now and then, for fully updated version see the website
 <td>915</td>
 <td>916</td>
 <td>917</td>
-<td>918</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 918 - Recursive Sequence Summation" href="https://www.ivl-projecteuler.com/overview-of-problems/10-difficulty/problem-918" target="_blank">918</a></td>
+
 <td>919</td>
 <td>920</td>
 </tr>
@@ -1662,25 +1664,9 @@ I will update this now and then, for fully updated version see the website
 
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;"><a title="Bonus Problem - Problem -1" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-1" target="_blank">-1</a></td>
-<td>18i</td>
 <td>?</td>
 <td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
-<td>?</td>
+<td style="background-color: #FFD700;"><a title="Bonus Problem - Problem 18i" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-18i" target="_blank">18i</a></td>
 </tr>
 </tbody>
 </table>
