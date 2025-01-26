@@ -84,6 +84,26 @@ def compute():
                 
     return total
 
+def compute1():
+    P = [[] for _ in range(10)]
+
+    for k in range(1, 10):
+        for x in itertools.permutations("123456789", k):
+            v = int("".join(x))
+            if is_prime(v):
+                P[k].append("".join(x))
+    
+    total = 0
+    for part in partition(9, [1,2,3,4,5,6,7,8,9]):
+        for a in itertools.product(*[P[i] for i in part]):
+            v = "".join(a)
+            v1 = [int(j) for j in a][::-1]
+            if v1 == sorted(v1):
+                if all([str(i) in v for i in range(1, 10)]):
+                    total += 1
+                
+    return total
+
 if __name__ == "__main__":
-    print(compute())
+    print(compute1())
     print("--- %s seconds ---" % (time.time() - start_time))
