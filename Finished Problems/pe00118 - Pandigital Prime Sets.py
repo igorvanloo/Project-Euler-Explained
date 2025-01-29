@@ -15,7 +15,8 @@ Inspired once again by backtracking solution of Sudoku problem!
 
 Answer:
     44680
---- 14.096630334854126 seconds ---
+--- 14.096630334854126 seconds --- Method 1
+--- 41.62073087692261 seconds --- Method 2
 '''
 import time, math, itertools
 start_time = time.time()
@@ -105,5 +106,5 @@ def compute1():
     return total
 
 if __name__ == "__main__":
-    print(compute1())
+    print(compute())
     print("--- %s seconds ---" % (time.time() - start_time))
