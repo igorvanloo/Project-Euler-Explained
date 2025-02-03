@@ -2,7 +2,7 @@
 
 Codes for Project Euler problems I have solved on https://www.ivl-projecteuler.com/
 
-300+ Problems solved at the moment! 
+325+ Problems solved at the moment! 
 
 Side note: as of 13/03/2024, when I posted the solution to Problem 869 (bringing the total number of problems solved to 311), this website has become the largest source of detailed explanations for Project Euler available (in English)!
 
@@ -91,15 +91,15 @@ I will update this now and then, for fully updated version see the website
 
 <td>12/63</td>
 
-<td>18/59</td>
+<td>21/59</td>
 
-<td>19/82</td>
+<td>22/82</td>
 
-<td>11/53</td>
+<td>12/53</td>
 
 <td>5/65</td>
 
-<td>8/51</td>
+<td>9/51</td>
 
 <td>7/53</td>
 
@@ -115,7 +115,7 @@ I will update this now and then, for fully updated version see the website
 
 <td>0/27</td>
 
-<td>319/921</td>
+<td>327/921</td>
 
 </tr>
   
@@ -344,7 +344,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 105 - Special Subset Sums: Testing" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-105" target="_blank">105</a></td>
 
-<td>106</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 106 - Special Subset Sums: Meta-testing" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-106" target="_blank">106</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 107 - Minimal network" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-107" target="_blank">107</a></td>
 
@@ -354,7 +354,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1e9bee;"><a title="Project Euler 110 - Diophantine Reciprocals II" href="https://www.ivl-projecteuler.com/overview-of-problems/40-difficulty/problem-110" target="_blank">110</a></td>
 
-<td>111</td>
+<td style="background-color: #EE9E1E;"><a title="Project Euler 111 - Primes with Runs" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-111" target="_blank">111</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 112 - Bouncy numbers" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-112" target="_blank">112</a></td>
 
@@ -368,7 +368,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 117 - Red, green, and blue tiles" href="https://www.ivl-projecteuler.com/overview-of-problems/35-difficulty/problem-117" target="_blank">117</a></td>
 
-<td>118</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 118 - Pandigital Prime Sets" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-118" target="_blank">118</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 119 - Digit power sum" href="https://www.ivl-projecteuler.com/overview-of-problems/30-difficulty/problem-119" target="_blank">119</a></td>
 
@@ -390,7 +390,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #EE9E1E;"><a title="Project Euler 127 - abc-hits" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-127" target="_blank">127</a></td>
 
-<td>128</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 128 - Hexagonal Tile Differences" href="https://www.ivl-projecteuler.com/overview-of-problems/55-difficulty/problem-128" target="_blank">128</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 129 - Repunit Divisibility" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-129" target="_blank">129</a></td>
 
@@ -420,9 +420,11 @@ I will update this now and then, for fully updated version see the website
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;"><a title="Project Euler 141 - Investigating progressive numbers, n, which are also square" href="https://www.ivl-projecteuler.com/overview-of-problems/60-difficulty/problem-141" target="_blank">141</a></td>
 
-<td>142</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 142 - Perfect Square Collection" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-142" target="_blank">142</a></td>
+
 <td>143</td>
-<td>144</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 144 - Laser Beam Reflections" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-144" target="_blank">144</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 145 - How many reversible numbers are there below one-billion?" href="https://www.ivl-projecteuler.com/overview-of-problems/20-difficulty/problem-145" target="_blank">145</a></td>
 
@@ -432,7 +434,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 148 - Exploring Pascal's triangle" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-148" target="_blank">148</a></td>
 
-<td>149</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 149- Maximum-sum Subsequence: an expected-value problem" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-149" target="_blank">149</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 150 - Searching a triangular array for a sub-triangle having minimum-sum" href="https://www.ivl-projecteuler.com/overview-of-problems/55-difficulty/problem-150" target="_blank">150</a></td>
 
@@ -440,7 +442,7 @@ I will update this now and then, for fully updated version see the website
 
 <td>152</td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 153 - Investigating Gaussian Integers" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00153%20-%20Investigating%20Gaussian%20Integers.py">153</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 153 - Investigating Gaussian Integers" href="https://www.ivl-projecteuler.com/overview-of-problems/65-difficulty/problem-153" target="_blank">153</a></td>
 
 <td>154</td>
 <td>155</td>
@@ -1664,8 +1666,11 @@ I will update this now and then, for fully updated version see the website
 
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;"><a title="Bonus Problem - Problem -1" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-1" target="_blank">-1</a></td>
+
 <td>?</td>
-<td>?</td>
+
+<td style="background-color: #1eeea6;"><a title="Bonus Problem - Problem Heegner" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-heegner" target="_blank">Heegner</a></td>
+
 <td style="background-color: #FFD700;"><a title="Bonus Problem - Problem 18i" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-18i" target="_blank">18i</a></td>
 </tr>
 </tbody>
