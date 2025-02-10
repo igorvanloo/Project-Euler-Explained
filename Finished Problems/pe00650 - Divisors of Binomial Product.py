@@ -2,7 +2,7 @@
 """
 Created on Thu Dec 26 20:46:05 2024
 
-@author: IP176077
+@author: Igor Van Loo
 """
 '''
 Project Euler Problem 650
