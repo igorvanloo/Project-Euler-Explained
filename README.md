@@ -2,7 +2,7 @@
 
 Codes for Project Euler problems I have solved on https://www.ivl-projecteuler.com/
 
-325+ Problems solved at the moment! 
+330+ Problems solved at the moment! 
 
 Side note: as of 13/03/2024, when I posted the solution to Problem 869 (bringing the total number of problems solved to 311), this website has become the largest source of detailed explanations for Project Euler available (in English)!
 
@@ -95,11 +95,11 @@ I will update this now and then, for fully updated version see the website
 
 <td>22/82</td>
 
-<td>12/53</td>
+<td>13/53</td>
 
-<td>5/65</td>
+<td>7/65</td>
 
-<td>9/51</td>
+<td>11/51</td>
 
 <td>7/53</td>
 
@@ -115,7 +115,7 @@ I will update this now and then, for fully updated version see the website
 
 <td>0/27</td>
 
-<td>327/921</td>
+<td>332/921</td>
 
 </tr>
   
@@ -444,8 +444,10 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 153 - Investigating Gaussian Integers" href="https://www.ivl-projecteuler.com/overview-of-problems/65-difficulty/problem-153" target="_blank">153</a></td>
 
-<td>154</td>
-<td>155</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 154 - Exploring Pascal's Pyramid" href="https://www.ivl-projecteuler.com/overview-of-problems/65-difficulty/problem-154" target="_blank">154</a></td>
+
+<td style="background-color: #EE9E1E;"><a title="Project Euler 155 - Counting Capacitor Circuits" href="https://www.ivl-projecteuler.com/overview-of-problems/60-difficulty/problem-155" target="_blank">155</a></td>
+
 <td>156</td>
 <td>157</td>
 <td>158</td>
@@ -499,9 +501,9 @@ I will update this now and then, for fully updated version see the website
 
 <td>184</td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 185 - Number Mind" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00185%20-%20Number%20Mind.py">185</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 185 - Number Mind" href="https://www.ivl-projecteuler.com/overview-of-problems/55-difficulty/problem-185" target="_blank">185</a></td>
 
-<td>186</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 186 - Connectedness of a Network" href="https://www.ivl-projecteuler.com/overview-of-problems/60-difficulty/problem-186" target="_blank">186</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 187 - Semiprimes" href="https://www.ivl-projecteuler.com/overview-of-problems/25-difficulty/problem-187" target="_blank">187</a></td>
 
@@ -519,7 +521,8 @@ I will update this now and then, for fully updated version see the website
 
 <td>194</td>
 <td>195</td>
-<td>196</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 196 - Prime Triplets" href="https://www.ivl-projecteuler.com/overview-of-problems/65-difficulty/problem-196" target="_blank">196</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 197 - Investigating the behaviour of a recursively defined sequence" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-197" target="_blank">197</a></td>
 
@@ -1667,11 +1670,13 @@ I will update this now and then, for fully updated version see the website
 <tr style="text-align: center;">
 <td style="background-color: #1eeea6;"><a title="Bonus Problem - Problem -1" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-1" target="_blank">-1</a></td>
 
-<td>?</td>
+<td style="background-color: #1eeea6;"><a title="Bonus Problem - Problem root13" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-root13" target="_blank">root13</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Bonus Problem - Problem Heegner" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-heegner" target="_blank">Heegner</a></td>
 
 <td style="background-color: #FFD700;"><a title="Bonus Problem - Problem 18i" href="https://www.ivl-projecteuler.com/overview-of-problems/bonus-problems/problem-18i" target="_blank">18i</a></td>
+
+<td>?</td>
 </tr>
 </tbody>
 </table>
