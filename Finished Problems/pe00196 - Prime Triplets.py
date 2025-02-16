@@ -35,7 +35,6 @@ def prime_sieve_in_range(low_limit, upp_limit, values = True):
             S += p
         for j in range(S, len(result), p):
             result[j] = 0
-            
     if values:
         return [i + low_limit for (i, isprime) in enumerate(result) if isprime]
     else:

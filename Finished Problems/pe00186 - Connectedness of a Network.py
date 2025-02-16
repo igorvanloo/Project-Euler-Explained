@@ -16,7 +16,7 @@ Answer:
 import time
 start_time = time.time()
 
-def compute(number, p):
+def compute(p, number = 524287):
     S = [0]
     V = [i for i in range(10**6)]
     cc = {i:set([i]) for i in range(10**6)}
@@ -31,13 +31,12 @@ def compute(number, p):
                 called = (100003 - 200003*k + 300007*pow(k, 3, 10**6)) % 10**6
             else:
                 called = (S[k - 24] + S[k - 55]) % 10**6
-            
             k += 1
         else:
             caller = (S[k - 24] + S[k - 55]) % 10**6
             called = (S[k - 23] + S[k - 54]) % 10**6
             k += 2
-
+        
         S += [caller, called]
             
         if caller != called:
@@ -64,5 +63,5 @@ def compute(number, p):
             return calls
                 
 if __name__ == "__main__":
-    print(compute(524287, 99))
+    print(compute(99))
     print("--- %s seconds ---" % (time.time() - start_time))
