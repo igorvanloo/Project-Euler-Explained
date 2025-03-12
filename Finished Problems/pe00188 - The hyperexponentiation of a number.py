@@ -42,5 +42,5 @@ def compute(x, y, mod):
     return a1
         
 if __name__ == "__main__":
-    print(compute(2, 7, 10**8))
+    print(compute(1777, 1855, 10**8))
     print("--- %s seconds ---" % (time.time() - start_time))
