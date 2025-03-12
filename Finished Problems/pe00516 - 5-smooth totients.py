@@ -39,6 +39,7 @@ We can go through our list of hammining numbers add 1, and see if its a prime to
 Anwser:
     939087315
 --- 162.62755703926086 seconds ---
+--- 43.050461769104004 seconds --- with pypy
 '''
 
 import time, math
@@ -126,5 +127,5 @@ def compute(limit):
     return sum(all_numbers) % 2**32
 
 if __name__ == "__main__":
-    print(compute(10**11))
+    print(compute(10**12))
     print("--- %s seconds ---" % (time.time() - start_time))

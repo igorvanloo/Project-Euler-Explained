@@ -32,6 +32,7 @@ Now lets go case by case:
 Anwser:
     197912312715
 --- 241.3640172481537 seconds ---
+--- 46.87748432159424 seconds --- with pypy
 '''
 import time, math
 start_time = time.time()

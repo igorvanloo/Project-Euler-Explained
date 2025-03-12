@@ -25,6 +25,7 @@ See website for details
 Anwser:
     500000000002845
 --- 536.6237738132477 seconds ---
+--- 15.170955657958984 seconds --- with pypy
 '''
 import time, math
 

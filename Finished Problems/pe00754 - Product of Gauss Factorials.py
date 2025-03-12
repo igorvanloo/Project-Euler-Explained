@@ -28,7 +28,7 @@ Anwser:
 --- 2452.4602587223053 seconds ---
 '''
 
-import time, math
+import time
 start_time = time.time()
 
 def totient_mobius_sieve(n):

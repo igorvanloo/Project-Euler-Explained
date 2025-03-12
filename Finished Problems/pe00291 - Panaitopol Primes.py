@@ -15,6 +15,7 @@ Brute force leads us to https://oeis.org/A027862 which are primes of the form n^
 Anwser:
     4037526
 --- 668.2800509929657 seconds ---
+--- 45.3799147605896 seconds --- with pypy
 '''
 import time, math
 start_time = time.time()

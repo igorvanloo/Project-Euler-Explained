@@ -44,6 +44,7 @@ so we can quickly search like that
 Anwser:
     476001479068717
 --- 234.5322027206421 seconds ---
+--- 14.739084482192993 seconds --- with pypy
 '''
 
 import time, math

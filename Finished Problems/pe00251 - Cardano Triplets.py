@@ -102,5 +102,5 @@ def compute(limit):
     return total
         
 if __name__ == "__main__":
-    print(compute(1000000))
+    print(compute(110000000))
     print("--- %s seconds ---" % (time.time() - start_time))

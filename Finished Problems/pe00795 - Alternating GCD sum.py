@@ -12,6 +12,7 @@ https://oeis.org/A353909
 Anwser:
     955892601606483.0
 --- 220.27288222312927 seconds ---
+--- 61.26275658607483 seconds --- with pypy
 '''
 import time, math
 start_time = time.time()

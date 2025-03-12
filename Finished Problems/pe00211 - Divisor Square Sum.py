@@ -17,6 +17,7 @@ Find the sum of all n, 0 < n < 64,000,000 such that σ2(n) is a perfect square
 Anwser:
     1922364685
 --- 607.2159321308136 seconds ---
+--- 24.204970359802246 seconds --- with pypy
 '''
 import time
 start_time = time.time()
@@ -38,5 +39,5 @@ def compute(limit):
     return sum([x for x in range(len(array)) if is_quadratic(array[x])])
 
 if __name__ == "__main__":
-    print(compute(640000))
+    print(compute(64000000))
     print("--- %s seconds ---" % (time.time() - start_time))

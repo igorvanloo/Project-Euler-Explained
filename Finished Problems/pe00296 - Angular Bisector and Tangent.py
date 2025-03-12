@@ -33,6 +33,7 @@ we then have that BE = AB * BC' / (AC' + BC') clearly AC' + BC' cannot divide BC
 Anwser:
     1137208419
 --- 844.7029659748077 seconds ---
+--- 91.18732213973999 seconds --- with pypy
 '''
 import time, math
 start_time = time.time()

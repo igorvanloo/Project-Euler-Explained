@@ -18,6 +18,7 @@ That is x1 - x2 is a duodigit multiple of n consisting of only 1's and 0's
 Anwser:
     245276777556527592946
 --- 176.1213300228119 seconds ---
+--- 38.36880135536194 seconds --- with pypy
 '''
 import time, math
 start_time = time.time()

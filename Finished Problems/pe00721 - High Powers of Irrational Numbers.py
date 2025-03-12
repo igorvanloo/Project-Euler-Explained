@@ -25,6 +25,7 @@ let x = ceil(sqrt(a))
 Anwser:
     700792959
 --- 127.4873640537262 seconds ---
+--- 13.672608613967896 seconds --- with pypy
 '''
 import time, math
 start_time = time.time()

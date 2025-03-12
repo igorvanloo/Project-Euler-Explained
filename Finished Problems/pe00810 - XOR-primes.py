@@ -15,6 +15,7 @@ I learnt this in galois theory, Dummit and Foote pg 589
 Anwser:
     124136381
 --- 241.78080296516418 seconds ---
+--- 48.81171727180481 seconds --- wit pypy
 '''
 import time, math, galois
 from functools import cache

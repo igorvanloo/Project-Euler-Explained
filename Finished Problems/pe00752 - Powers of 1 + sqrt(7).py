@@ -58,10 +58,11 @@ this also explains the multiples since the cycle will simply repeat hence every 
 
 Anwser:
     5610899769745488
---- 233.407475233078 seconds ---
+--- 233.407475233078 seconds --- with scipy divisors
+--- 8.340565919876099 seconds --- with pypy
 '''
 import time, math
-from sympy import divisors
+#from sympy import divisors
 start_time = time.time()
 
 def prime_factors(n):
@@ -82,13 +83,32 @@ def prime_factors(n):
             break
     return factors
 
-def divisors_of(x):  # Find the divisors of a number
-    divisors = []
-    for i in range(1, int(math.sqrt(x)) + 1):
-        if x % i == 0:
-            divisors.append(i)
-            divisors.append(int(x//i))
-    return sorted(divisors)[1:]
+def divisors(n, proper = False):
+
+    pf = prime_factors(n)
+    primes = [x for x in pf]
+    l = len(primes)
+
+    def gen(n = 0):
+        if n == l:
+            return [1]
+        else:
+            pows = [1]
+            p = primes[n]
+            for _ in range(pf[p]):
+                pows.append(pows[-1] * p)
+            
+            div = []
+            for q in gen(n + 1):
+                for p in pows:
+                    div.append(q * p)
+            return div
+                    
+    div = gen()
+    if proper:
+        div.pop(-1)
+        return div
+    return div
 
 def power(mod):
     a0, a1 = 1, 1

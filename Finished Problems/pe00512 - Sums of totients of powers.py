@@ -27,9 +27,10 @@ Anwser:
 
     50660591862310323
 --- 1021.46232567244944 seconds ---
+--- 24.47919201850891 seconds --- with pypy
 '''
 
-import time, math
+import time
 start_time = time.time()
 
 def totient_sieve(n): 

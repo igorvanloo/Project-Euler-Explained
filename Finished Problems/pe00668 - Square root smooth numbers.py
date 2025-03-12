@@ -39,12 +39,79 @@ So therefore we have the number of non-square-root-smooth numbers x ≤ n = sum_
 
 Anwser:
     2811077773
---- 412.0572929382324 seconds ---
+--- 412.0572929382324 seconds --- using scipy
+--- 45.17464542388916 seconds --- with pypy
 '''
 
 import time, math
-from sympy import primepi
+#from sympy import primepi
 start_time = time.time()
+
+def prime_sieve(limit, values = True):
+    result = [True] * (limit + 1)
+    result[0] = result[1] = False
+    for i in range(int(math.sqrt(limit)) + 1):
+    	if result[i]:
+    		for j in range(2 * i, len(result), i):
+    			result[j] = False
+    if values:
+        return [i for (i, isprime) in enumerate(result) if isprime]
+    else:
+        return result
+    
+def primepiarray(limit):  # Returns an array such that array[x] = number of primes < x
+    prime_gen = prime_sieve(limit + 50, values = False)
+    primes = [x for x in range(len(prime_gen)) if prime_gen[x]]
+    array = [0] * (limit + 1)
+    p_index = 0
+    for x in range(1, limit + 1):
+        while True:
+            if primes[p_index] > x:
+                array[x] = p_index
+                break
+            p_index += 1
+    return array
+
+def primePi(x):
+    limit = int(math.sqrt(x))
+    primes = prime_sieve(limit + 1000)
+    array = primepiarray(limit + 1000)
+    
+    phiCache = {}
+    def phi(x, a):
+        if (x, a) in phiCache:
+            return phiCache[(x, a)]
+        if a == 0:
+            return int(x)
+        if a == 1:
+            return int(x) - x//2
+        result = phi(x, a - 1) - phi(int(x / primes[a - 1]), a - 1)
+        phiCache[(x, a)] = result
+        return result
+    
+    piCache = {}
+    def pi(x):
+        if int(x) in piCache:
+            return piCache[int(x)]
+        
+        if x <= limit:
+            return array[math.floor(x)]
+        
+        a = pi(pow(x, 1/4))
+        b = pi(pow(x, 1/2))
+        c = pi(pow(x, 1/3))
+        result = phi(int(x), int(a)) + ((b + a - 2) * (b - a + 1))//2
+        for i in range(a + 1, b + 1):
+            w = x / primes[i - 1]
+            result -= pi(w)
+            if i <= c:
+                bi = pi(int(math.sqrt(w)))
+                for j in range(i, bi + 1):
+                    result -= (pi(w / primes[j - 1]) - j + 1)
+        piCache[int(x)] = result
+        return int(result)
+    
+    return int(pi(x))
 
 def max_prime_factor(n): #https://oeis.org/A006530
     result = [1]*(n+1)
@@ -67,9 +134,9 @@ def compute1(limit): #Worked up to 10^7 then became too slow
 def compute(n):
     total = 0
     for i in range(1, int(math.sqrt(n))):
-        total += (primepi(int(math.floor(n/i))) - primepi(i-1))
+        total += (primePi(int(math.floor(n/i))) - primePi(i-1))
     return n - total
 
 if __name__ == "__main__":
-    print(compute(10**9))
+    print(compute(10**10))
     print("--- %s seconds ---" % (time.time() - start_time))

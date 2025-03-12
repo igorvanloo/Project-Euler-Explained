@@ -30,6 +30,7 @@ Anwser:
 
     172023848 ~ 10^8
 --- 302.72959208488464 seconds ---
+--- 13.172532558441162 seconds --- with pypy
 '''
 
 import time, math

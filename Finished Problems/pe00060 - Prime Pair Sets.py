@@ -18,11 +18,23 @@ Find the lowest sum for a set of five primes for which any two primes concatenat
 Anwser:
     [26033, [13, 5197, 5701, 6733, 8389]]
 --- 190.72501707077026 seconds ---
+--- 17.082186460494995 seconds --- Using pypy
 '''
 
-import time, math, eulerlib
+import time, math
 start_time = time.time()
 
+def prime_sieve(limit, values = True):
+    result = [True] * (limit + 1)
+    result[0] = result[1] = False
+    for i in range(int(math.sqrt(limit)) + 1):
+    	if result[i]:
+    		for j in range(2 * i, len(result), i):
+    			result[j] = False
+    if values:
+        return [i for (i, isprime) in enumerate(result) if isprime]
+    else:
+        return result
 
 def is_prime(x): #Test if giving value is a prime 
 	if x <= 1:
@@ -41,7 +53,7 @@ def MergedPrimeChecker(prime1, prime2):
     return (is_prime(int(str(prime1) + str(prime2))) and is_prime(int(str(prime2) + str(prime1))))
                 
 def compute():
-    primes = eulerlib.primes(9000)
+    primes = prime_sieve(9000)
     
     length = len(primes)
     candidates = []

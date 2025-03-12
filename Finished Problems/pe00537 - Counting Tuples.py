@@ -87,6 +87,7 @@ We just binary exponentiation to do it quickly and we are done
 Anwser:
     779429131
 --- 702.8318181037903 seconds ---
+--- 32.04938626289368 seconds --- with pypy
 '''
 import time, math
 start_time = time.time()

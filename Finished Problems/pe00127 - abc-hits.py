@@ -21,6 +21,7 @@ Key points
 Answer:
     18407904
 --- 763.6556217670441 seconds ---
+--- 5.171984910964966 seconds --- with pypy
 '''
 
 import time, math

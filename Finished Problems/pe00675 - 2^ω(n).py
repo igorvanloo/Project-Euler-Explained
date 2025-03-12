@@ -33,6 +33,7 @@ Using a sieve to find all prime factors and modular division, problem can be sol
 Anwser:
     416146418
 --- 135.02284979820251 seconds ---
+--- 55.45124101638794 seconds --- with pypy
 '''
 
 import time

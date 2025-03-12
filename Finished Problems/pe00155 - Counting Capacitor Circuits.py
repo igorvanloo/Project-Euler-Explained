@@ -16,6 +16,7 @@ https://oeis.org/A153588
 Answer:
     3857447
 --- 558.0285637378693 seconds ---
+--- 76.81572437286377 seconds --- Using pypy
 '''
 import time
 from fractions import Fraction

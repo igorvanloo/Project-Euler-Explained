@@ -17,6 +17,7 @@ of i in its factorial
 Anwser:
     278157919195482643
 --- 1374.538467168808 seconds ---
+--- 40.60763955116272 seconds --- with pypy
 '''
 import time, math
 start_time = time.time()
@@ -101,8 +102,6 @@ def compute(limit):
     curr_N = 9876543138
     
     for n in range(10, limit + 1):
-        if n % 1000 == 0:
-            print(n)
         new_pf = pf[n]
         for p in new_pf:
             if p in curr_pf:
