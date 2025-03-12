@@ -75,7 +75,7 @@ I will update this now and then, for fully updated version see the website
 
 </tr>
 <tr style="text-align: center;">
-<td style="background-color: #1eeea6;">74/74</td>
+<td style="background-color: #1eeea6;">75/75</td>
 
 <td style="background-color: #1eeea6;">21/21</td>
 
@@ -89,19 +89,19 @@ I will update this now and then, for fully updated version see the website
 
 <td>23/69</td>
 
-<td>12/63</td>
+<td>13/63</td>
 
-<td>21/59</td>
+<td>22/59</td>
 
-<td>22/82</td>
+<td>23/82</td>
 
 <td>13/53</td>
 
-<td>7/65</td>
+<td>8/65</td>
 
-<td>11/51</td>
+<td>12/51</td>
 
-<td>7/53</td>
+<td>9/53</td>
 
 <td>1/35</td>
 
@@ -115,7 +115,9 @@ I will update this now and then, for fully updated version see the website
 
 <td>0/27</td>
 
-<td>332/921</td>
+<td>341/921</td>
+
+</tr>
 
 </tr>
   
@@ -448,7 +450,8 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #EE9E1E;"><a title="Project Euler 155 - Counting Capacitor Circuits" href="https://www.ivl-projecteuler.com/overview-of-problems/60-difficulty/problem-155" target="_blank">155</a></td>
 
-<td>156</td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 156 - Counting Digits" href="https://www.ivl-projecteuler.com/overview-of-problems/70-difficulty/problem-156" target="_blank">156</a></td>
+
 <td>157</td>
 <td>158</td>
 <td>159</td>
@@ -469,11 +472,14 @@ I will update this now and then, for fully updated version see the website
 <td style="background-color: #1eeea6;"><a title="Project Euler 166 - Criss Cross" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-166" target="_blank">166</a></td>
 
 <td>167</td>
+
 <td>168</td>
-<td>169</td>
+
+<td style="background-color: #1e9bee;"><a title="Project Euler 169 - Sums of Powers of Two" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-169" target="_blank">169</a></td>
+
 <td>170</td>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 171 - Finding numbers for which the sum of the squares of the digits is a square" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00171%20-%20Finding%20numbers%20for%20which%20the%20sum%20of%20the%20squares%20of%20the%20digits%20is%20a%20square.py">171</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 171 - Square Sum of the Digital Squares" href="https://www.ivl-projecteuler.com/overview-of-problems/65-difficulty/problem-171" target="_blank">171</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 172 - Investigating numbers with few repeated digits" href="https://www.ivl-projecteuler.com/overview-of-problems/55-difficulty/problem-172" target="_blank">172</a></td>
 
@@ -495,7 +501,8 @@ I will update this now and then, for fully updated version see the website
 </tr>
 <tr style="text-align: center;">
 <td>181</td>
-<td>182</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 182 - RSA Encryption" href="https://www.ivl-projecteuler.com/overview-of-problems/60-difficulty/problem-182" target="_blank">182</a></td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 183 - Maximum product of parts" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-183" target="_blank">183</a></td>
 
@@ -594,7 +601,9 @@ I will update this now and then, for fully updated version see the website
 <td style="background-color: #1eeea6;"><a title="Project Euler 235 - An Arithmetic Geometric sequence" href="https://www.ivl-projecteuler.com/overview-of-problems/40-difficulty/problem-235" target="_blank">235</a></td>
 
 <td>236</td>
-<td>237</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 237 - Tours on a 4 X N Playing Board" href="https://www.ivl-projecteuler.com/overview-of-problems/70-difficulty/problem-237" target="_blank">237</a></td>
+
 <td>238</td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 239 - Twenty-two Foolish Primes" href="https://www.ivl-projecteuler.com/overview-of-problems/65-difficulty/problem-239" target="_blank">239</a></td>
@@ -721,7 +730,7 @@ I will update this now and then, for fully updated version see the website
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 309 - Integer Ladders" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-309" target="_blank">309</a>
 
-<td style="background-color: #E41B17;"><a title="Project Euler 310 - Nim Square" href="https://github.com/igorvanloo/Project-Euler-Explained/blob/main/Unfinished%20Problems/pe00310%20-%20Nim%20Square.py">310</a></td>
+<td style="background-color: #1eeea6;"><a title="Project Euler 310 - Nim Square" href="https://www.ivl-projecteuler.com/overview-of-problems/40-difficulty/problem-310" target="_blank">310</a>
 
 <td>311</td>
 
@@ -1510,7 +1519,9 @@ I will update this now and then, for fully updated version see the website
 <td>823</td>
 <td>824</td>
 <td>825</td>
-<td>826</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 826 - Birds on a Wire" href="https://www.ivl-projecteuler.com/overview-of-problems/45-difficulty/problem-826" target="_blank">826</a></td>
+
 <td>827</td>
 
 <td style="background-color: #1eeea6;"><a title="Project Euler 828 - Numbers Challenge" href="https://www.ivl-projecteuler.com/overview-of-problems/15-difficulty/problem-828" target="_blank">828</a></td>
@@ -1649,8 +1660,11 @@ I will update this now and then, for fully updated version see the website
 <td>929</td>
 <td>930</td>
 <td>931</td>
-<td>932</td>
-<td>933</td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 932 - 2025" href="https://www.ivl-projecteuler.com/overview-of-problems/5-difficulty/problem-932" target="_blank">932</a></td>
+
+<td style="background-color: #1eeea6;"><a title="Project Euler 933 - Paper Cutting" href="https://www.ivl-projecteuler.com/overview-of-problems/50-difficulty/problem-933" target="_blank">933</a></td>
+
 <td>934</td>
 <td>935</td>
 <td>936</td>
