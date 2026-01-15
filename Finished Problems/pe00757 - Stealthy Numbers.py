@@ -63,5 +63,5 @@ def compute1(limit): #Faster for lower numbers
     return len(a)
     
 if __name__ == "__main__":
-    print(compute(10^14))
+    print(compute(10**14))
     print("--- %s seconds ---" % (time.time() - start_time))
