@@ -36,8 +36,8 @@ that is n - 1 C d_0
 total is (d_1 + ... d _9)!/ prod d_i! * n - 1 C d_0 = (n - d_0)! * (n - 1)! / (n - 1 - d_0)! / prod d_i!
 
 Answer:
-    6111397420909321590
---- 1.5269503593444824 seconds ---
+    6111397420935766740
+--- 1.4457035064697266 seconds ---
 '''
 
 import time, math, itertools
@@ -58,10 +58,9 @@ def S(n):
     total = 0
     for x in itertools.combinations_with_replacement("0123456789", n):
         d = [x.count(str(i)) for i in range(10)]
-        t = math.factorial(n - 1)
+        t = math.factorial(n - 1) * (n - d[0])
         for v in range(10):
             t //= math.factorial(d[v])
-        t *= (n - d[0])
         total += t*(t - 1)//2
     return total
         
