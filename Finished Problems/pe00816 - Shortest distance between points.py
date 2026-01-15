@@ -116,5 +116,5 @@ def d(k):
     return round(closestPairOfPoints(points)[0], 9)
 
 if __name__ == "__main__":
-    print(d(2*10**5))
+    print(d(2*10**6))
     print("--- %s seconds ---" % (time.time() - start_time))
