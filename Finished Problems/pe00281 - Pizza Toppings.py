@@ -55,5 +55,5 @@ def compute(limit):
     return total
 
 if __name__ == "__main__":
-    print(compute(10**15))
+    print(compute(10**16))
     print("--- %s seconds ---" % (time.time() - start_time))
